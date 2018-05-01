@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - study@localhost" uuid="74edab61-aaaf-4fb8-88bb-d6e2dfd863c0">
+    <database-info product="MySQL" version="5.7.20" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.46 ( Revision: 9cc87a48e75c2d2e87c1a293b2862ce651cb256e )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.4">
+      <schema id="1" name="study"/>
+      <table id="2" parent="1" name="shipping_documents">
+        <comment>货运单据表（SHIPPING_DOCUMENTS）</comment>
+      </table>
+      <table id="3" parent="1" name="sys_menu"/>
+      <table id="4" parent="1" name="sys_role"/>
+      <table id="5" parent="1" name="sys_role_menu"/>
+      <table id="6" parent="1" name="sys_role_user"/>
+      <table id="7" parent="1" name="sys_user"/>
+      <table id="8" parent="1" name="test"/>
+      <column id="9" parent="2" name="ROW_ID">
+        <comment>ä¸»é”®ID</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="10" parent="2" name="ORG_CODE">
+        <comment>ä¸»ä½“ç¼–ç &#x81;</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(32)</data-type>
+      </column>
+      <column id="11" parent="2" name="BILL_NO">
+        <comment>å&#x8d;•æ&#x8d;®ç¼–ç &#x81;</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="12" parent="2" name="BILL_DATE">
+        <comment>å&#x8d;•æ&#x8d;®æ—¥æœŸ</comment>
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="13" parent="2" name="RECEIVER">
+        <comment>æ”¶è´§äºº</comment>
+        <data-type>varchar(32)</data-type>
+      </column>
+      <column id="14" parent="2" name="RECEIVER_PHONE">
+        <comment>æ”¶è´§äººç”µè¯&#x9d;</comment>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="15" parent="2" name="SHIPPER">
+        <comment>å&#x8f;‘è´§äºº</comment>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="16" parent="2" name="SHIPPER_PHONE">
+        <comment>å&#x8f;‘è´§äººç”µè¯&#x9d;</comment>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="17" parent="2" name="QUANTITY">
+        <comment>æ•°é‡&#x8f;</comment>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="18" parent="2" name="MONEY">
+        <comment>è´§æ¬¾</comment>
+        <data-type>decimal(16,2)</data-type>
+      </column>
+      <column id="19" parent="2" name="FREIGHT">
+        <comment>è¿&#x90;è´¹</comment>
+        <data-type>decimal(16,2)</data-type>
+      </column>
+      <column id="20" parent="2" name="TOTAL">
+        <comment>å&#x90;ˆè®¡ï¼&#x9d;è´§æ¬¾ï¼‹è¿&#x90;è´¹</comment>
+        <data-type>decimal(16,2)</data-type>
+      </column>
+      <column id="21" parent="2" name="FREIGHT_TYPE">
+        <comment>è´§è¿&#x90;æ–¹å¼&#x8f;</comment>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="22" parent="2" name="DRIVER">
+        <comment>å&#x8f;¸æœº</comment>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="23" parent="2" name="REMARKS">
+        <comment>å¤‡æ³¨</comment>
+        <data-type>varchar(1024)</data-type>
+      </column>
+      <column id="24" parent="2" name="BILL_STATE">
+        <comment>å&#x8d;•æ&#x8d;®çŠ¶æ€&#x81;</comment>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="25" parent="2" name="RECEIVABLES_STATE">
+        <comment>收款状态，未收、已收，默认未收，收款功能批量更新。</comment>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="26" parent="2" name="RECEIVABLES_TYPE">
+        <comment>收款方式，现金、转账，默认为空，收款功能批量更新。</comment>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="27" parent="2" name="RECEIVABLES_DATE">
+        <comment>收款日期，默认为空，收款功能批量更新。</comment>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="28" parent="2" name="PAYMENT_STATE">
+        <comment>付款状态，未付、已付、自结，默认未付，付款功能批量更新。</comment>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="29" parent="2" name="PAYMENT_TYPE">
+        <comment>付款方式，现金、转账，默认为空，付款功能批量更新。</comment>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="30" parent="2" name="PAYMENT_DATE">
+        <comment>付款日期，默认为空，付款功能批量更新。</comment>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="31" parent="2" name="PRICE_SPARE_1">
+        <comment>预留1</comment>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="32" parent="2" name="PRICE_SPARE_2">
+        <comment>预留2</comment>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="33" parent="2" name="PRICE_SPARE_3">
+        <comment>预留3</comment>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="34" parent="2" name="PRICE_SPARE_4">
+        <comment>预留4</comment>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="35" parent="2" name="PRICE_SPARE_5">
+        <comment>预留5</comment>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="36" parent="2" name="PRICE_SPARE_6">
+        <comment>预留6</comment>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="37" parent="2" name="PRICE_SPARE_7">
+        <comment>预留7</comment>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="38" parent="2" name="PRICE_SPARE_8">
+        <comment>预留8</comment>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="39" parent="2" name="PRICE_SPARE_9">
+        <comment>预留9</comment>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="40" parent="2" name="PRICE_SPARE_10">
+        <comment>预留10</comment>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="41" parent="2" name="PUB_CREATE_PERSON">
+        <comment>创建人</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(32)</data-type>
+      </column>
+      <column id="42" parent="2" name="PUB_CREATE_DATE">
+        <comment>创建时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="43" parent="2" name="PUB_MODI_PERSON">
+        <comment>最后修改人</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(32)</data-type>
+      </column>
+      <column id="44" parent="2" name="PUB_MODI_DATE">
+        <comment>最后修改时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="45" parent="2" name="UNIT">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <index id="46" parent="2" name="I_SHIPPING_DOCUMENTS">
+        <columns>BILL_NO</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="47" parent="2" name="I_SHIPPING_DOCUMENTS">
+        <columns>BILL_NO</columns>
+        <underlying-index>I_SHIPPING_DOCUMENTS</underlying-index>
+      </key>
+      <key id="48" parent="2" name="PRIMARY">
+        <columns>ROW_ID</columns>
+        <primary>1</primary>
+      </key>
+      <column id="49" parent="3" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(32)</data-type>
+      </column>
+      <column id="50" parent="3" name="menu_name">
+        <data-type>varchar(200)</data-type>
+      </column>
+      <column id="51" parent="3" name="menu_desc">
+        <data-type>varchar(200)</data-type>
+      </column>
+      <column id="52" parent="3" name="pid">
+        <data-type>int(32)</data-type>
+      </column>
+      <column id="53" parent="3" name="url">
+        <data-type>varchar(200)</data-type>
+      </column>
+      <column id="54" parent="3" name="remark">
+        <data-type>varchar(200)</data-type>
+      </column>
+      <column id="55" parent="3" name="validy">
+        <data-type>varchar(2)</data-type>
+      </column>
+      <column id="56" parent="3" name="creater">
+        <data-type>varchar(200)</data-type>
+      </column>
+      <column id="57" parent="3" name="create_time">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="58" parent="3" name="updater">
+        <data-type>varchar(200)</data-type>
+      </column>
+      <column id="59" parent="3" name="update_time">
+        <data-type>datetime</data-type>
+      </column>
+      <key id="60" parent="3" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="61" parent="4" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(32)</data-type>
+      </column>
+      <column id="62" parent="4" name="role_name">
+        <data-type>varchar(200)</data-type>
+      </column>
+      <column id="63" parent="4" name="pid">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="64" parent="4" name="desc_">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="65" parent="4" name="validly">
+        <data-type>varchar(10)</data-type>
+      </column>
+      <column id="66" parent="4" name="creater">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="67" parent="4" name="create_time">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="68" parent="4" name="updater">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="69" parent="4" name="update_time">
+        <data-type>datetime</data-type>
+      </column>
+      <key id="70" parent="4" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="71" parent="5" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(32)</data-type>
+      </column>
+      <column id="72" parent="5" name="role_id">
+        <data-type>int(32)</data-type>
+      </column>
+      <column id="73" parent="5" name="menu_id">
+        <data-type>int(32)</data-type>
+      </column>
+      <column id="74" parent="5" name="validy">
+        <data-type>varchar(2)</data-type>
+      </column>
+      <column id="75" parent="5" name="creater">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="76" parent="5" name="create_time">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="77" parent="5" name="updater">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="78" parent="5" name="update_time">
+        <data-type>datetime</data-type>
+      </column>
+      <key id="79" parent="5" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="80" parent="6" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(32)</data-type>
+      </column>
+      <column id="81" parent="6" name="role_id">
+        <data-type>int(32)</data-type>
+      </column>
+      <column id="82" parent="6" name="user_id">
+        <data-type>int(32)</data-type>
+      </column>
+      <column id="83" parent="6" name="validy">
+        <data-type>varchar(2)</data-type>
+      </column>
+      <column id="84" parent="6" name="creater">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="85" parent="6" name="create_time">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="86" parent="6" name="updater">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="87" parent="6" name="update_time">
+        <data-type>datetime</data-type>
+      </column>
+      <key id="88" parent="6" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="89" parent="7" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="90" parent="7" name="account">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="91" parent="7" name="name_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="92" parent="7" name="passwd">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="93" parent="7" name="user_type">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="94" parent="7" name="user_status">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="95" parent="7" name="email">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="96" parent="7" name="phone">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="97" parent="7" name="address">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="98" parent="7" name="lastupdate_passwd">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="99" parent="7" name="validly">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="100" parent="7" name="remark">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="101" parent="7" name="creater">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="102" parent="7" name="create_time">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="103" parent="7" name="updater">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="104" parent="7" name="update_time">
+        <data-type>datetime</data-type>
+      </column>
+      <key id="105" parent="7" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="106" parent="8" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="107" parent="8" name="code">
+        <comment>å&#x8f;‘çš„æ’’å&#x8f;‘çš„æ’’</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="108" parent="8" name="name">
+        <comment>é¥¿æ­»çš„æ’’</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <key id="109" parent="8" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>

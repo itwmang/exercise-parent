@@ -1,5 +1,5 @@
 server:
-  port: 8889
+  port: 2189
 spring:
   application:
     name: zuul-gateway
@@ -8,3 +8,7 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:2188/eureka
+
+
+zuulFilter:
+  permissionFilter: true

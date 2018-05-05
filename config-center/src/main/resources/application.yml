@@ -4,15 +4,18 @@ server:
 spring:
   application:
     name: config-server
+  profiles:
+    active: native #native访问本地配置 dev 打开git配置
   cloud:
     config:
-      label: master
       server:
-        git:
-          uri: https://github.com/itwmang/springCloudConfig
-          search-paths: mac-dev
-          username: itfast@yeah.net
-          password: itfast123.
+        native:
+          search-locations: classpath:/local
+#        git:
+#          uri: https://github.com/itwmang/springCloudConfig
+#          search-paths: mac-dev
+#          username: itfast@yeah.net
+#          password: itfast123.
 eureka:
   client:
     service-url:

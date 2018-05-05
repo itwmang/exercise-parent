@@ -4,6 +4,8 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableEurekaClient
 @RestController
 @MapperScan("com.spring.cloud.service.dao")
-public class UserSevrviceApplication {
+public class UserSevrviceApplication extends SpringBootServletInitializer{
 
 	@Value("${druid.url}")
 	private String url;
@@ -24,6 +26,12 @@ public class UserSevrviceApplication {
 	@RequestMapping(value = "geturl",method = RequestMethod.POST)
 	public String geturl(){
 		return "config Center return port:["+port+"] url:["+url+"]";
+	}
+
+
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+		return builder.sources(UserSevrviceApplication.class);
 	}
 
 	public static void main(String[] args) {

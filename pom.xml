@@ -16,7 +16,8 @@
         <module>user-consumer</module>
         <module>user-service</module>
         <module>zuul-gateway</module>
-        <module>framework-api</module>
+        <!--<module>framework-api</module>-->
+        <module>authentic-service</module>
     </modules>
 
     <parent>

@@ -4,25 +4,21 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.Cache;
-import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.interceptor.CacheErrorHandler;
 import org.springframework.cache.interceptor.KeyGenerator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
-import org.springframework.data.redis.connection.jedis.JedisClientConfiguration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.JdkSerializationRedisSerializer;
 import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
+import redis.clients.jedis.JedisPoolConfig;
 
 import java.lang.reflect.Method;
-import java.util.HashMap;
-import java.util.Map;
 
 @Configuration
 @EnableCaching
@@ -30,25 +26,25 @@ public class RedisConfig extends CachingConfigurerSupport {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Value("${spring.redis.host}")
+    @Value("${redis.host}")
     private String host;
 
-    @Value("${spring.redis.port}")
+    @Value("${redis.port}")
     private int port;
 
-    @Value("${spring.redis.timeout}")
+    @Value("${redis.timeout}")
     private int timeout;
 
-    @Value("${spring.redis.password}")
+    @Value("${redis.password}")
     private String password;
 
-    @Value("${spring.redis.database}")
+    @Value("${redis.database}")
     private int database;
 
-    @Value("${spring.redis.pool.max-idle}")
+    @Value("${redis.jedis.pool.max-idle}")
     private int maxIdle;
 
-    @Value("${spring.redis.pool.min-idle}")
+    @Value("${redis.jedis.pool.min-idle}")
     private int minIdle;
 
     /**
@@ -79,12 +75,12 @@ public class RedisConfig extends CachingConfigurerSupport {
 //    @Bean
 //    public CacheManager cacheManager(RedisTemplate redisTemplate) {
 //        RedisCacheManager cacheManager = new RedisCacheManager(redisTemplate);
-//        Map<String, Long> expires=new HashMap<String, Long>();
+//        Map<String, Long> expires=new HashMap<>();
 //        expires.put("user", 6000L);
 //        expires.put("city", 600L);
-////        cacheManager.setExpires(expires);
+//        cacheManager.setExpires(expires);
 //        // Number of seconds before expiration. Defaults to unlimited (0)
-////        cacheManager.setDefaultExpiration(600); //设置key-value超时时间
+//        cacheManager.setDefaultExpiration(600); //设置key-value超时时间
 //        return cacheManager;
 //    }
 
@@ -127,24 +123,24 @@ public class RedisConfig extends CachingConfigurerSupport {
         factory.setDatabase(database);
         //设置连接超时时间
         factory.setTimeout(timeout);
-//        factory.setUsePool(true);
-//        factory.setPoolConfig(jedisPoolConfig());
+        factory.setUsePool(true);
+        factory.setPoolConfig(jedisPoolConfig());
         return factory;
     }
 
-//    /**
-//     * 连接池配置
-//     * @Description:
-//     * @return
-//     */
-//    @Bean
-//    public JedisPoolConfig jedisPoolConfig() {
-//        JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
-//        jedisPoolConfig.setMaxIdle(maxIdle);
-//        jedisPoolConfig.setMinIdle(minIdle);
-////    jedisPoolConfig.set ...
-//        return jedisPoolConfig;
-//    }
+    /**
+     * 连接池配置
+     * @Description:
+     * @return
+     */
+    @Bean
+    public JedisPoolConfig jedisPoolConfig() {
+        JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
+        jedisPoolConfig.setMaxIdle(maxIdle);
+        jedisPoolConfig.setMinIdle(minIdle);
+//    jedisPoolConfig.set ...
+        return jedisPoolConfig;
+    }
 
     /**
      * redis数据操作异常处理

@@ -51,8 +51,6 @@ public class PermissionPreFilter extends ZuulFilter {
         String token = request.getParameter("testToken");
 
         if(StringUtils.isNotBlank(token)){
-
-
             ctx.addZuulRequestHeader("Authorization",token);
             //如果有说明权限通过,则继续转发路由
             ctx.setSendZuulResponse(true);
@@ -60,7 +58,7 @@ public class PermissionPreFilter extends ZuulFilter {
             ctx.set("token",token);
             log.info("Zuul Filter PermissionPreFilter validate success!");
         }else{
-            //如果全县验证不成功,则不再转发路由
+            //如果权限验证不成功,则不再转发路由
             ctx.setSendZuulResponse(false);
             ctx.setResponseStatusCode(201);
             ctx.setResponseBody("{\"result\":\"token is not correct!\"}");

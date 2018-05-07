@@ -58,6 +58,7 @@
         <option value="$PROJECT_DIR$/config-center/pom.xml" />
         <option value="$PROJECT_DIR$/exec-consumer/pom.xml" />
         <option value="$PROJECT_DIR$/exce-service/pom.xml" />
+        <option value="$PROJECT_DIR$/authentic-service/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

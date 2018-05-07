@@ -85,8 +85,23 @@
         <processorPath useClasspath="true" />
         <module name="zuul-gateway" />
       </profile>
+      <profile default="false" name="Annotation profile for authentic-service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="authentic-service" />
+      </profile>
+      <profile default="false" name="Annotation profile for framework-api" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="framework-api" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="authentic-service" target="1.8" />
       <module name="config-center" target="1.8" />
       <module name="eurake-server" target="1.8" />
       <module name="eureka-server" target="1.8" />
@@ -94,6 +109,7 @@
       <module name="exce-service" target="1.8" />
       <module name="exec-consumer" target="1.8" />
       <module name="exercise-parent" target="1.8" />
+      <module name="framework-api" target="1.8" />
       <module name="untitled" target="1.8" />
       <module name="untitled1" target="1.5" />
       <module name="user-consumer" target="1.8" />

@@ -3,12 +3,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.spring.cloud.service</groupId>
-    <artifactId>user-service</artifactId>
+    <groupId>com.spring.cloud.authentic</groupId>
+    <artifactId>authentic-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
 
-    <name>user-sevrvice</name>
+    <name>authentic-service</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>
@@ -18,41 +18,42 @@
     </parent>
 
     <dependencies>
-
-
-        <!--&lt;!&ndash;mongdb&ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-data-mongodb</artifactId>-->
-        <!--</dependency>-->
-
-        <!--&lt;!&ndash;ribbmq&ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-amqp</artifactId>-->
-        <!--</dependency>-->
-
-        <!--&lt;!&ndash;kafka&ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.kafka</groupId>-->
-            <!--<artifactId>spring-kafka</artifactId>-->
-        <!--</dependency>-->
-
-        <!--mysql-->
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <scope>runtime</scope>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
-
-        <!--mybatis-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
             <version>${mybatis.springboot.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
 
-
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
 
         <!-- 分页插件 -->
         <dependency>
@@ -67,23 +68,14 @@
             <artifactId>druid</artifactId>
             <version>${druid.version}</version>
         </dependency>
+
         <!--热部署工具-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
         </dependency>
-
-        <!--&lt;!&ndash;druid 阿里连接池&ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>com.alibaba</groupId>-->
-            <!--<artifactId>druid-spring-boot-starter</artifactId>-->
-            <!--<version>1.1.0</version>-->
-        <!--</dependency>-->
-
-
     </dependencies>
-
 
     <profiles>
         <profile>
@@ -94,64 +86,45 @@
             <properties>
                 <profileActive>dev</profileActive>
             </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-tomcat</artifactId>
-                </dependency>
-                <dependency>
-                    <groupId>org.apache.tomcat</groupId>
-                    <artifactId>tomcat-jdbc</artifactId>
-                </dependency>
-            </dependencies>
+            <!--<dependencies>-->
+            <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-tomcat</artifactId>-->
+            <!--</dependency>-->
+            <!--<dependency>-->
+            <!--<groupId>org.apache.tomcat</groupId>-->
+            <!--<artifactId>tomcat-jdbc</artifactId>-->
+            <!--</dependency>-->
+            <!--</dependencies>-->
         </profile>
-
         <profile>
             <id>ver</id>
             <properties>
-                <profileActive>ver</profileActive>
+                <profileActive>dev</profileActive>
             </properties>
-
-
-            <dependencies>
-                <dependency>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-tomcat</artifactId>
-                </dependency>
-                <dependency>
-                    <groupId>org.apache.tomcat</groupId>
-                    <artifactId>tomcat-jdbc</artifactId>
-                </dependency>
-            </dependencies>
-
         </profile>
     </profiles>
 
-
     <build>
-
         <resources>
-            <!--普通resources引入-->
             <resource>
-                <directory>src/main/resources</directory>
+                <directory>src/java/resources</directory>
                 <excludes>
-                    <exclude>application*.properties</exclude>
+                    <exclude>bootstrap.yml</exclude>
                     <exclude>application*.yml</exclude>
                 </excludes>
             </resource>
-            <!--替换properties值的配置文件引入-->
             <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
+                <directory>src/java/resources</directory>
+                <filtering>
+                    true
+                </filtering>
                 <includes>
                     <include>bootstrap.yml</include>
                     <include>application.yml</include>
-                    <include>application-${profileActive}.yml</include>
                 </includes>
             </resource>
-
         </resources>
-
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -169,6 +142,8 @@
                     <verbose>true</verbose>
                 </configuration>
             </plugin>
+
+
 
         </plugins>
     </build>

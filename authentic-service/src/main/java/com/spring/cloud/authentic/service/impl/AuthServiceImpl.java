@@ -12,7 +12,9 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public AuthResponse login(String account, String passwd) {
-
-        return null;
+        AuthResponse res = new AuthResponse();
+        res.setStatus(false);
+        res.setMsg("用户验证请求失败!");
+        return res;
     }
 }

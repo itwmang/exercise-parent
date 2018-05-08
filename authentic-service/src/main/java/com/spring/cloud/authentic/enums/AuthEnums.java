@@ -12,7 +12,7 @@ public enum AuthEnums {
     public enum AuthLoginEnums{
         auth_login_fail_notfount_account(404,"用户名不存在"),
         auth_login_fail_passwd_error(401,"密码错误"),
-
+        auth_error(401,"用户密码接口请求失败"),
         ;
 
         private int code;

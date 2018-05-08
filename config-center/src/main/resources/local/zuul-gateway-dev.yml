@@ -1,8 +1,5 @@
 server:
   port: 2189
-spring:
-  application:
-    name: zuul-gateway
 
 eureka:
   client:
@@ -12,3 +9,5 @@ eureka:
 
 zuulFilter:
   permissionFilter: true
+  rules:
+    whiteurl: /authentic-service/login,/test

@@ -1,13 +1,15 @@
 <component name="libraryTable">
   <library name="Maven: com.wmang.spring.boot:framework-api:1.0-SNAPSHOT">
     <CLASSES>
-      <root url="jar://$USER_HOME$/Documents/maven-repository/com/wmang/spring/boot/framework-api/1.0-SNAPSHOT/framework-api-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://E:/aliyunEDAS/localrepo/com/wmang/spring/boot/framework-api/1.0-SNAPSHOT/framework-api-1.0-SNAPSHOT.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$USER_HOME$/Documents/maven-repository/com/wmang/spring/boot/framework-api/1.0-SNAPSHOT/framework-api-1.0-SNAPSHOT-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/framework-api/framework-api-1.0-SNAPSHOT-javadoc.jar!/" />
+      <root url="jar://E:/aliyunEDAS/localrepo/com/wmang/spring/boot/framework-api/1.0-SNAPSHOT/framework-api-1.0-SNAPSHOT-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$USER_HOME$/Documents/maven-repository/com/wmang/spring/boot/framework-api/1.0-SNAPSHOT/framework-api-1.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/framework-api/framework-api-1.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://E:/aliyunEDAS/localrepo/com/wmang/spring/boot/framework-api/1.0-SNAPSHOT/framework-api-1.0-SNAPSHOT-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

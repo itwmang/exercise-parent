@@ -35,5 +35,16 @@ public class MD5Utils {
         return ret.toString();
     }
 
-
+    /**
+     * 根据用户民密码做md5加密
+     *
+     * @param account
+     * @param passwd
+     * @return
+     */
+    public static String encryPasswd(String account, String passwd) {
+        return MD5Utils.encry(MD5Utils.encry(account.substring(0, account.length() / 2))
+                .concat(MD5Utils.encry(Base64Utils.encode(passwd)))
+                .concat(MD5Utils.encry(account.substring(account.length() / 2, account.length()))));
+    }
 }

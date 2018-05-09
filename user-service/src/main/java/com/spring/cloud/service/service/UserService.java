@@ -12,4 +12,6 @@ public interface UserService {
     User getUserById(int id);
 
     List<User> listUser();
+
+    void insertUser(User user);
 }

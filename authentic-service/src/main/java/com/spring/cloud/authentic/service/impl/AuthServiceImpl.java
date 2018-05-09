@@ -51,8 +51,7 @@ public class AuthServiceImpl implements AuthService {
                 return res;
             } else {
                 User user = users.get(0);
-                String encryPasswd = MD5Utils.encry(MD5Utils.encry(account.substring(0, account.length() / 2)).concat(MD5Utils.encry(Base64Utils.encode(passwd))).concat(MD5Utils.encry(account.substring(account.length() / 2, account.length()))));
-
+                String encryPasswd = MD5Utils.encryPasswd(account,passwd);
                 if (!encryPasswd.equals(user.getPasswd())) {
                     if (log.isDebugEnabled()) {
                         log.debug(MessageFormat.format("account[{0}]登录验证失败,密码不正确!", account));

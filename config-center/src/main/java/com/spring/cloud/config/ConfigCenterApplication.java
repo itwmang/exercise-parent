@@ -5,10 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.cloud.config.server.EnableConfigServer;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
-@EnableEurekaClient
+//@EnableEurekaClient
 @EnableConfigServer
 public class ConfigCenterApplication extends SpringBootServletInitializer{
 

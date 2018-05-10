@@ -3,7 +3,7 @@ package com.spring.cloud.zuul.filters;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -55,7 +55,7 @@ public class PermissionPreFilter extends ZuulFilter {
         log.info("Zuul Filter PermissionPreFilter uri:"+requestURI);
 
         if(hasHandleReq(requestURI)){
-            String token = request.getParameter("testToken");
+            String token = request.getHeader("testToken");
 
             if(StringUtils.isNotBlank(token)){
                 ctx.addZuulRequestHeader("Authorization",token);

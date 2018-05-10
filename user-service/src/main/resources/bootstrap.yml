@@ -1,9 +1,7 @@
 spring:
-  application:
-    name: user-service
   cloud:
     config:
-      uri: http://localhost:8888
+      uri: http://configcenter:config0510@localhost:8888
       profile: @profileActive@
       label: master
-      name: common
+      name: user-service

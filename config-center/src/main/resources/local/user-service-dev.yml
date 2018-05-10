@@ -1,8 +1,8 @@
 server:
-  port: 9001
+  port: 8082
 spring:
   application:
-    name: authentic-service
+    name: user-service
   rabbitmq:
      host: 127.0.0.1
      port: 5672
@@ -20,17 +20,18 @@ eureka:
       lease-expiration-duration-in-seconds: 10
   client:
     service-url:
-     defaultZone: http://localhost:2188/eureka
+     defaultZone: http://root:root@localhost:2188/eureka
 
 #####################################################################################################
+
 
 # 打印日志 trace
 logging:
   level:
     root: info
     org.hibernate: INFO
-    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
-    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+    org.hibernate.type.descriptor.sql.BasicBinder: DEBUG
+    org.hibernate.type.descriptor.sql.BasicExtractor: DEBUG
     com.springms: DEBUG
 #####################################################################################################
 
@@ -70,44 +71,37 @@ druid:
   logSlowSql: true
 #####################################################################################################
 
+
+
+
+#####################################################################################################
+# mysql 属性配置
+#  datasource:
+#    driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://192.168.1.188:3306/logis?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
+#    username: root
+#    password: root
+#  jpa:
+#    hibernate:
+#      #ddl-auto: create #ddl-auto:设为create表示每次都重新建表
+#      ddl-auto: update #ddl-auto:设为update表示每次都不会重新建表
+#    show-sql: true
+#####################################################################################################
+
+
+#####################################################################################################
+#datasource config
+#jdbc:
+#  driverClassName: com.mysql.jdbc.Driver
+#  url: jdbc:mysql://192.168.1.188:3306/logis?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
+#  username: root
+#  password: root
+#####################################################################################################
+
 #####################################################################################################
 # mybatis配置
 mybatis:
   mapper-locations: classpath*:mapper/*.xml
-  type-aliases-package: com.spring.cloud.authentic.entity
+  type-aliases-package: com.spring.cloud.service.entity
 
 #####################################################################################################
-
-
-#####################################################################################################
-# redis配置
-redis:
-  # Redis数据库索引（默认为0）
-  database: 0
-  # Redis服务器地址
-  host: 127.0.0.1
-  # Redis服务器连接端口
-  port: 6379
-  # Redis服务器连接密码（默认为空）
-  password: auth@#redis
-  jedis:
-    pool:
-      # 连接池最大连接数（使用负值表示没有限制）
-      max-active: 8
-      # 连接池最大阻塞等待时间（使用负值表示没有限制）表示永不超时。如果超过等待时间，则直接抛出JedisConnectionException
-      max-wait: 1
-      # 连接池中的最大空闲连接
-      max-idle: 8
-      # 连接池中的最小空闲连接
-      min-idle: 0
-  # 连接超时时间（毫秒）
-  timeout: 1000
-
-#################redis哨兵设置#################
-# Redis服务器master的名字
-#  sentinel:
-#    master: master8026
-#    # redis-sentinel的配置地址和端口
-#    nodes: 10.189.80.25:26379,10.189.80.26:26379,10.189.80.27:26378
-#####################################################################################################
-testbus: 121122121211

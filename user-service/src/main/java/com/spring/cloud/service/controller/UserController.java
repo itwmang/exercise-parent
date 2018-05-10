@@ -1,8 +1,9 @@
 package com.spring.cloud.service.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.spring.boot.framework.api.BaseException;
 import com.spring.cloud.service.entity.User;
-import com.spring.cloud.service.exception.UserExecption;
+import com.spring.cloud.service.exception.UserException;
 import com.spring.cloud.service.service.UserService;
 import org.apache.commons.lang.time.StopWatch;
 import org.slf4j.Logger;
@@ -35,8 +36,10 @@ public class UserController {
             sp.stop();
             log.info("UserController_getUserById_Success,port[" + port + "],time[" + sp.getTime() + "]毫秒");
             return JSON.toJSONString(user);
+        } catch (BaseException e) {
+            throw e;
         } catch (Exception e) {
-            throw UserExecption.user_get_error.getException(e.getLocalizedMessage());
+            throw UserException.user_get_error.getException(e.getLocalizedMessage());
         }
     }
 
@@ -50,8 +53,10 @@ public class UserController {
             sp.stop();
             log.info("UserController_listUser_Success,port[\"+port+\"],time[" + sp.getTime() + "]毫秒");
             return JSON.toJSONString(users);
+        } catch (BaseException e) {
+            throw e;
         } catch (Exception e) {
-            throw UserExecption.user_get_error.getException(e.getLocalizedMessage());
+            throw UserException.user_get_error.getException(e.getLocalizedMessage());
         }
     }
 
@@ -65,9 +70,22 @@ public class UserController {
             sp.stop();
             log.info("UserController_insertUser_Success,port[\"+port+\"],time[" + sp.getTime() + "]毫秒");
             return JSON.toJSONString(user);
-
+        } catch (BaseException e) {
+            throw e;
         } catch (Exception e) {
-            throw UserExecption.user_insert_error.getException(e.getLocalizedMessage());
+            throw UserException.user_insert_error.getException(e.getLocalizedMessage());
         }
+    }
+
+
+    public static void main(String[] args) {
+        User user = new User();
+        user.setAccount("spring");
+        user.setPasswd("MQ==");
+        user.setName("springcloud测试账号");
+        user.setUserType("1");
+        user.setUserStatus("1");
+        user.setValidly("1");
+        System.out.println(JSON.toJSONString(user));
     }
 }

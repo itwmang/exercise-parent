@@ -16,7 +16,21 @@ spring:
 #          search-paths: mac-dev
 #          username: itfast@yeah.net
 #          password: itfast123.
+    bus:
+      trace:
+        enabled: true
+  rabbitmq:
+     host: 127.0.0.1
+     port: 5672
+     username: rabbitmq
+     password: rabbitmq
+  security:
+    user:
+      name: configcenter
+      password: config0510
+
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:2188/eureka
+

@@ -18,3 +18,6 @@ eureka:
     fetch-registry: false
     service-url:
      defaultZone: http://localhost:2188/eureka/
+management:
+  security:
+    enabled: false

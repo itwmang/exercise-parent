@@ -11,3 +11,6 @@ zuulFilter:
   permissionFilter: true
   rules:
     whiteurl: /authentic-service/login,/test
+management:
+  security:
+    enabled: false

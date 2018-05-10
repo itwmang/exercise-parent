@@ -18,6 +18,7 @@
         <module>zuul-gateway</module>
         <module>authentic-service</module>
         <module>framework-api</module>
+        <module>test</module>
     </modules>
 
     <parent>
@@ -106,6 +107,7 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
+
 
         <!--自定义配置-->
         <dependency>

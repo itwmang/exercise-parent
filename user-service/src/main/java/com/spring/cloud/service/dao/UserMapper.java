@@ -2,8 +2,11 @@ package com.spring.cloud.service.dao;
 
 import com.spring.cloud.service.entity.User;
 import com.spring.cloud.service.entity.UserExample;
+import org.springframework.stereotype.Component;
+
 import java.util.List;
 
+@Component
 public interface UserMapper {
     int countByExample(UserExample example);
 

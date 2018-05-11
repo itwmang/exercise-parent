@@ -12,12 +12,10 @@ import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
 
-import static org.bouncycastle.asn1.x500.style.RFC4519Style.l;
-
 /**
  * Created by yingying on 18-5-4.
  */
-//@Component
+@Component
 public class PermissionPreFilter extends ZuulFilter {
 
     private final static String split_mark = ",";

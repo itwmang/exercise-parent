@@ -3,10 +3,10 @@ server:
 spring:
   application:
     name: eureka-server
-#  security:
-#    user:
-#      name: root
-#      password: root
+  security:
+    user:
+      name: eureka
+      password: eureka0510
 eureka:
   instance:
     hostname: localhost
@@ -17,7 +17,7 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
     service-url:
-     defaultZone: http://localhost:2188/eureka/
+     defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:${server.port}/eureka
 management:
   security:
     enabled: false

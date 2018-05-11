@@ -6,6 +6,15 @@ eureka:
     service-url:
       defaultZone: http://eureka:eureka0510@localhost:2188/eureka/
 
+security:
+#是否需要校验验证码
+  capcha: false
+urls:
+  collects:
+    - /auth/**
+
+
+
 
 zuulFilter:
   permissionFilter: true

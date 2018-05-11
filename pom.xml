@@ -83,12 +83,6 @@
 
     <dependencies>
 
-        <dependency>
-            <groupId>com.wmang.spring.boot</groupId>
-            <artifactId>framework-api</artifactId>
-            <version>${framework.version}</version>
-        </dependency>
-
 
         <!--springboot web 启动器-->
         <dependency>

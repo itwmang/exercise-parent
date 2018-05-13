@@ -2,6 +2,7 @@ package com.spring.cloud.authentic.controller;
 
 import com.spring.boot.framework.api.BaseController;
 import com.spring.boot.framework.api.BaseResponse;
+import com.spring.boot.framework.api.beans.AuthPermission;
 import com.spring.boot.framework.utils.Base64Utils;
 import com.spring.cloud.authentic.dto.AuthResponse;
 import com.spring.cloud.authentic.enums.AuthEnums;
@@ -10,11 +11,11 @@ import org.apache.commons.lang.time.StopWatch;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.text.MessageFormat;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by yingying on 18-5-6.
@@ -64,5 +65,18 @@ public class AuthController extends BaseController {
         }
     }
 
+
+
+    @GetMapping(value = "/authentic/api/findMenuByRole/{roleCode}")
+    public Set<AuthPermission> findMenuByRole(@PathVariable String roleCode){
+        Set<AuthPermission> permissionSet = new HashSet<>();
+        log.info("class:[AuthController-findMenuByRole]roleCode[{}]",roleCode);
+        if(roleCode == "getuser"){
+            AuthPermission auth = new AuthPermission();
+            auth.setUrl("/authentic-service/getUser");
+            permissionSet.add(auth);
+        }
+        return permissionSet;
+    }
 
 }

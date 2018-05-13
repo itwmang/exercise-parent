@@ -1,4 +1,4 @@
-package com.spring.boot.framework.constant;
+package com.spring.boot.framework.api.constants;
 
 /**
  * @author liuweijw MQ 消息队列

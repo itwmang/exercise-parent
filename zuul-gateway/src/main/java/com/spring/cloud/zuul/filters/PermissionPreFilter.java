@@ -1,6 +1,5 @@
 package com.spring.cloud.zuul.filters;
 
-import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
 import org.apache.commons.lang3.StringUtils;
@@ -8,15 +7,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.netflix.zuul.filters.support.FilterConstants;
-import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
 
 /**
  * Created by yingying on 18-5-4.
  */
-@Component
-public class PermissionPreFilter extends ZuulFilter {
+//@Component
+//public class PermissionPreFilter extends ZuulFilter {
+public class PermissionPreFilter {
 
     private final static String split_mark = ",";
     @Value("${zuulFilter.permissionFilter}")
@@ -28,22 +27,22 @@ public class PermissionPreFilter extends ZuulFilter {
 
     Logger log = LoggerFactory.getLogger(PermissionPreFilter.class);
 
-    @Override
+//    @Override
     public String filterType() {
         return FilterConstants.PRE_TYPE;
     }
 
-    @Override
+//    @Override
     public int filterOrder() {
         return FilterConstants.DEBUG_FILTER_ORDER;
     }
 
-    @Override
+//    @Override
     public boolean shouldFilter() {
         return execPermissionFilter;
     }
 
-    @Override
+//    @Override
     public Object run() throws ZuulException {
 
         RequestContext ctx = RequestContext.getCurrentContext();

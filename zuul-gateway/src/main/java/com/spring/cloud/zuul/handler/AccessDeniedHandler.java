@@ -2,13 +2,14 @@ package com.spring.cloud.zuul.handler;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.spring.boot.framework.api.BaseResponse;
-import com.spring.boot.framework.constant.CommonConstant;
+import com.spring.boot.framework.api.constants.CommonConstant;
 import com.spring.cloud.zuul.enums.AuthException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.oauth2.provider.error.OAuth2AccessDeniedHandler;
+import org.springframework.stereotype.Component;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -19,6 +20,7 @@ import java.io.PrintWriter;
 /**
  * 授权拒绝处理器,默认覆盖OAuth2AccessDeniedHandler包装失败信息到DeniedExceptio
  */
+@Component
 public class AccessDeniedHandler extends OAuth2AccessDeniedHandler {
 
     private Logger log = LoggerFactory.getLogger(AccessDeniedHandler.class);

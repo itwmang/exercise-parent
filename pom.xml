@@ -19,6 +19,7 @@
         <module>authentic-service</module>
         <module>framework-api</module>
         <module>test</module>
+        <module>framework-redis</module>
     </modules>
 
     <parent>
@@ -83,7 +84,11 @@
 
     <dependencies>
 
-
+        <dependency>
+            <groupId>com.wmang.spring.boot</groupId>
+            <artifactId>framework-api</artifactId>
+            <version>${framework.version}</version>
+        </dependency>
         <!--springboot web 启动器-->
         <dependency>
             <groupId>org.springframework.boot</groupId>

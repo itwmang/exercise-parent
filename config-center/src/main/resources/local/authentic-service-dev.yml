@@ -20,7 +20,7 @@ eureka:
       lease-expiration-duration-in-seconds: 10
   client:
     service-url:
-     defaultZone: http://eureka:eureka0510@localhost:2188/eureka/
+     defaultZone: http://eureka:eureka0510@localhost:2188/eureka
 
 #####################################################################################################
 

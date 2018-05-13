@@ -1,4 +1,4 @@
-package com.spring.cloud.authentic.config;
+package com.spring.boot.framework.redis.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,6 +17,7 @@ import org.springframework.data.redis.serializer.JdkSerializationRedisSerializer
 import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 import redis.clients.jedis.JedisPoolConfig;
+
 import java.lang.reflect.Method;
 
 @Configuration

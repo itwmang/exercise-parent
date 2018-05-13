@@ -1,4 +1,4 @@
-package com.spring.boot.framework.beans;
+package com.spring.boot.framework.api.beans;
 
 import java.io.Serializable;
 

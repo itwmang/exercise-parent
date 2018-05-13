@@ -18,4 +18,18 @@ public class SecurityConstant {
      */
     public static final String mobile_token_url = "/mobile/token";
 
+    /*token分隔符*/
+    public static final String TOKEN_SPILT = "Bearer";
+
+    /*threadlocal userAccount 标识*/
+    public static final String USER_ACCOUNT = "userAccount";
+
+    /*threadlocal userRoles 标识*/
+    public static final java.lang.String USER_ROLES = "userRoles";
+
+    /*请求头部获取token标识*/
+    public static final String REQUEST_AUTHENCATION = "Authorization";
+
+    public static final String KEY_USER = "user";
+    public static final String TOKEN_PREFIX = "authorization";
 }

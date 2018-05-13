@@ -1,10 +1,10 @@
 package com.spring.cloud.zuul.service.impl;
 
 import com.netflix.zuul.context.RequestContext;
-import com.spring.boot.framework.beans.AuthLog;
-import com.spring.boot.framework.beans.Log;
-import com.spring.boot.framework.constant.CommonConstant;
-import com.spring.boot.framework.constant.MqQueueConstant;
+import com.spring.boot.framework.api.beans.AuthLog;
+import com.spring.boot.framework.api.beans.Log;
+import com.spring.boot.framework.api.constants.CommonConstant;
+import com.spring.boot.framework.api.constants.MqQueueConstant;
 import com.spring.cloud.zuul.service.LogService;
 import com.xiaoleilu.hutool.http.HttpUtil;
 import com.xiaoleilu.hutool.io.IoUtil;

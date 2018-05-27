@@ -65,7 +65,7 @@ redis:
 # 打印日志 trace
 logging:
   level:
-    root: debug
+    root: info
     org.hibernate: INFO
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
     org.hibernate.type.descriptor.sql.BasicExtractor: TRACE

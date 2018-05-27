@@ -3,11 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/authentic-service/authentic-service.iml" filepath="$PROJECT_DIR$/authentic-service/authentic-service.iml" />
-      <module fileurl="file://$PROJECT_DIR$/bus-service/bus-service.iml" filepath="$PROJECT_DIR$/bus-service/bus-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/config-center/config-center.iml" filepath="$PROJECT_DIR$/config-center/config-center.iml" />
       <module fileurl="file://$PROJECT_DIR$/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/eureka-server/eureka-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/exercise-parent.iml" filepath="$PROJECT_DIR$/exercise-parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/framework-api/framework-api.iml" filepath="$PROJECT_DIR$/framework-api/framework-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framework-redis/framework-redis.iml" filepath="$PROJECT_DIR$/framework-redis/framework-redis.iml" />
       <module fileurl="file://$PROJECT_DIR$/user-consumer/user-consumer.iml" filepath="$PROJECT_DIR$/user-consumer/user-consumer.iml" />
       <module fileurl="file://$PROJECT_DIR$/user-service/user-service.iml" filepath="$PROJECT_DIR$/user-service/user-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/zuul-gateway/zuul-gateway.iml" filepath="$PROJECT_DIR$/zuul-gateway/zuul-gateway.iml" />

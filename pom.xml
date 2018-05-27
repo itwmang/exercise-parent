@@ -18,7 +18,6 @@
         <module>zuul-gateway</module>
         <module>authentic-service</module>
         <module>framework-api</module>
-        <module>test</module>
         <module>framework-redis</module>
     </modules>
 

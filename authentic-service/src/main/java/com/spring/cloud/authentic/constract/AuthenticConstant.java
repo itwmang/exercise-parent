@@ -12,4 +12,6 @@ public class AuthenticConstant {
     public static final String AUTHORIZATION_CODE = "authorization_code";
     /*许可证标识*/
     public static final String LICENSE = "Copyright (c) 2018 wmang";
+
+    public static final String REDIS_PREFIX = "authentic_service_redis_store";
 }

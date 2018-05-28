@@ -11,12 +11,14 @@ security:
   capcha: false
 urls:
   collects:
+    - /authentic-service/login
     - /auth/**
 
 
 
+
 zuulFilter:
-  permissionFilter: true
+  permissionFilter: false
   errorFilter: true
   loggerFilter: true
   rules:
@@ -25,6 +27,41 @@ management:
   security:
     enabled: false
 
+#zuul:
+#  ribbon:
+#    eager-load:
+#      enabled: true #开启Ribbon的饥饿加载模式
+#      clients: authentic-service #指定需要饥饿加载的客户端名称、服务名
+#  ignoredServices: '*'
+#  host:
+#    connect-timeout-millis: 30000
+#    socket-timeout-millis: 30000
+#  routes:
+#    authentic-service:
+#      path: /auth/**
+#      serviceId: authentic-service
+#      stripPrefix: true
+#      sensitiveHeaders:
+#    business-admin-server:
+#      path: /admin/**
+#      serviceId: business-admin-server
+#      stripPrefix: true
+#      sensitiveHeaders:
+#    business-pay-server:
+#      path: /pay/**
+#      serviceId: business-pay-server
+#      stripPrefix: true
+#      sensitiveHeaders:
+#  ratelimit:
+#    key-prefix: business-ratelimite
+#    enabled: true
+#    repository: REDIS
+#    behind-proxy: true
+#    policies:
+#      business-admin-server:
+#        limit: 100
+#        quota: 100
+#        refresh-interval: 3 #3秒内允许300个访问，平均每个请求2秒，并且要求总请求时间小于2400秒
 
 
 #####################################################################################################

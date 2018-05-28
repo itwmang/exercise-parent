@@ -15,7 +15,9 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.TokenEnhancer;
 import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
+import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
+import org.springframework.security.oauth2.provider.token.store.redis.RedisTokenStore;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -54,12 +56,23 @@ public class JwtAuthorizationConfig extends AuthorizationServerConfigurerAdapter
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
         TokenEnhancerChain tec = new TokenEnhancerChain();
         tec.setTokenEnhancers(Arrays.asList(tokenEnhancer(), jwtAccessTokenConverter()));
-
+        endpoints.tokenStore(redisTokenStore()).tokenEnhancer(tec).authenticationManager(authenticationManager).reuseRefreshTokens(false).userDetailsService(userDetailsService);
     }
 
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
-        super.configure(security);
+        security.allowFormAuthenticationForClients()
+//          获取JWt加密key: /oauth/token_key 采用RSA非对称加密时候使用。对称加密禁止访问
+//          .tokenKeyAccess("isAuthenticated")
+            .checkTokenAccess("permitAll()");
+    }
+
+
+    @Bean
+    public TokenStore redisTokenStore() {
+        RedisTokenStore redisTokenStore = new RedisTokenStore(redisConnectionFactory);
+        redisTokenStore.setPrefix(AuthenticConstant.REDIS_PREFIX);
+        return redisTokenStore;
     }
 
     /**
@@ -81,7 +94,11 @@ public class JwtAuthorizationConfig extends AuthorizationServerConfigurerAdapter
     public JwtAccessTokenConverter jwtAccessTokenConverter() {
         JwtAccessTokenConverter jat = new JwtAccessTokenConverter();
         jat.setSigningKey(jwtConfig.getJwtKey());
-        log.info("Initializing jwt with is ");
+        log.info("Initializing jwt with public key:\n"+ authServerConfig.getPublicKey());
+        // 采用RSA非对称加密
+        // JwtAccessTokenConverter jwtAccessTokenConverter = new JwtAccessTokenConverter();
+        // jwtAccessTokenConverter.setSigningKey(authServerConfiguration.getPrivateKey());
+        // jwtAccessTokenConverter.setVerifierKey(authServerConfiguration.getPublicKey());
         return jat;
     }
 }

@@ -32,4 +32,6 @@ public class SecurityConstant {
 
     public static final String KEY_USER = "user";
     public static final String TOKEN_PREFIX = "authorization";
+
+    public static final String AUTH_SERVICE = "authentic-service";
 }

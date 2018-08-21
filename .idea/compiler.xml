@@ -35,48 +35,19 @@
         <processorPath useClasspath="true" />
         <module name="exce-consumer" />
       </profile>
-      <profile default="false" name="Annotation profile for authentic-service" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="true" />
-        <module name="authentic-service" />
-      </profile>
-      <profile default="false" name="Annotation profile for eureka-server" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="true" />
-        <module name="eureka-server" />
-      </profile>
-      <profile default="false" name="Annotation profile for config-center" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="true" />
-        <module name="config-center" />
-      </profile>
       <profile default="false" name="Annotation profile for user-consumer" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="true" />
-        <module name="user-consumer" />
-      </profile>
-      <profile default="false" name="Annotation profile for zuul-gateway" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="true" />
-        <module name="zuul-gateway" />
-      </profile>
-      <profile default="false" name="Annotation profile for framework-api" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
       </profile>
       <profile default="false" name="Annotation profile for bus-service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+      </profile>
+      <profile default="false" name="Annotation profile for framework-api" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -89,10 +60,53 @@
         <processorPath useClasspath="true" />
         <module name="framework-redis" />
       </profile>
+      <profile default="false" name="Annotation profile for framework-utils" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="framework-utils" />
+      </profile>
+      <profile default="false" name="Annotation profile for zuul-gateway" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="zuul-gateway" />
+      </profile>
+      <profile default="false" name="Annotation profile for eureka-server" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="eureka-server" />
+      </profile>
+      <profile default="false" name="Annotation profile for authentic-service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="authentic-service" />
+      </profile>
+      <profile default="false" name="Annotation profile for config-center" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="config-center" />
+      </profile>
+      <profile default="false" name="Annotation profile for user-service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="user-service" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="authentic-service" target="1.8" />
       <module name="bus-service" target="1.8" />
+      <module name="business-core" target="1.8" />
       <module name="config-center" target="1.8" />
       <module name="eurake-server" target="1.8" />
       <module name="eureka-server" target="1.8" />
@@ -101,7 +115,10 @@
       <module name="exec-consumer" target="1.8" />
       <module name="exercise-parent" target="1.8" />
       <module name="framework-api" target="1.8" />
+      <module name="framework-core" target="1.8" />
       <module name="framework-redis" target="1.8" />
+      <module name="framework-system" target="1.8" />
+      <module name="framework-utils" target="1.8" />
       <module name="untitled" target="1.8" />
       <module name="untitled1" target="1.5" />
       <module name="user-consumer" target="1.8" />

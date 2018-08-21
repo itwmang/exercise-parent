@@ -61,6 +61,7 @@
         <option value="$PROJECT_DIR$/exce-service/pom.xml" />
         <option value="$PROJECT_DIR$/authentic-service/pom.xml" />
         <option value="$PROJECT_DIR$/bus-service/pom.xml" />
+        <option value="$PROJECT_DIR$/framework-core/framework-utils/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

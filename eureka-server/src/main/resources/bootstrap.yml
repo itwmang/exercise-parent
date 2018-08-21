@@ -1,7 +1,0 @@
-spring:
-  cloud:
-    config:
-      uri: http://configcenter:config0510@localhost:8888
-      profile: @profileActive@
-      label: master
-      name: eureka-server

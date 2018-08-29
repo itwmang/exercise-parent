@@ -1,35 +1,142 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5faf5308-da24-407b-90aa-c3a7e45231d3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/aop/AuthorizationInterceptor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/config/PermissionConfiguration.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/service/PermissionService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-core/framework-configuration/src/main/java/com/spring/boot/framework/redis/config/JwtConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-core/framework-configuration/src/main/java/com/spring/boot/framework/redis/config/SwaggerConfiguration.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-core/framework-utils/src/main/java/com/spring/cloud/framework/constant/AuthenticConstant.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-core/framework-utils/src/main/java/com/spring/cloud/framework/constant/CommonConstant.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-core/framework-utils/src/main/java/com/spring/cloud/framework/constant/MqQueueConstant.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/DruidConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/ajax/AjaxAuthenticationFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/ajax/AjaxAuthenticationProvider.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/ajax/AjaxAuthenticationToken.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/ajax/AjaxLoginSuccessHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/ajax/AjaxSecurityConfigurer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/eureka-server/src/main/resources/application.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/system-api/auth-api/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/system-api/auth-api/src/main/java/com/wmang/system/auth/api/UserFeignApi.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/system-api/auth-api/src/main/java/com/wmang/system/auth/hystrix/UserFeignApiHystrix.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/system-api/auth-api/src/main/java/com/wmang/system/auth/model/AuthUser.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/system-api/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_wmang_spring_boot_framework_api_1_0_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_wmang_spring_boot_framework_api_1_0_SNAPSHOT.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+    <list default="true" id="5faf5308-da24-407b-90aa-c3a7e45231d3" name="Default" comment="完善项目结构">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-consumer/.mvn/wrapper/maven-wrapper.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-service/.mvn/wrapper/maven-wrapper.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/authentic-service/.mvn/wrapper/maven-wrapper.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/config-center/.mvn/wrapper/maven-wrapper.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/eureka-server/.mvn/wrapper/maven-wrapper.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/.mvn/wrapper/maven-wrapper.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-consumer/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-consumer/.mvn/wrapper/maven-wrapper.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-consumer/mvnw" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-consumer/mvnw.cmd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-consumer/pom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-consumer/src/main/java/com/spring/cloud/consumer/UserConsumerApplication.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-consumer/src/main/java/com/spring/cloud/consumer/base/BaseErrorController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-consumer/src/main/java/com/spring/cloud/consumer/base/MvcConfigure.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-consumer/src/main/java/com/spring/cloud/consumer/contorller/UserConsumerController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-consumer/src/main/java/com/spring/cloud/consumer/contorller/UserContorller.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-consumer/src/main/java/com/spring/cloud/consumer/service/UserService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-consumer/src/main/resources/application-dev.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-consumer/src/main/resources/application.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-consumer/src/main/resources/banner.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-consumer/src/main/resources/bootstrap.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-consumer/src/main/resources/static/user-list.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-consumer/src/main/resources/templates/user-list.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-consumer/src/test/java/com/spring/cloud/consumer/UserConsumerApplicationTests.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-service/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-service/.mvn/wrapper/maven-wrapper.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-service/mvnw" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-service/mvnw.cmd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-service/pom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/UserSevrviceApplication.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/config/DruidConfig.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/controller/UserController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/dao/UserMapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/entity/User.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/entity/UserExample.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/exception/UserException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/service/UserService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/service/impl/UserServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-service/src/main/resources/banner.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-service/src/main/resources/bootstrap.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-service/src/main/resources/generator/generatorConfig.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-service/src/main/resources/mapper/UserMapper.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/business-core/user-service/src/test/java/com/spring/cloud/service/UserSevrviceApplicationTests.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-core/framework-api/pom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-core/framework-api/src/main/java/com/spring/boot/framework/api/BaseController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-core/framework-api/src/main/java/com/spring/boot/framework/api/BaseException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-core/framework-api/src/main/java/com/spring/boot/framework/api/BaseResponse.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-core/framework-api/src/main/java/com/spring/boot/framework/api/beans/AuthLog.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-core/framework-api/src/main/java/com/spring/boot/framework/api/beans/AuthPermission.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-core/framework-api/src/main/java/com/spring/boot/framework/api/beans/AuthRole.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-core/framework-api/src/main/java/com/spring/boot/framework/api/beans/Log.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-core/framework-api/src/main/java/com/spring/boot/framework/utils/Base64Utils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-core/framework-api/src/main/java/com/spring/boot/framework/utils/MD5Utils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-core/framework-configuration/pom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-core/framework-configuration/src/main/java/com/spring/boot/framework/redis/config/RedisConfig.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-core/framework-utils/pom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/authentic-service/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/authentic-service/.mvn/wrapper/maven-wrapper.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/authentic-service/mvnw" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/authentic-service/mvnw.cmd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/authentic-service/pom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/AuthenticServiceApplication.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/AuthServerConfig.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/FwJwtAccessTokenConverter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/JwtAuthorizationConfig.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/JwtRedisTokenStore.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/controller/AuthController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/controller/UserController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/dao/UserMapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/dto/AuthResponse.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/entity/User.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/entity/UserExample.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/enums/AuthEnums.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/service/AuthService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/service/UserService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/service/impl/AuthServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/service/impl/UserDetailServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/service/impl/UserDetailsImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/service/impl/UserServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/resources/banner.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/resources/bootstrap.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/resources/generator/generatorConfig.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/resources/mapper/UserMapper.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/test/java/com/spring/cloud/authentic/AuthenticServiceApplicationTests.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/config-center/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/config-center/.mvn/wrapper/maven-wrapper.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/config-center/mvnw" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/config-center/mvnw.cmd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/config-center/pom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/config-center/src/main/java/com/spring/cloud/config/ConfigCenterApplication.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/config-center/src/main/resources/application.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/config-center/src/main/resources/banner.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/config-center/src/main/resources/local/authentic-service-dev.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/config-center/src/main/resources/local/common-dev.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/config-center/src/main/resources/local/eureka-server-dev.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/config-center/src/main/resources/local/user-service-dev.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/config-center/src/main/resources/local/zuul-gateway-dev.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/config-center/src/test/java/com/spring/cloud/config/ConfigCenterApplicationTests.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/eureka-server/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/eureka-server/.mvn/wrapper/maven-wrapper.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/eureka-server/mvnw" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/eureka-server/mvnw.cmd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/eureka-server/pom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/eureka-server/src/main/java/com/spring/cloud/eureka/EurekaServerApplication.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/eureka-server/src/main/java/com/spring/cloud/eureka/config/WebSecurityConfig.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/eureka-server/src/main/resources/banner.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/eureka-server/src/test/java/com/spring/cloud/eureka/EurekaServerApplicationTests.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/.mvn/wrapper/maven-wrapper.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/mvnw" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/mvnw.cmd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/pom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/ZuulGetewayApplication.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/config/FilterUrlsConfig.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/config/ResourceServerConfig.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/config/SwaggerResourceProviderConfig.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/constant/SecurityConstant.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/enums/AuthException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/filters/CapchaFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/filters/ErrorFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/filters/LoggerFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/filters/PermissionPreFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/fullback/AuthFallbackProvider.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/handler/AccessDeniedHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/jwt/JwtUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/service/LogService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/service/MenuPermissionService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/service/PermissionService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/service/impl/LogServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/service/impl/MenuPermissionServiceFallback.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/service/impl/PermissionServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/resources/banner.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/resources/bootstrap.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/test/java/com/spring/cloud/zuul/ZuulGetewayApplicationTests.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework-core/pom.xml" afterPath="$PROJECT_DIR$/framework-core/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <list id="424b79f4-249d-4459-b9b6-cdc65328f10c" name="New changelist" comment="" />
     <ignored path="exercise-parent.iws" />
@@ -117,9 +224,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -129,7 +234,13 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#470#471#0" expanded="false" />
+                <element signature="e#491#492#0" expanded="false" />
+                <element signature="e#535#536#0" expanded="false" />
+                <element signature="e#564#565#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -345,33 +456,23 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="exercise-parent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="exercise-parent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="exercise-parent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scratches" />
       <pane id="PackagesPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="exercise-parent" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exercise-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -1290,7 +1391,8 @@
       <workItem from="1534165305498" duration="206000" />
       <workItem from="1534772711771" duration="12189000" />
       <workItem from="1534945130059" duration="13212000" />
-      <workItem from="1535554384127" duration="93000" />
+      <workItem from="1535554384127" duration="177000" />
+      <workItem from="1535555072465" duration="280000" />
     </task>
     <task id="LOCAL-00001" summary="添加gitignore配置文件">
       <created>1525964787015</created>
@@ -1328,7 +1430,13 @@
       <option name="project" value="LOCAL" />
       <updated>1534868175719</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="完善项目结构">
+      <created>1535554530723</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1535554530723</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1361,10 +1469,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="288171000" />
+    <option name="totallyTimeSpent" value="288535000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1649,13 +1757,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/framework-system/config-center/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5036765">
-          <caret line="32" column="11" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/framework-system/eureka-server/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.52389705">
@@ -1971,9 +2072,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1981,15 +2080,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/service/PermissionService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43965518">
-          <caret line="17" column="27" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="27" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#470#471#0" expanded="false" />
+            <element signature="e#491#492#0" expanded="false" />
+            <element signature="e#535#536#0" expanded="false" />
+            <element signature="e#564#565#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2013,6 +2110,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="24" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exercise-parent.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/service/PermissionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43965518">
+          <caret line="17" column="27" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="27" />
           <folding />
         </state>
       </provider>

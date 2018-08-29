@@ -66,6 +66,8 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/business-api/pom.xml" />
+        <option value="$PROJECT_DIR$/system-api/pom.xml" />
         <option value="$PROJECT_DIR$/user-service/user-service-api/pom.xml" />
       </set>
     </option>

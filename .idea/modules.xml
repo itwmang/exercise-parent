@@ -2,16 +2,18 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/system-api/auth-api/auth-api.iml" filepath="$PROJECT_DIR$/system-api/auth-api/auth-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/framework-system/authentic-service/authentic-service.iml" filepath="$PROJECT_DIR$/framework-system/authentic-service/authentic-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/business-core/business-core.iml" filepath="$PROJECT_DIR$/business-core/business-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/framework-system/config-center/config-center.iml" filepath="$PROJECT_DIR$/framework-system/config-center/config-center.iml" />
       <module fileurl="file://$PROJECT_DIR$/framework-system/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/framework-system/eureka-server/eureka-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/exercise-parent.iml" filepath="$PROJECT_DIR$/exercise-parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/framework-core/framework-api/framework-api.iml" filepath="$PROJECT_DIR$/framework-core/framework-api/framework-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framework-core/framework-configuration/framework-configuration.iml" filepath="$PROJECT_DIR$/framework-core/framework-configuration/framework-configuration.iml" />
       <module fileurl="file://$PROJECT_DIR$/framework-core/framework-core.iml" filepath="$PROJECT_DIR$/framework-core/framework-core.iml" />
-      <module fileurl="file://$PROJECT_DIR$/framework-core/framework-redis/framework-redis.iml" filepath="$PROJECT_DIR$/framework-core/framework-redis/framework-redis.iml" />
       <module fileurl="file://$PROJECT_DIR$/framework-system/framework-system.iml" filepath="$PROJECT_DIR$/framework-system/framework-system.iml" />
       <module fileurl="file://$PROJECT_DIR$/framework-core/framework-utils/framework-utils.iml" filepath="$PROJECT_DIR$/framework-core/framework-utils/framework-utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/system-api/system-api.iml" filepath="$PROJECT_DIR$/system-api/system-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/business-core/user-consumer/user-consumer.iml" filepath="$PROJECT_DIR$/business-core/user-consumer/user-consumer.iml" />
       <module fileurl="file://$PROJECT_DIR$/business-core/user-service/user-service.iml" filepath="$PROJECT_DIR$/business-core/user-service/user-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/framework-system/zuul-gateway/zuul-gateway.iml" filepath="$PROJECT_DIR$/framework-system/zuul-gateway/zuul-gateway.iml" />

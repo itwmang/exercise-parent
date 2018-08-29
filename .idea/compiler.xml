@@ -4,7 +4,7 @@
     <resourceExtensions />
     <wildcardResourcePatterns />
     <annotationProcessing>
-      <profile default="true" name="Default" enabled="false">
+      <profile default="true" name="Default" enabled="true">
         <processorPath useClasspath="true" />
       </profile>
       <profile default="false" name="Maven default annotation processors profile" enabled="true">
@@ -102,10 +102,26 @@
         <processorPath useClasspath="true" />
         <module name="user-service" />
       </profile>
+      <profile default="false" name="Annotation profile for auth-api" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="auth-api" />
+      </profile>
+      <profile default="false" name="Annotation profile for framework-configuration" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="framework-configuration" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="auth-api" target="1.8" />
       <module name="authentic-service" target="1.8" />
       <module name="bus-service" target="1.8" />
+      <module name="business-api" target="1.8" />
       <module name="business-core" target="1.8" />
       <module name="config-center" target="1.8" />
       <module name="eurake-server" target="1.8" />
@@ -115,10 +131,12 @@
       <module name="exec-consumer" target="1.8" />
       <module name="exercise-parent" target="1.8" />
       <module name="framework-api" target="1.8" />
+      <module name="framework-configuration" target="1.8" />
       <module name="framework-core" target="1.8" />
       <module name="framework-redis" target="1.8" />
       <module name="framework-system" target="1.8" />
       <module name="framework-utils" target="1.8" />
+      <module name="system-api" target="1.8" />
       <module name="untitled" target="1.8" />
       <module name="untitled1" target="1.5" />
       <module name="user-consumer" target="1.8" />

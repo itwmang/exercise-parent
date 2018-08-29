@@ -21,6 +21,7 @@
         <module>framework-core</module>
         <module>framework-system</module>
         <module>business-core</module>
+        <module>system-api</module>
     </modules>
 
 
@@ -40,6 +41,7 @@
         <ttl.version>2.2.0</ttl.version>
         <swagger2.version>2.9.0</swagger2.version>
         <jedis>2.9.0</jedis>
+        <lombok.version>1.16.20</lombok.version>
     </properties>
 
 
@@ -62,7 +64,7 @@
             </dependency>
             <dependency>
                 <groupId>com.wmang.spring.boot</groupId>
-                <artifactId>framework-redis</artifactId>
+                <artifactId>framework-configuration</artifactId>
                 <version>${framework.version}</version>
             </dependency>
             <dependency>
@@ -70,7 +72,11 @@
                 <artifactId>framework-utils</artifactId>
                 <version>${framework.version}</version>
             </dependency>
-
+            <dependency>
+                <groupId>com.wmang.spring.boot</groupId>
+                <artifactId>auth-api</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
             <!--log4j-->
             <dependency>
                 <groupId>log4j</groupId>
@@ -144,6 +150,22 @@
                 <artifactId>commons-lang3</artifactId>
                 <version>3.7</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+
+
+            <!--fegin client-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-feign</artifactId>
+                <version>1.4.4.RELEASE</version>
+            </dependency>
+
         </dependencies>
 
     </dependencyManagement>

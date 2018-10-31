@@ -10,7 +10,7 @@ import java.util.List;
 public interface UserMapper {
     int countByExample(UserExample example);
 
-    int deleteByPrimaryKey(Integer id);
+    int deleteByPrimaryKey(Integer userId);
 
     int insert(User record);
 
@@ -18,7 +18,7 @@ public interface UserMapper {
 
     List<User> selectByExample(UserExample example);
 
-    User selectByPrimaryKey(Integer id);
+    User selectByPrimaryKey(Integer userId);
 
     int updateByPrimaryKeySelective(User record);
 

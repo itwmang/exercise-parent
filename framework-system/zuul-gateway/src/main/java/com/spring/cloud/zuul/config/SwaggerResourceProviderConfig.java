@@ -1,6 +1,6 @@
 package com.spring.cloud.zuul.config;
 
-import com.spring.cloud.framework.constant.ServiceIdConstant;
+import com.spring.cloud.framework.utils.constant.ServiceIdConstant;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.cloud.netflix.zuul.filters.Route;
 import org.springframework.cloud.netflix.zuul.filters.RouteLocator;

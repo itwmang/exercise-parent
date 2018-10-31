@@ -1,7 +1,7 @@
 package com.spring.cloud.authentic.service.impl;
 
 import com.spring.cloud.authentic.service.UserService;
-import com.wmang.system.auth.model.AuthUser;
+import com.wmang.system.api.auth.model.AuthUser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 /**
  * Created by yingying on 2018/6/6.
  */
-@Service
+@Service("userService")
 public class UserServiceImpl implements UserService {
 
    public static final  Logger log = LoggerFactory.getLogger(UserServiceImpl.class);

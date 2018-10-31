@@ -1,7 +1,7 @@
 package com.spring.cloud.zuul.service.impl;
 
 import com.spring.boot.framework.api.beans.AuthPermission;
-import com.spring.cloud.zuul.constant.SecurityConstant;
+import com.spring.cloud.framework.utils.constant.SecurityConstant;
 import com.spring.cloud.zuul.jwt.JwtUtils;
 import com.spring.cloud.zuul.service.MenuPermissionService;
 import com.spring.cloud.zuul.service.PermissionService;

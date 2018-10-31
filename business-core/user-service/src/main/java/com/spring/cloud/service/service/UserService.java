@@ -1,6 +1,7 @@
 package com.spring.cloud.service.service;
 
 import com.spring.cloud.service.entity.User;
+import com.wmang.system.api.auth.model.AuthUser;
 
 import java.util.List;
 
@@ -14,4 +15,8 @@ public interface UserService {
     List<User> listUser();
 
     void insertUser(User user);
+
+    AuthUser findUserByUsername(String username);
+
+    AuthUser findUserByMobile(String mobile);
 }

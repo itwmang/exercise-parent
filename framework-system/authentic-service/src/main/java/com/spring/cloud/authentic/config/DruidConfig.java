@@ -3,8 +3,7 @@ package com.spring.cloud.authentic.config;
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.support.http.StatViewServlet;
 import com.alibaba.druid.support.http.WebStatFilter;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
@@ -17,14 +16,11 @@ import java.sql.SQLException;
  * Created by yingying on 18-4-15.
  */
 @Configuration
+@Slf4j
 public class DruidConfig {
-    private Logger logger = LoggerFactory.getLogger(DruidConfig.class);
 
     @Value("${druid.url}")
     private String dbUrl;
-
-    @Value("${druid.type}")
-    private String type;
 
     @Value("${druid.loginUsername}")
     private String loginUsername;
@@ -110,7 +106,6 @@ public class DruidConfig {
         datasource.setInitialSize(initialSize);
         datasource.setMinIdle(minIdle);
         datasource.setMaxActive(maxActive);
-        //datasource.setDbType(type);
         datasource.setMaxWait(maxWait);
         datasource.setTimeBetweenEvictionRunsMillis(timeBetweenEvictionRunsMillis);
         datasource.setMinEvictableIdleTimeMillis(minEvictableIdleTimeMillis);
@@ -121,7 +116,7 @@ public class DruidConfig {
         try {
             datasource.setFilters(filters);
         } catch (SQLException e) {
-            logger.error("druid configuration initialization filter", e);
+            log.error("druid configuration initialization filter", e);
         }
         return datasource;
     }

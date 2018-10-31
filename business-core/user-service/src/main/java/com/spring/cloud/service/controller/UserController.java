@@ -18,7 +18,7 @@ import java.util.List;
  * 用户操作基础请求
  * Created by yingying on 18-4-18.
  */
-@RestController
+@RestController(value = "/user")
 public class UserController {
     private Logger log = LoggerFactory.getLogger(UserController.class);
     @Value("${server.port}")
@@ -26,7 +26,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping(value = "/user/get/{id}")
+    @GetMapping(value = "/get/{id}")
     public String getUserById(@PathVariable("id") int id) {
         try {
             StopWatch sp = new StopWatch();
@@ -43,7 +43,7 @@ public class UserController {
         }
     }
 
-    @GetMapping(value = "/user/list")
+    @GetMapping(value = "/list")
     public String listUser() {
         try {
             StopWatch sp = new StopWatch();
@@ -60,7 +60,7 @@ public class UserController {
         }
     }
 
-    @PostMapping(value = "/user/insert")
+    @PostMapping(value = "/insert")
     public String insertUser(@RequestBody User user) {
         try {
             StopWatch sp = new StopWatch();
@@ -77,15 +77,13 @@ public class UserController {
         }
     }
 
-
-    public static void main(String[] args) {
-        User user = new User();
-        user.setAccount("spring");
-        user.setPasswd("MQ==");
-        user.setName("springcloud测试账号");
-        user.setUserType("1");
-        user.setUserStatus("1");
-        user.setValidly("1");
-        System.out.println(JSON.toJSONString(user));
-    }
+//
+//    public static void main(String[] args) {
+//        User user = new User();
+//        user.setUsername("spring");
+//        user.setPassword("MQ==");
+//        user.setFullname("springcloud测试账号");
+//        user.setStatu(CommonConstant.STATUS_DEL.shortValue());
+//        System.out.println(JSON.toJSONString(user));
+//    }
 }

@@ -1,16 +1,23 @@
 package com.spring.cloud.authentic.config;
 
-import com.spring.cloud.framework.constant.AuthenticConstant;
+import com.spring.boot.framework.config.JwtConfig;
+import com.spring.cloud.framework.utils.constant.SecurityConstant;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.ProviderManager;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.oauth2.common.DefaultOAuth2AccessToken;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.TokenEnhancer;
@@ -27,6 +34,9 @@ import java.util.Map;
  * 服务器认证实现逻辑
  * Created by yingying on 18-5-22.
  */
+@Configuration
+@Order(Integer.MIN_VALUE)
+@EnableAuthorizationServer
 public class JwtAuthorizationConfig extends AuthorizationServerConfigurerAdapter {
 
 
@@ -36,9 +46,12 @@ public class JwtAuthorizationConfig extends AuthorizationServerConfigurerAdapter
     private AuthServerConfig authServerConfig;
     @Autowired
     private JwtConfig jwtConfig;
+//    @Autowired
+//    private AuthenticationManager authenticationManager;
     @Autowired
     private AuthenticationManager authenticationManager;
     @Autowired
+    @Qualifier(value = "userDetailService")
     private UserDetailsService userDetailsService;
     @Autowired
     private RedisConnectionFactory redisConnectionFactory;
@@ -47,16 +60,22 @@ public class JwtAuthorizationConfig extends AuthorizationServerConfigurerAdapter
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory().withClient(authServerConfig.getClientId()).secret(authServerConfig.getClientSecret())
-                .authorizedGrantTypes(AuthenticConstant.AUTHORIZATION_CODE).scopes(authServerConfig.getScope())
+                .authorizedGrantTypes(SecurityConstant.refresh_token_url,SecurityConstant.PASSWORD,SecurityConstant.AUTHORIZATION_CODE)
+                .scopes(authServerConfig.getScope())
                 //true 直接跳转客户端 false 跳转到用户确认授权页面
                 .autoApprove(true);
     }
+
 
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
         TokenEnhancerChain tec = new TokenEnhancerChain();
         tec.setTokenEnhancers(Arrays.asList(tokenEnhancer(), jwtAccessTokenConverter()));
-        endpoints.tokenStore(redisTokenStore()).tokenEnhancer(tec).authenticationManager(authenticationManager).reuseRefreshTokens(false).userDetailsService(userDetailsService);
+        endpoints.tokenStore(redisTokenStore())
+                .tokenEnhancer(tec)
+                .authenticationManager(authenticationManager)
+                .reuseRefreshTokens(false)
+                .userDetailsService(userDetailsService);
     }
 
     @Override
@@ -71,7 +90,7 @@ public class JwtAuthorizationConfig extends AuthorizationServerConfigurerAdapter
     @Bean
     public TokenStore redisTokenStore() {
         RedisTokenStore redisTokenStore = new RedisTokenStore(redisConnectionFactory);
-        redisTokenStore.setPrefix(AuthenticConstant.REDIS_PREFIX);
+        redisTokenStore.setPrefix(SecurityConstant.REDIS_PREFIX);
         return redisTokenStore;
     }
 
@@ -84,7 +103,7 @@ public class JwtAuthorizationConfig extends AuthorizationServerConfigurerAdapter
     public TokenEnhancer tokenEnhancer() {
         return (accessToken, authentication) -> {
             final Map<String, Object> additionalInfo = new HashMap<>(1);
-            additionalInfo.put("license", AuthenticConstant.LICENSE);
+            additionalInfo.put("license", SecurityConstant.LICENSE);
             ((DefaultOAuth2AccessToken) accessToken).setAdditionalInformation(additionalInfo);
             return accessToken;
         };

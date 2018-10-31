@@ -1,10 +1,9 @@
 package com.spring.cloud.zuul.filters;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.spring.cloud.zuul.constant.SecurityConstant;
+import com.spring.cloud.framework.utils.constant.SecurityConstant;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -16,9 +15,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+@Slf4j
 @Component
 public class CapchaFilter extends OncePerRequestFilter {
-    private Logger log = LoggerFactory.getLogger(CapchaFilter.class);
 
     @Value("${security.capcha}")
     private boolean isCapcha;

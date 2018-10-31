@@ -6,11 +6,26 @@ spring:
      name: zuul-gateway
 
 eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    #表示eureka client发送心跳给server端的频率。如果  在leaseExpirationDurationInSeconds后，server端没有收到client的心跳，则将摘除该instance
+    lease-renewal-interval-in-seconds: 5 #注册服务默认心跳时间为30秒，当一个服务器不可用，需要3个心跳才能让服务器和客户端的元数据相同。生产环境最好使用默认配置。
+    #表示eureka server至上一次收到client的心跳之后，等待下一次心跳的超时时间，在这个时间内若没收到下一次心跳，则将移除该instance
+    lease-expiration-duration-in-seconds: 10 # 续约到期时间（默认90秒）
   client:
+    healthcheck:
+      enable: true # 开启健康检查（依赖spring-boot-starter-actuator）
     service-url:
-      defaultZone: http://eureka:eureka0510@localhost:2188/eureka/
+      defaultZone: http://eureka:eureka@localhost:2188/eureka
+      #开启密码模式 http://${userName}:${password}@localhost:2180/eureka
+    registry-fetch-interval-seconds: 10
+
 
 security:
+  #认证服务器
+  auth:
+    server: http://localhost:2190
 #是否需要校验验证码
   capcha: false
 #  user:
@@ -31,15 +46,15 @@ security:
   sessions: stateless
   oauth2:
     client:
-      client-id: ENC(eZLNwFxeSKENBh1pu/M/rMMB76nxo/RLhWSaSLHa8+0=)
-      client-secret: ENC(sKbpJGHz9JZmdydv1WOyAYjyXm2irxc0xYqvQ6VpF31uEw/FVNxYeA==)
+      clientId: com.wmang.spring.cloud.exercise
+      clientSecret: com.wmang.spring.cloud.exercise.888888
     resource:
       loadBalanced: true
-      token-info-uri: authentic-service/oauth/check-token #由资源服务器用来解码访问令牌
-      service-id: authentic-service
+      token-info-uri: ${security.auth.server}/oauth/check-token #由资源服务器用来解码访问令牌
+      service-id: zuul-gateway
       jwt:
          #key-uri: ${security.auth.server}/oauth/token_key #使用JWT令牌，RSA公开密钥可以用于令牌验证
-         key-value: ENC(fmVD9Jt6YXP9Q+KBPU8/1cWgKn5WhlGuD10SzFADNz4=)
+         key-value: wmangccc.888888
 #security:
 #  validate:
 #    code: false
@@ -54,33 +69,33 @@ security:
 
 urls:
   collects:
-    - /auth/**
-    - /error
-    - /**/*.css
-    - /**/*.png
-    - /info
-    - /health
-    - /metrics/**
-    - /loggers/**
-    - /mobile/token
+  - /mobile/**
+  - /auth/**
+  - /admin/code/*
+  - /admin/api/info
+  - /admin/api/userTree
+  - /admin/api/dictType/*
+  - /swagger-resources/**
+  - /swagger-ui.html
+  - /*/v2/api-docs
+  - /swagger/api-docs
+  - /webjars/**
 
 
 
 zuulFilter:
-  permissionFilter: false
+  permissionFilter: true
   errorFilter: true
   loggerFilter: true
   rules:
     whiteurl: /authentic-service/login,/test
-management:
-  security:
-    enabled: false
+
 
 zuul:
   ribbon:
     eager-load:
       enabled: true #开启Ribbon的饥饿加载模式
-      clients: authentic-service #指定需要饥饿加载的客户端名称、服务名
+      clients: authentic-service,user-service #指定需要饥饿加载的客户端名称、服务名
   ignoredServices: '*'
   host:
     connect-timeout-millis: 30000
@@ -89,6 +104,11 @@ zuul:
     authentic-service:
       path: /auth/**
       serviceId: authentic-service
+      stripPrefix: true
+      sensitiveHeaders:
+    user-service:
+      path: /user/**
+      serviceId: user-service
       stripPrefix: true
       sensitiveHeaders:
 #    business-admin-server:
@@ -107,7 +127,7 @@ zuul:
     repository: REDIS
     behind-proxy: true
     policies:
-      business-admin-server:
+      user-service:
         limit: 100
         quota: 100
         refresh-interval: 3 #3秒内允许300个访问，平均每个请求2秒，并且要求总请求时间小于2400秒
@@ -123,7 +143,7 @@ redis:
   # Redis服务器连接端口
   port: 6379
   # Redis服务器连接密码（默认为空）
-  password: auth@#redis
+  password: redis***
   jedis:
     pool:
       # 连接池最大连接数（使用负值表示没有限制）
@@ -149,12 +169,32 @@ redis:
 #####################################################################################################
 
 # 打印日志 trace
+#logging:
+#  level:
+#    root: info
+#    org.hibernate: INFO
+#    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+#    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+#    com.springms: DEBUG
+##自定义日志格式
 logging:
-  level:
-    root: info
-    org.hibernate: INFO
-    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
-    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
-    com.springms: DEBUG
+  config: classpath:logback.xml
 #####################################################################################################
 
+#动态刷新配置
+#management:
+#  endpoint:
+#    us-refresh:
+#      enabled: true
+#  endpoints:
+#    web:
+#      exposure:
+#        include: bus-refresh
+
+##动态刷新配置文件
+management:
+  endpoints:
+    web:
+      exposure:
+        #暴露bus-refresh节点，通过此节点刷新配置
+        inclouds: '*'

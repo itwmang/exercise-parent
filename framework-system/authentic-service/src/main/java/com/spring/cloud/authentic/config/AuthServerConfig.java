@@ -1,12 +1,15 @@
 package com.spring.cloud.authentic.config;
 
+import com.spring.cloud.framework.utils.constant.CommonConstant;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
+
+import java.io.UnsupportedEncodingException;
+import java.util.Base64;
 
 /**
  * Created by yingying on 18-5-21.
  */
-
 @Configuration
 @ConfigurationProperties(prefix = "jwt.auth")
 public class AuthServerConfig {
@@ -31,43 +34,56 @@ public class AuthServerConfig {
      */
     private String publicKey;
 
-    public String getClientId() {
-        return clientId;
-    }
-
     public void setClientId(String clientId) {
-        this.clientId = clientId;
+        this.clientId = base64Encode(clientId);
     }
 
-    public String getClientSecret() {
-        return clientSecret;
-    }
-
-    public void setClientSecret(String clientSecret) {
-        this.clientSecret = clientSecret;
-    }
-
-    public String getScope() {
-        return scope;
+    public void setClientSecret(String clientSecret_) {
+        this.clientSecret = base64Encode(clientSecret);
     }
 
     public void setScope(String scope) {
         this.scope = scope;
     }
 
-    public String getPrivateKey() {
-        return privateKey;
-    }
-
     public void setPrivateKey(String privateKey) {
         this.privateKey = privateKey;
+    }
+
+    public void setPublicKey(String publicKey) {
+        this.publicKey = publicKey;
+    }
+
+    public String getClientId() {
+        return clientId;
+    }
+
+    public String getClientSecret() {
+        return clientSecret;
+    }
+
+    public String getScope() {
+        return scope;
+    }
+
+    public String getPrivateKey() {
+        return privateKey;
     }
 
     public String getPublicKey() {
         return publicKey;
     }
 
-    public void setPublicKey(String publicKey) {
-        this.publicKey = publicKey;
+    private String base64Encode(String str){
+        String encode_ = "";
+        byte[] decoded = null;
+        try {
+            decoded = Base64.getDecoder().decode(str);
+            encode_ = new String(decoded, CommonConstant.UTF8);
+        } catch (IllegalArgumentException var7) {
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return encode_;
     }
 }

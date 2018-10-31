@@ -2,21 +2,16 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.spring.cloud.service.dao.UserMapper" >
   <resultMap id="BaseResultMap" type="com.spring.cloud.service.entity.User" >
-    <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="account" property="account" jdbcType="VARCHAR" />
-    <result column="name_" property="name" jdbcType="VARCHAR" />
-    <result column="passwd" property="passwd" jdbcType="VARCHAR" />
-    <result column="user_type" property="userType" jdbcType="VARCHAR" />
-    <result column="user_status" property="userStatus" jdbcType="VARCHAR" />
-    <result column="email" property="email" jdbcType="VARCHAR" />
-    <result column="phone" property="phone" jdbcType="VARCHAR" />
-    <result column="address" property="address" jdbcType="VARCHAR" />
-    <result column="lastupdate_passwd" property="lastupdatePasswd" jdbcType="TIMESTAMP" />
-    <result column="validly" property="validly" jdbcType="VARCHAR" />
-    <result column="remark" property="remark" jdbcType="VARCHAR" />
-    <result column="creater" property="creater" jdbcType="VARCHAR" />
+    <id column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="fullname" property="fullname" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="open_id" property="openId" jdbcType="VARCHAR" />
+    <result column="mobile" property="mobile" jdbcType="VARCHAR" />
+    <result column="pic_url" property="picUrl" jdbcType="VARCHAR" />
+    <result column="statu" property="statu" jdbcType="SMALLINT" />
+    <result column="dept_id" property="deptId" jdbcType="INTEGER" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
-    <result column="updater" property="updater" jdbcType="VARCHAR" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -49,8 +44,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, account, name_, passwd, user_type, user_status, email, phone, address, lastupdate_passwd, 
-    validly, remark, creater, create_time, updater, update_time
+    user_id, username, fullname, password, open_id, mobile, pic_url, statu, dept_id, 
+    create_time, update_time
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.spring.cloud.service.entity.UserExample" >
     select
@@ -59,7 +54,7 @@
     </if>
     'true' as QUERYID,
     <include refid="Base_Column_List" />
-    from sys_user
+    from t_sys_user
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
@@ -70,118 +65,90 @@
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
-    from sys_user
-    where id = #{id,jdbcType=INTEGER}
+    from t_sys_user
+    where user_id = #{userId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from sys_user
-    where id = #{id,jdbcType=INTEGER}
+    delete from t_sys_user
+    where user_id = #{userId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.spring.cloud.service.entity.User" useGeneratedKeys="true" keyProperty="id" >
-    insert into sys_user (account, name_, passwd, 
-      user_type, user_status, email, 
-      phone, address, lastupdate_passwd, 
-      validly, remark, creater, 
-      create_time, updater, update_time
-      )
-    values (#{account,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{passwd,jdbcType=VARCHAR}, 
-      #{userType,jdbcType=VARCHAR}, #{userStatus,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
-      #{phone,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{lastupdatePasswd,jdbcType=TIMESTAMP}, 
-      #{validly,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{creater,jdbcType=VARCHAR}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{updater,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}
-      )
+  <insert id="insert" parameterType="com.spring.cloud.service.entity.User" >
+    insert into t_sys_user (user_id, username, fullname, 
+      password, open_id, mobile, 
+      pic_url, statu, dept_id, 
+      create_time, update_time)
+    values (#{userId,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{fullname,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{openId,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, 
+      #{picUrl,jdbcType=VARCHAR}, #{statu,jdbcType=SMALLINT}, #{deptId,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.spring.cloud.service.entity.User" useGeneratedKeys="true" keyProperty="id" >
-    insert into sys_user
+  <insert id="insertSelective" parameterType="com.spring.cloud.service.entity.User" >
+    insert into t_sys_user
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="account != null" >
-        account,
+      <if test="userId != null" >
+        user_id,
       </if>
-      <if test="name != null" >
-        name_,
+      <if test="username != null" >
+        username,
       </if>
-      <if test="passwd != null" >
-        passwd,
+      <if test="fullname != null" >
+        fullname,
       </if>
-      <if test="userType != null" >
-        user_type,
+      <if test="password != null" >
+        password,
       </if>
-      <if test="userStatus != null" >
-        user_status,
+      <if test="openId != null" >
+        open_id,
       </if>
-      <if test="email != null" >
-        email,
+      <if test="mobile != null" >
+        mobile,
       </if>
-      <if test="phone != null" >
-        phone,
+      <if test="picUrl != null" >
+        pic_url,
       </if>
-      <if test="address != null" >
-        address,
+      <if test="statu != null" >
+        statu,
       </if>
-      <if test="lastupdatePasswd != null" >
-        lastupdate_passwd,
-      </if>
-      <if test="validly != null" >
-        validly,
-      </if>
-      <if test="remark != null" >
-        remark,
-      </if>
-      <if test="creater != null" >
-        creater,
+      <if test="deptId != null" >
+        dept_id,
       </if>
       <if test="createTime != null" >
         create_time,
-      </if>
-      <if test="updater != null" >
-        updater,
       </if>
       <if test="updateTime != null" >
         update_time,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="account != null" >
-        #{account,jdbcType=VARCHAR},
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
       </if>
-      <if test="name != null" >
-        #{name,jdbcType=VARCHAR},
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
       </if>
-      <if test="passwd != null" >
-        #{passwd,jdbcType=VARCHAR},
+      <if test="fullname != null" >
+        #{fullname,jdbcType=VARCHAR},
       </if>
-      <if test="userType != null" >
-        #{userType,jdbcType=VARCHAR},
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
       </if>
-      <if test="userStatus != null" >
-        #{userStatus,jdbcType=VARCHAR},
+      <if test="openId != null" >
+        #{openId,jdbcType=VARCHAR},
       </if>
-      <if test="email != null" >
-        #{email,jdbcType=VARCHAR},
+      <if test="mobile != null" >
+        #{mobile,jdbcType=VARCHAR},
       </if>
-      <if test="phone != null" >
-        #{phone,jdbcType=VARCHAR},
+      <if test="picUrl != null" >
+        #{picUrl,jdbcType=VARCHAR},
       </if>
-      <if test="address != null" >
-        #{address,jdbcType=VARCHAR},
+      <if test="statu != null" >
+        #{statu,jdbcType=SMALLINT},
       </if>
-      <if test="lastupdatePasswd != null" >
-        #{lastupdatePasswd,jdbcType=TIMESTAMP},
-      </if>
-      <if test="validly != null" >
-        #{validly,jdbcType=VARCHAR},
-      </if>
-      <if test="remark != null" >
-        #{remark,jdbcType=VARCHAR},
-      </if>
-      <if test="creater != null" >
-        #{creater,jdbcType=VARCHAR},
+      <if test="deptId != null" >
+        #{deptId,jdbcType=INTEGER},
       </if>
       <if test="createTime != null" >
         #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updater != null" >
-        #{updater,jdbcType=VARCHAR},
       </if>
       <if test="updateTime != null" >
         #{updateTime,jdbcType=TIMESTAMP},
@@ -189,79 +156,59 @@
     </trim>
   </insert>
   <select id="countByExample" parameterType="com.spring.cloud.service.entity.UserExample" resultType="java.lang.Integer" >
-    select count(*) from sys_user
+    select count(*) from t_sys_user
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByPrimaryKeySelective" parameterType="com.spring.cloud.service.entity.User" >
-    update sys_user
+    update t_sys_user
     <set >
-      <if test="account != null" >
-        account = #{account,jdbcType=VARCHAR},
+      <if test="username != null" >
+        username = #{username,jdbcType=VARCHAR},
       </if>
-      <if test="name != null" >
-        name_ = #{name,jdbcType=VARCHAR},
+      <if test="fullname != null" >
+        fullname = #{fullname,jdbcType=VARCHAR},
       </if>
-      <if test="passwd != null" >
-        passwd = #{passwd,jdbcType=VARCHAR},
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
       </if>
-      <if test="userType != null" >
-        user_type = #{userType,jdbcType=VARCHAR},
+      <if test="openId != null" >
+        open_id = #{openId,jdbcType=VARCHAR},
       </if>
-      <if test="userStatus != null" >
-        user_status = #{userStatus,jdbcType=VARCHAR},
+      <if test="mobile != null" >
+        mobile = #{mobile,jdbcType=VARCHAR},
       </if>
-      <if test="email != null" >
-        email = #{email,jdbcType=VARCHAR},
+      <if test="picUrl != null" >
+        pic_url = #{picUrl,jdbcType=VARCHAR},
       </if>
-      <if test="phone != null" >
-        phone = #{phone,jdbcType=VARCHAR},
+      <if test="statu != null" >
+        statu = #{statu,jdbcType=SMALLINT},
       </if>
-      <if test="address != null" >
-        address = #{address,jdbcType=VARCHAR},
-      </if>
-      <if test="lastupdatePasswd != null" >
-        lastupdate_passwd = #{lastupdatePasswd,jdbcType=TIMESTAMP},
-      </if>
-      <if test="validly != null" >
-        validly = #{validly,jdbcType=VARCHAR},
-      </if>
-      <if test="remark != null" >
-        remark = #{remark,jdbcType=VARCHAR},
-      </if>
-      <if test="creater != null" >
-        creater = #{creater,jdbcType=VARCHAR},
+      <if test="deptId != null" >
+        dept_id = #{deptId,jdbcType=INTEGER},
       </if>
       <if test="createTime != null" >
         create_time = #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updater != null" >
-        updater = #{updater,jdbcType=VARCHAR},
       </if>
       <if test="updateTime != null" >
         update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where id = #{id,jdbcType=INTEGER}
+    where user_id = #{userId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.spring.cloud.service.entity.User" >
-    update sys_user
-    set account = #{account,jdbcType=VARCHAR},
-      name_ = #{name,jdbcType=VARCHAR},
-      passwd = #{passwd,jdbcType=VARCHAR},
-      user_type = #{userType,jdbcType=VARCHAR},
-      user_status = #{userStatus,jdbcType=VARCHAR},
-      email = #{email,jdbcType=VARCHAR},
-      phone = #{phone,jdbcType=VARCHAR},
-      address = #{address,jdbcType=VARCHAR},
-      lastupdate_passwd = #{lastupdatePasswd,jdbcType=TIMESTAMP},
-      validly = #{validly,jdbcType=VARCHAR},
-      remark = #{remark,jdbcType=VARCHAR},
-      creater = #{creater,jdbcType=VARCHAR},
+    update t_sys_user
+    set username = #{username,jdbcType=VARCHAR},
+      fullname = #{fullname,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      open_id = #{openId,jdbcType=VARCHAR},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      pic_url = #{picUrl,jdbcType=VARCHAR},
+      statu = #{statu,jdbcType=SMALLINT},
+      dept_id = #{deptId,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP},
-      updater = #{updater,jdbcType=VARCHAR},
       update_time = #{updateTime,jdbcType=TIMESTAMP}
-    where id = #{id,jdbcType=INTEGER}
+    where user_id = #{userId,jdbcType=INTEGER}
   </update>
 </mapper>

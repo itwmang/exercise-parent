@@ -28,29 +28,72 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-config-server</artifactId>
         </dependency>
-        <!--动态刷新配置信息-->
+        <!--消息总线，动态刷新配置信息-->
         <!--<dependency>-->
-            <!--<groupId>org.springframework.cloud</groupId>-->
-            <!--<artifactId>spring-cloud-starter-bus-amqp</artifactId>-->
+        <!--<groupId>org.springframework.cloud</groupId>-->
+        <!--<artifactId>spring-cloud-starter-bus-amqp</artifactId>-->
         <!--</dependency>-->
 
         <!--spring security-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-security</artifactId>
-        </dependency>
+        <!--<dependency>-->
+        <!--<groupId>org.springframework.cloud</groupId>-->
+        <!--<artifactId>spring-cloud-starter-security</artifactId>-->
+        <!--</dependency>-->
 
 
         <!--eureka-client-->
         <!--<dependency>-->
-            <!--<groupId>org.springframework.cloud</groupId>-->
-            <!--<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>-->
+        <!--<groupId>org.springframework.cloud</groupId>-->
+        <!--<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>-->
         <!--</dependency>-->
 
     </dependencies>
 
 
+    <profiles>
+        <profile>
+            <id>native</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <profileActive>native</profileActive>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>git</id>
+            <properties>
+                <profileActive>git</profileActive>
+            </properties>
+        </profile>
+    </profiles>
+
+
     <build>
+
+        <finalName>config-center</finalName>
+        <resources>
+            <!--普通resources引入-->
+            <resource>
+                <directory>src/main/resources</directory>
+                <excludes>
+                    <exclude>application*.properties</exclude>
+                    <exclude>application*.yml</exclude>
+                </excludes>
+            </resource>
+            <!--替换properties值的配置文件引入-->
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>bootstrap.yml</include>
+                    <include>application.yml</include>
+                </includes>
+            </resource>
+
+        </resources>
+
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

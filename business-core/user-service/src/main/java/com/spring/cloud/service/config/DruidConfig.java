@@ -11,7 +11,6 @@ import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import javax.activation.DataSource;
 import java.sql.SQLException;
 
 /**
@@ -23,9 +22,6 @@ public class DruidConfig {
 
     @Value("${druid.url}")
     private String dbUrl;
-
-    @Value("${druid.type}")
-    private String type;
 
     @Value("${druid.loginUsername}")
     private String loginUsername;
@@ -111,7 +107,6 @@ public class DruidConfig {
         datasource.setInitialSize(initialSize);
         datasource.setMinIdle(minIdle);
         datasource.setMaxActive(maxActive);
-        //datasource.setDbType(type);
         datasource.setMaxWait(maxWait);
         datasource.setTimeBetweenEvictionRunsMillis(timeBetweenEvictionRunsMillis);
         datasource.setMinEvictableIdleTimeMillis(minEvictableIdleTimeMillis);

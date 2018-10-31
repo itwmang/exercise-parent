@@ -15,6 +15,8 @@
     <file url="file://$PROJECT_DIR$/framework-system/eureka-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/framework-system/zuul-gateway" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/system-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/system-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/system-api/auth-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/system-api/auth-api" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>

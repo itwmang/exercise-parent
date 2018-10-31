@@ -3,11 +3,11 @@ package com.spring.cloud.authentic.controller;
 import com.spring.boot.framework.api.BaseController;
 import com.spring.boot.framework.api.BaseResponse;
 import com.spring.boot.framework.api.beans.AuthPermission;
-import com.spring.boot.framework.utils.Base64Utils;
+import com.spring.boot.framework.api.utils.Base64Utils;
 import com.spring.cloud.authentic.dto.AuthResponse;
 import com.spring.cloud.authentic.enums.AuthEnums;
 import com.spring.cloud.authentic.service.AuthService;
-import com.spring.cloud.framework.constant.AuthenticConstant;
+import com.spring.cloud.framework.utils.constant.SecurityConstant;
 import org.apache.commons.lang.time.StopWatch;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -96,7 +96,7 @@ public class AuthController extends BaseController {
     private ConsumerTokenServices consumerTokenServices;
 
     @PostMapping("/removeToken")
-    @CacheEvict(value = AuthenticConstant.TOKEN_USER_DETAIL, key = "#accesstoken")
+    @CacheEvict(value = SecurityConstant.TOKEN_USER_DETAIL, key = "#accesstoken")
     public BaseResponse removeToken(String accesstoken) {
         boolean isRemoved = consumerTokenServices.revokeToken(accesstoken);
         return BaseResponse.success(isRemoved);

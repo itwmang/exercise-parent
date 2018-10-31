@@ -1,7 +1,16 @@
 spring:
   cloud:
     config:
-     uri: http://localhost:8888
-     profile: @profileActive@
-     label: master
-     name: common
+      failFast: true
+#      discovery:
+#        enable: true
+#        service-id: config-center
+      uri: http://120.79.90.129:8888
+      profile: @profileActive@
+      label: master
+      #名字可以写多个，逗号隔开
+      name: user-service
+      username: configcenter
+      password: configcenter
+    bus:
+      enabled: true

@@ -1,6 +1,6 @@
 package com.spring.cloud.authentic.service;
 
-import com.wmang.system.auth.model.AuthUser;
+import com.wmang.system.api.auth.model.AuthUser;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 

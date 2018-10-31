@@ -1,7 +1,7 @@
 package com.spring.cloud.service.aop;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.spring.boot.framework.redis.config.JwtConfig;
+import com.spring.boot.framework.config.JwtConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 

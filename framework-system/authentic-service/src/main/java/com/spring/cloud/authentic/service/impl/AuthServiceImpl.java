@@ -1,7 +1,6 @@
 package com.spring.cloud.authentic.service.impl;
 
-import com.spring.boot.framework.utils.Base64Utils;
-import com.spring.boot.framework.utils.MD5Utils;
+import com.spring.boot.framework.api.utils.MD5Utils;
 import com.spring.cloud.authentic.dao.UserMapper;
 import com.spring.cloud.authentic.dto.AuthResponse;
 import com.spring.cloud.authentic.entity.User;
@@ -74,10 +73,10 @@ public class AuthServiceImpl implements AuthService {
 
     }
 
-    public static void main(String[] args) {
-        String account = "spring", passwd = "1";
-        String encryPasswd = MD5Utils.encry(MD5Utils.encry(account.substring(0, account.length() / 2)).concat(MD5Utils.encry(Base64Utils.encode(passwd))).concat(MD5Utils.encry(account.substring(account.length() / 2, account.length()))));
-        System.out.println(encryPasswd);
-        //D27F4751A21B543D00E428ADFBD75253
-    }
+//    public static void main(String[] args) {
+//        String account = "spring", passwd = "1";
+//        String encryPasswd = MD5Utils.encry(MD5Utils.encry(account.substring(0, account.length() / 2)).concat(MD5Utils.encry(Base64Utils.encode(passwd))).concat(MD5Utils.encry(account.substring(account.length() / 2, account.length()))));
+//        System.out.println(encryPasswd);
+//        //D27F4751A21B543D00E428ADFBD75253
+//    }
 }

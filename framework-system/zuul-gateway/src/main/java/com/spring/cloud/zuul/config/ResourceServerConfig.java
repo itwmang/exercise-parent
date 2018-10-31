@@ -1,5 +1,6 @@
 package com.spring.cloud.zuul.config;
 
+import com.spring.boot.framework.config.FilterUrlsConfig;
 import com.spring.cloud.zuul.filters.CapchaFilter;
 import com.spring.cloud.zuul.handler.AccessDeniedHandler;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,9 +46,10 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
+        // 认证回调
         resources.expressionHandler(exceptionHandler);
+        // 访问异常回调
         resources.accessDeniedHandler(accessDeniedHandler);
-//        super.configure(resources);
     }
 
     @Bean

@@ -5,7 +5,7 @@ package com.spring.cloud.zuul.jwt;
  */
 
 import com.alibaba.ttl.TransmittableThreadLocal;
-import com.spring.cloud.zuul.constant.SecurityConstant;
+import com.spring.cloud.framework.utils.constant.SecurityConstant;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import org.apache.commons.lang3.StringUtils;

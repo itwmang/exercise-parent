@@ -4,6 +4,14 @@ package com.spring.boot.framework.api;
  * Created by yingying on 18-5-6.
  */
 public class BaseController {
+
+    // do anything
+
+    protected static final String	POST	= "POST";
+
+    protected static final String	GET		= "GET";
+
+
     private final static int successCode = 200;
     private final static String sucessMsg = "请求成功";
     private final static int errorCode = 400;

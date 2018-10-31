@@ -1,0 +1,22 @@
+version: '3'
+services:
+  eureka-server:
+    build:
+      context: ./
+      dockerfile: Dockerfile-eureka
+    restart: always
+    volumes:
+      - /usr/web/logs/eureka:/usr/web/logs/eureka
+    ports:
+      - 2188:2188
+  config-server:
+    links:
+      - eureka-server:eureka
+    build:
+      context: ./
+      dockerfile: Dockerfile-config
+    restart: always
+    volumes:
+    - /usr/web/logs/config:/usr/web/logs/config
+    ports:
+      - 8888:8888

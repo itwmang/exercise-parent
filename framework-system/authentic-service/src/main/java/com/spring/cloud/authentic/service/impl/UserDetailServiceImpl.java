@@ -1,21 +1,25 @@
 package com.spring.cloud.authentic.service.impl;
 
-import com.spring.cloud.authentic.service.UserService;
-import com.wmang.system.auth.model.AuthUser;
+import com.wmang.system.api.auth.api.UserFeignApi;
+import com.wmang.system.api.auth.model.AuthUser;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
 import java.io.Serializable;
 
 /**
  * Created by yingying on 2018/6/6.
  */
+@Service("userDetailService")
 public class UserDetailServiceImpl implements UserDetailsService,Serializable {
 
 
-    private UserService userService;
+    @Autowired
+    private UserFeignApi userFeignApi;
 
     /**
      * Locates the user based on the username. In the actual implementation, the search
@@ -34,7 +38,7 @@ public class UserDetailServiceImpl implements UserDetailsService,Serializable {
         if(StringUtils.isBlank(username)){
             throw new UsernameNotFoundException("用户不存在："+username);
         }
-        AuthUser user = userService.findUserByUsername(username);
+        AuthUser user = userFeignApi.findUserByUsername(username);
         if (null == user) { throw new UsernameNotFoundException("用户不存在:" + username); }
         return new UserDetailsImpl(user);
     }

@@ -2,7 +2,7 @@ package com.spring.cloud.zuul.handler;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.spring.boot.framework.api.BaseResponse;
-import com.spring.cloud.framework.constant.CommonConstant;
+import com.spring.cloud.framework.utils.constant.CommonConstant;
 import com.spring.cloud.zuul.enums.AuthException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

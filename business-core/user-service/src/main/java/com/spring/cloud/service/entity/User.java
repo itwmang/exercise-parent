@@ -3,140 +3,98 @@ package com.spring.cloud.service.entity;
 import java.util.Date;
 
 public class User {
-    private Integer id;
+    private Integer userId;
 
-    private String account;
+    private String username;
 
-    private String name;
+    private String fullname;
 
-    private String passwd;
+    private String password;
 
-    private String userType;
+    private String openId;
 
-    private String userStatus;
+    private String mobile;
 
-    private String email;
+    private String picUrl;
 
-    private String phone;
+    private Short statu;
 
-    private String address;
-
-    private Date lastupdatePasswd;
-
-    private String validly;
-
-    private String remark;
-
-    private String creater;
+    private Integer deptId;
 
     private Date createTime;
 
-    private String updater;
-
     private Date updateTime;
 
-    public Integer getId() {
-        return id;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
-    public String getAccount() {
-        return account;
+    public String getUsername() {
+        return username;
     }
 
-    public void setAccount(String account) {
-        this.account = account == null ? null : account.trim();
+    public void setUsername(String username) {
+        this.username = username == null ? null : username.trim();
     }
 
-    public String getName() {
-        return name;
+    public String getFullname() {
+        return fullname;
     }
 
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
+    public void setFullname(String fullname) {
+        this.fullname = fullname == null ? null : fullname.trim();
     }
 
-    public String getPasswd() {
-        return passwd;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPasswd(String passwd) {
-        this.passwd = passwd == null ? null : passwd.trim();
+    public void setPassword(String password) {
+        this.password = password == null ? null : password.trim();
     }
 
-    public String getUserType() {
-        return userType;
+    public String getOpenId() {
+        return openId;
     }
 
-    public void setUserType(String userType) {
-        this.userType = userType == null ? null : userType.trim();
+    public void setOpenId(String openId) {
+        this.openId = openId == null ? null : openId.trim();
     }
 
-    public String getUserStatus() {
-        return userStatus;
+    public String getMobile() {
+        return mobile;
     }
 
-    public void setUserStatus(String userStatus) {
-        this.userStatus = userStatus == null ? null : userStatus.trim();
+    public void setMobile(String mobile) {
+        this.mobile = mobile == null ? null : mobile.trim();
     }
 
-    public String getEmail() {
-        return email;
+    public String getPicUrl() {
+        return picUrl;
     }
 
-    public void setEmail(String email) {
-        this.email = email == null ? null : email.trim();
+    public void setPicUrl(String picUrl) {
+        this.picUrl = picUrl == null ? null : picUrl.trim();
     }
 
-    public String getPhone() {
-        return phone;
+    public Short getStatu() {
+        return statu;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone == null ? null : phone.trim();
+    public void setStatu(Short statu) {
+        this.statu = statu;
     }
 
-    public String getAddress() {
-        return address;
+    public Integer getDeptId() {
+        return deptId;
     }
 
-    public void setAddress(String address) {
-        this.address = address == null ? null : address.trim();
-    }
-
-    public Date getLastupdatePasswd() {
-        return lastupdatePasswd;
-    }
-
-    public void setLastupdatePasswd(Date lastupdatePasswd) {
-        this.lastupdatePasswd = lastupdatePasswd;
-    }
-
-    public String getValidly() {
-        return validly;
-    }
-
-    public void setValidly(String validly) {
-        this.validly = validly == null ? null : validly.trim();
-    }
-
-    public String getRemark() {
-        return remark;
-    }
-
-    public void setRemark(String remark) {
-        this.remark = remark == null ? null : remark.trim();
-    }
-
-    public String getCreater() {
-        return creater;
-    }
-
-    public void setCreater(String creater) {
-        this.creater = creater == null ? null : creater.trim();
+    public void setDeptId(Integer deptId) {
+        this.deptId = deptId;
     }
 
     public Date getCreateTime() {
@@ -145,14 +103,6 @@ public class User {
 
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
-    }
-
-    public String getUpdater() {
-        return updater;
-    }
-
-    public void setUpdater(String updater) {
-        this.updater = updater == null ? null : updater.trim();
     }
 
     public Date getUpdateTime() {

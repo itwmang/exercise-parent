@@ -2,7 +2,7 @@ server:
   port: 2188
 spring:
   profiles:
-    active: dev
+    active: @profileActive@
   application:
     name: eureka-server
 
@@ -23,9 +23,11 @@ management:
 spring:
   profiles: dev
   security:
+    basic:
+      enabled: true
     user:
       name: eureka
-      password: eureka0510
+      password: eureka
 eureka:
   server:
     enable-self-preservation: false #Eureka自我保护机制以及心跳周期长会遇到 Eureka不剔除已关停的节点的问题，默认打开状态。建议生产环境打开此配置
@@ -33,3 +35,21 @@ eureka:
   client:
      service-url:
          defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:${server.port}/eureka
+
+
+---
+ spring:
+   profiles: ver
+   security:
+     basic:
+       enabled: true
+     user:
+       name: eureka
+       password: eureka
+ eureka:
+   server:
+     enable-self-preservation: false #Eureka自我保护机制以及心跳周期长会遇到 Eureka不剔除已关停的节点的问题，默认打开状态。建议生产环境打开此配置
+     eviction-interval-timer-in-ms: 4000 #清理间隔（单位毫秒，默认是60*1000）
+   client:
+     service-url:
+       defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:${server.port}/eureka

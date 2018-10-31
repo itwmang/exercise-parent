@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="MySQL - logis@192.168.1.188">
-  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.7">
+<dataSource name="MySQL - study@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.11">
     <root id="1">
       <DefaultCasing>lower/lower</DefaultCasing>
     </root>

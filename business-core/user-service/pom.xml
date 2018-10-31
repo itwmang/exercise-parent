@@ -21,6 +21,14 @@
     <dependencies>
 
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.wmang.spring.boot</groupId>
+            <artifactId>auth-api</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.wmang.spring.boot</groupId>
             <artifactId>framework-configuration</artifactId>
         </dependency>
@@ -28,6 +36,20 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-feign</artifactId>
+        </dependency>
+        <!--链路监控-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-jwt</artifactId>
         </dependency>
 
         <!--&lt;!&ndash;mongdb&ndash;&gt;-->
@@ -59,7 +81,6 @@
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
-            <version>${mybatis.springboot.version}</version>
         </dependency>
 
         <!--动态刷新配置文件-->
@@ -71,7 +92,7 @@
         <!-- 分页插件 -->
         <dependency>
             <groupId>com.github.pagehelper</groupId>
-            <artifactId>pagehelper-spring-boot-starter</artifactId>
+            <artifactId>pagehelper</artifactId>
         </dependency>
 
         <!-- alibaba的druid数据库连接池 -->

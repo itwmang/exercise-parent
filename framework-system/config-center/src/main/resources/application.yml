@@ -5,17 +5,7 @@ spring:
   application:
     name: config-server
   profiles:
-    active: native #native访问本地配置 dev 打开git配置
-  cloud:
-    config:
-      server:
-        native:
-          search-locations: classpath:/local
-#        git:
-#          uri: https://github.com/itwmang/springCloudConfig
-#          search-paths: mac-dev
-#          username: itfast@yeah.net
-#          password: itfast123.
+    active: @profileActive@ #native访问本地配置  git 访问远程配置
     bus:
       trace:
         enabled: true
@@ -24,10 +14,6 @@ spring:
      port: 5672
      username: rabbitmq
      password: rabbitmq
-  security:
-    user:
-      name: configcenter
-      password: config0510
 
 eureka:
   instance:
@@ -41,6 +27,59 @@ eureka:
     healthcheck:
       enable: true # 开启健康检查（依赖spring-boot-starter-actuator）
     service-url:
-      defaultZone: http://eureka:eureka0510@localhost:2188/eureka
+      defaultZone: http://eureka:eureka@${spring.cloud.client.ip-address}:2188/eureka
       #开启密码模式 http://${userName}:${password}@localhost:2180/eureka
     registry-fetch-interval-seconds: 10
+
+
+#动态刷新配置信息
+management:
+  endpoint:
+    us-refresh:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
+  security:
+    enabled: false
+
+
+---
+spring:
+  profiles: native
+  cloud:
+    config:
+      server:
+        native:
+          search-location: classpath:/local
+  security:
+    user:
+      name: configcenter
+      password: configcenter
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka:eureka@${spring.cloud.client.ip-address}:2188/eureka
+
+
+---
+spring:
+  profiles: git
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/itwmang/springCloudConfig
+          search-paths: exercise
+          username: itfast@yeah.net
+          password: itfast123.
+  security:
+    user:
+      name: configcenter
+      password: configcenter
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka:eureka@120.79.90.129:2188/eureka
+#      defaultZone: http://eureka:eureka@eureka-server:2188/eureka

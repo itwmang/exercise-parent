@@ -17,9 +17,6 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <properties>
-        <jedis>2.9.0</jedis>
-    </properties>
 
 
     <dependencies>
@@ -41,25 +38,14 @@
         <!--</dependency>-->
 
 
-        <!--<dependency>-->
-        <!--<groupId>org.springframework.boot</groupId>-->
-        <!--<artifactId>spring-boot-starter-amqp</artifactId>-->
-        <!--</dependency>-->
-
-
-
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-oauth2</artifactId>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.cloud</groupId>-->
-            <!--<artifactId>spring-cloud-starter-feign</artifactId>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-freemarker</artifactId>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
+        </dependency>
 
 
         <!--redis-->
@@ -80,6 +66,13 @@
         </dependency>
 
 
+        <!--链路监控-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
+
+
 
         <dependency>
             <groupId>mysql</groupId>
@@ -92,11 +85,6 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- 分页插件 -->
-        <dependency>
-            <groupId>com.github.pagehelper</groupId>
-            <artifactId>pagehelper-spring-boot-starter</artifactId>
-        </dependency>
 
         <!-- alibaba的druid数据库连接池 -->
         <dependency>

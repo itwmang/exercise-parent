@@ -1,7 +1,16 @@
 spring:
   cloud:
     config:
-      uri: http://configcenter:config0510@localhost:8888
+#      discovery:
+#        enable: true
+#        service-id: config-center
+      uri: http://120.79.90.129:8888
       profile: @profileActive@
       label: master
+      #名字可以写多个，逗号隔开
       name: zuul-gateway
+      username: configcenter
+      password: configcenter
+      failFast: true
+    bus:
+      enabled: true

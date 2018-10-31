@@ -25,11 +25,7 @@
             <artifactId>framework-utils</artifactId>
         </dependency>
 
-        <!--开启心跳健康检查-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
+
         <!--config client-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -41,6 +37,17 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
+        <!--开启心跳健康检查-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <!--消息总线，动态刷新配置信息-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.cloud</groupId>-->
+            <!--<artifactId>spring-cloud-starter-bus-amqp</artifactId>-->
+        <!--</dependency>-->
+
 
         <!--热部署工具-->
         <dependency>

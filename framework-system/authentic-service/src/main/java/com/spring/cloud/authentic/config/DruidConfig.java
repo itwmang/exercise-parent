@@ -74,7 +74,6 @@ public class DruidConfig {
     private String logSlowSql;
 
 
-
     @Bean
     public ServletRegistrationBean druidServlet() {
         ServletRegistrationBean reg = new ServletRegistrationBean();

@@ -1,4 +1,4 @@
-package com.spring.boot.framework.config;
+package com.spring.cloud.zuul.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;

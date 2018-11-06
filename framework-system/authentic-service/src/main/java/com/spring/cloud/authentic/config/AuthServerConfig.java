@@ -1,6 +1,7 @@
 package com.spring.cloud.authentic.config;
 
 import com.spring.cloud.framework.utils.constant.CommonConstant;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
@@ -38,7 +39,7 @@ public class AuthServerConfig {
         this.clientId = base64Encode(clientId);
     }
 
-    public void setClientSecret(String clientSecret_) {
+    public void setClientSecret(String clientSecret) {
         this.clientSecret = base64Encode(clientSecret);
     }
 
@@ -74,7 +75,10 @@ public class AuthServerConfig {
         return publicKey;
     }
 
-    private String base64Encode(String str){
+    private String base64Encode(String str) {
+        if (StringUtils.isBlank(str)) {
+            return "";
+        }
         String encode_ = "";
         byte[] decoded = null;
         try {

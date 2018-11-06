@@ -27,48 +27,48 @@ public class PermissionPreFilter {
 
     Logger log = LoggerFactory.getLogger(PermissionPreFilter.class);
 
-//    @Override
+    //    @Override
     public String filterType() {
         return FilterConstants.PRE_TYPE;
     }
 
-//    @Override
+    //    @Override
     public int filterOrder() {
         return FilterConstants.DEBUG_FILTER_ORDER;
     }
 
-//    @Override
+    //    @Override
     public boolean shouldFilter() {
         return execPermissionFilter;
     }
 
-//    @Override
+    //    @Override
     public Object run() throws ZuulException {
 
         RequestContext ctx = RequestContext.getCurrentContext();
-        ctx.set("startTime",System.currentTimeMillis());
+        ctx.set("startTime", System.currentTimeMillis());
         HttpServletRequest request = ctx.getRequest();
         String requestURI = request.getRequestURI();
-        log.info("Zuul Filter PermissionPreFilter uri:"+requestURI);
+        log.info("Zuul Filter PermissionPreFilter uri:" + requestURI);
 
-        if(hasHandleReq(requestURI)){
+        if (hasHandleReq(requestURI)) {
             String token = request.getHeader("testToken");
 
-            if(StringUtils.isNotBlank(token)){
-                ctx.addZuulRequestHeader("Authorization",token);
+            if (StringUtils.isNotBlank(token)) {
+                ctx.addZuulRequestHeader("Authorization", token);
                 //如果有说明权限通过,则继续转发路由
                 ctx.setSendZuulResponse(true);
                 ctx.setResponseStatusCode(200);
-                ctx.set("token",token);
+                ctx.set("token", token);
                 log.info("Zuul Filter PermissionPreFilter validate success!");
-            }else{
+            } else {
                 //如果权限验证不成功,则不再转发路由
                 ctx.setSendZuulResponse(false);
                 ctx.setResponseStatusCode(201);
                 ctx.setResponseBody("{\"result\":\"token is not correct!\"}");
                 log.info("Zuul Filter PermissionPreFilter validate error!");
             }
-        }else{
+        } else {
             //如果有说明权限通过,则继续转发路由
             ctx.setSendZuulResponse(true);
         }
@@ -81,7 +81,7 @@ public class PermissionPreFilter {
         boolean ishandle = true;
         String[] whiteurls = whiteurl.split(split_mark);
         for (int i = 0; i < whiteurls.length; i++) {
-            if(requestURI.contains(whiteurls[i])){
+            if (requestURI.contains(whiteurls[i])) {
                 ishandle = false;
                 break;
             }

@@ -12,14 +12,14 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class AuthenticServiceApplicationTests {
 
-	@Autowired
-	private StringRedisTemplate stringRedisTemplate;
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
 
-	@Test
-	public void contextLoads() {
-		stringRedisTemplate.opsForValue().set("zzp","big z");
-		Assert.assertEquals("big z",stringRedisTemplate.opsForValue().get("zzp"));
+    @Test
+    public void contextLoads() {
+        stringRedisTemplate.opsForValue().set("zzp", "big z");
+        Assert.assertEquals("big z", stringRedisTemplate.opsForValue().get("zzp"));
 
-	}
+    }
 
 }

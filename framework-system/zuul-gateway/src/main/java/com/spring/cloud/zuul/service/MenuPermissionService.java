@@ -11,9 +11,9 @@ import java.util.Set;
 /**
  * Created by yingying on 18-5-12.
  */
-@FeignClient(name = "authentic-service",fallback = MenuPermissionServiceFallback.class)
+@FeignClient(name = "authentic-service", fallback = MenuPermissionServiceFallback.class)
 public interface MenuPermissionService {
 
     @GetMapping(value = "/authentic/api/findMenuByRole/{roleCode}")
-    Set<AuthPermission> findMenuByRole(@PathVariable String roleCode);
+    Set<AuthPermission> findMenuByRole(@PathVariable(value = "roleCode") String roleCode);
 }

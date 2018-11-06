@@ -1,311 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5faf5308-da24-407b-90aa-c3a7e45231d3" name="Default" comment="完善项目结构">
-      <change afterPath="$PROJECT_DIR$/business-core/user-consumer/src/main/resources/logback.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/cache/UserCacheKey.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/controller/feignClient/PermissionFeignApiClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/controller/feignClient/UserFeignApiClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/entity/RoleMenuPermission.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/service/RoleMenuService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/service/RoleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/service/impl/PermissionServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/service/impl/RoleMenuServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/service/impl/RoleServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/utils/UserServiceConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/business-core/user-service/src/main/resources/logback.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/dbscript/study_init.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/docker/Dockerfile-config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/docker/Dockerfile-eureka" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/docker/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework-core/framework-api/src/main/java/com/spring/boot/framework/api/Module.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework-core/framework-api/src/main/java/com/spring/boot/framework/api/R.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework-core/framework-api/src/main/java/com/spring/boot/framework/api/aop/GlobalExceptionAdvice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework-core/framework-api/src/main/java/com/spring/boot/framework/api/aop/PrePermissions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework-core/framework-api/src/main/java/com/spring/boot/framework/api/beans/RoleDeptBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework-core/framework-api/src/main/java/com/spring/boot/framework/api/beans/page/PageBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework-core/framework-api/src/main/java/com/spring/boot/framework/api/beans/page/PageParams.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework-core/framework-utils/src/main/java/com/spring/cloud/framework/utils/WebUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework-core/framework-utils/src/main/java/com/spring/cloud/framework/utils/constant/SecurityConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/AuthResourceServerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/resources/logback.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/resources/security/messages_zh_CN.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/resources/static/images/login-img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/resources/static/images/login_logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/resources/static/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/resources/templates/ftl/login.ftl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework-system/config-center/src/main/resources/logback.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework-system/eureka-server/src/main/resources/logback.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/filters/AccessFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/fullback/UserFallbackProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/handler/ZuulRateLimiterErrorHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/resources/logback.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/system-api/auth-api/src/main/java/com/wmang/system/api/auth/api/PermissionFeignApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/system-api/auth-api/src/main/java/com/wmang/system/api/auth/hystrix/PermissionFeignApiHystrix.java" afterDir="false" />
+    <list default="true" id="5faf5308-da24-407b-90aa-c3a7e45231d3" name="Default" comment="完善安全认证功能">
+      <change afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/config/JwtRedisTokenStore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/74edab61-aaaf-4fb8-88bb-d6e2dfd863c0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/74edab61-aaaf-4fb8-88bb-d6e2dfd863c0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_1_0_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_28.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_esotericsoftware_kryo_shaded_3_0_3.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_esotericsoftware_minlog_1_3_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_3_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_3.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_dataformat_jackson_dataformat_xml_2_9_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_9_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_9_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_afterburner_2_9_3.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_jaxb_annotations_2_9_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_9_3.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_woodstox_woodstox_core_5_0_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_andrewoma_dexx_dexx_collections_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_1_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_5_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_spring_boot_autoconfigure_1_2_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_spring_boot_starter_1_2_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_vlsi_compactmap_compactmap_1_2_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_3_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_18_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_inject_guice_4_1_0.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_googlecode_javaewah_JavaEWAH_1_1_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_4_0.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_jcraft_jsch_0_1_54.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_archaius_archaius_core_0_7_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_eureka_eureka_client_1_8_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_eureka_eureka_core_1_8_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_hystrix_hystrix_core_1_5_12.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_hystrix_hystrix_javanica_1_5_12.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_hystrix_hystrix_metrics_event_stream_1_5_12.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_hystrix_hystrix_serialization_1_5_12.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_netflix_commons_netflix_commons_util_0_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_netflix_commons_netflix_eventbus_0_3_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_netflix_commons_netflix_infix_0_3_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_netflix_commons_netflix_statistics_0_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_ribbon_ribbon_2_2_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_ribbon_ribbon_core_2_2_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_ribbon_ribbon_eureka_2_2_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_ribbon_ribbon_httpclient_2_2_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_ribbon_ribbon_loadbalancer_2_2_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_ribbon_ribbon_transport_2_2_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_servo_servo_core_0_10_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_servo_servo_internal_0_10_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_zuul_zuul_core_1_3_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_rabbitmq_amqp_client_5_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_jersey_contribs_jersey_apache_client4_1_19_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_jersey_jersey_client_1_19_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_jersey_jersey_core_1_19_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_jersey_jersey_server_1_19_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_jersey_jersey_servlet_1_19_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_thoughtworks_xstream_xstream_1_4_10.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_configuration_commons_configuration_1_8.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_jxpath_commons_jxpath_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_github_openfeign_feign_core_9_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_github_openfeign_feign_hystrix_9_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_github_openfeign_feign_java8_9_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_github_openfeign_feign_slf4j_9_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_24_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_24_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_24_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_24_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_24_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_reactivex_rxjava_1_3_8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_reactivex_rxjava_reactive_streams_1_2_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_reactivex_rxnetty_0_4_9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_reactivex_rxnetty_contexts_0_4_9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_reactivex_rxnetty_servo_0_4_9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_3_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_inject_javax_inject_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_2_0_1_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_ws_rs_jsr311_api_1_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_stream_stax_api_1_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__joda_time_joda_time_2_9_9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_46.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_7_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_7_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_accessors_smart_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_json_smart_2_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_antlr_antlr_runtime_3_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_antlr_stringtemplate_3_2_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_math_2_2.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_5_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_10_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_10_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_13.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_3_9_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_attoparser_attoparser_2_0_4_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcpkix_jdk15on_1_56.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcprov_jdk15on_1_56.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jettison_jettison_1_3_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_woodstox_stax2_api_3_1_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_woodstox_woodstox_core_asl_4_4_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jgit_org_eclipse_jgit_4_8_0_201706111038_r.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_freemarker_freemarker_2_3_28.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_library_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hdrhistogram_HdrHistogram_2_1_10.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hdrhistogram_HdrHistogram_2_1_9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_0_9_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_2_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_latencyutils_LatencyUtils_2_0_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_2_15_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_4_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_3_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_1_3_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_1_3_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_2_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_5_0_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_reactivestreams_reactive_streams_1_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_5_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_25.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_amqp_spring_amqp_2_0_3_RELEASE.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_amqp_spring_rabbit_2_0_3_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_0_2_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_0_2_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_0_2_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_0_2_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_commons_2_0_0_M9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_config_client_2_0_0_M9.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_config_server_2_0_0_M9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_context_2_0_0_M9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_netflix_archaius_2_0_0_M8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_netflix_core_2_0_0_M8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_netflix_eureka_client_2_0_0_M8.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_netflix_eureka_server_2_0_0_M8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_netflix_ribbon_2_0_0_M8.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_netflix_zuul_2_0_0_M8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_openfeign_core_2_0_0_M2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_2_0_0_M9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_config_2_0_0_M9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_netflix_archaius_2_0_0_M8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_netflix_eureka_client_2_0_0_M8.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_netflix_eureka_server_2_0_0_M8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_netflix_hystrix_2_0_0_M8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_netflix_ribbon_2_0_0_M8.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_netflix_zuul_2_0_0_M8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_openfeign_2_0_0_M2.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_integration_spring_integration_tuple_1_0_0_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_retry_spring_retry_1_2_2_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_rsa_1_0_5_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_0_6_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_0_6_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_0_6_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_0_6_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_0_6_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_0_6_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_0_6_RELEASE.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tuple_1_0_0_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_extras_thymeleaf_extras_java8time_3_0_1_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_3_0_9_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_spring5_3_0_9_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_unbescape_unbescape_1_1_5_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_19.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__stax_stax_api_1_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__xmlpull_xmlpull_1_1_3_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__xpp3_xpp3_min_1_1_4c.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/business-core/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-core/user-consumer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/business-core/user-consumer/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-core/user-consumer/src/main/java/com/spring/cloud/consumer/contorller/UserContorller.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-core/user-consumer/src/main/java/com/spring/cloud/consumer/contorller/UserContorller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-core/user-consumer/src/main/resources/application-dev.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-core/user-consumer/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-core/user-consumer/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/business-core/user-consumer/src/main/resources/bootstrap.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/business-core/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/business-core/user-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/UserSevrviceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/UserSevrviceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/aop/AuthorizationInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/aop/AuthorizationInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/config/DruidConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/config/DruidConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/dao/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/dao/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/entity/UserExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/entity/UserExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/service/PermissionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/service/PermissionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-core/user-service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/business-core/user-service/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-core/user-service/src/main/resources/generator/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/business-core/user-service/src/main/resources/generator/generatorConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-core/user-service/src/main/resources/mapper/UserMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-core/user-service/src/test/java/com/spring/cloud/service/UserSevrviceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-core/user-service/src/test/java/com/spring/cloud/service/UserSevrviceApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exercise-parent.iml" beforeDir="false" afterPath="$PROJECT_DIR$/exercise-parent.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework-core/framework-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework-core/framework-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework-core/framework-api/src/main/java/com/spring/boot/framework/api/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-core/framework-api/src/main/java/com/spring/boot/framework/api/BaseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework-core/framework-api/src/main/java/com/spring/boot/framework/utils/Base64Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-core/framework-api/src/main/java/com/spring/boot/framework/api/utils/Base64Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework-core/framework-api/src/main/java/com/spring/boot/framework/utils/MD5Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-core/framework-api/src/main/java/com/spring/boot/framework/api/utils/MD5Utils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/framework-core/framework-configuration/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework-core/framework-configuration/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework-core/framework-configuration/src/main/java/com/spring/boot/framework/redis/config/JwtConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-core/framework-configuration/src/main/java/com/spring/boot/framework/config/JwtConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework-core/framework-configuration/src/main/java/com/spring/boot/framework/redis/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-core/framework-configuration/src/main/java/com/spring/boot/framework/config/RedisConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework-core/framework-configuration/src/main/java/com/spring/boot/framework/redis/config/SwaggerConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-core/framework-configuration/src/main/java/com/spring/boot/framework/config/SwaggerConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework-core/framework-utils/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework-core/framework-utils/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework-core/framework-utils/src/main/java/com/spring/cloud/framework/constant/AuthenticConstant.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework-core/framework-utils/src/main/java/com/spring/cloud/framework/constant/CommonConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-core/framework-utils/src/main/java/com/spring/cloud/framework/utils/constant/CommonConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework-core/framework-utils/src/main/java/com/spring/cloud/framework/constant/MqQueueConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-core/framework-utils/src/main/java/com/spring/cloud/framework/utils/constant/MqQueueConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework-core/framework-utils/src/main/java/com/spring/cloud/framework/constant/ServiceIdConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-core/framework-utils/src/main/java/com/spring/cloud/framework/utils/constant/ServiceIdConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework-core/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/framework-system/authentic-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/authentic-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/AuthenticServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/AuthenticServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/ajax/AjaxAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/ajax/AjaxAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/ajax/AjaxAuthenticationProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/ajax/AjaxAuthenticationProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/ajax/AjaxAuthenticationToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/ajax/AjaxAuthenticationToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/ajax/AjaxLoginSuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/ajax/AjaxLoginSuccessHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/ajax/AjaxSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/ajax/AjaxSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/AuthResourceServerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/AuthResourceServerConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/AuthServerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/AuthServerConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/DruidConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/DruidConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/FwJwtAccessTokenConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/FwJwtAccessTokenConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/JwtAuthorizationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/JwtAuthorizationConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/ajax/AjaxAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/ajax/AjaxAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/ajax/AjaxAuthenticationProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/ajax/AjaxAuthenticationProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/ajax/AjaxAuthenticationToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/ajax/AjaxAuthenticationToken.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/ajax/AjaxLoginSuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/ajax/AjaxLoginSuccessHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/ajax/AjaxSecurityConfigurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/ajax/AjaxSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/JwtRedisTokenStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/JwtRedisTokenStore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/dto/AuthResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/dto/AuthResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/enums/AuthEnums.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/enums/AuthEnums.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/service/impl/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/service/impl/AuthServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/service/impl/UserDetailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/service/impl/UserDetailServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/service/impl/UserDetailsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/service/impl/UserDetailsImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/service/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/framework-system/authentic-service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework-system/config-center/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/config-center/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-system/authentic-service/src/main/resources/generator/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/resources/generator/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-system/authentic-service/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/resources/logback.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-system/authentic-service/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-system/authentic-service/src/main/resources/static/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/resources/static/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-system/authentic-service/src/main/resources/templates/ftl/login.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/main/resources/templates/ftl/login.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-system/authentic-service/src/test/java/com/spring/cloud/authentic/AuthenticServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/authentic-service/src/test/java/com/spring/cloud/authentic/AuthenticServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-system/config-center/src/main/java/com/spring/cloud/config/ConfigCenterApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/config-center/src/main/java/com/spring/cloud/config/ConfigCenterApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/framework-system/config-center/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/config-center/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/framework-system/config-center/src/main/resources/local/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/config-center/src/main/resources/local/application-dev.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/framework-system/config-center/src/main/resources/local/authentic-service-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/config-center/src/main/resources/local/authentic-service-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-system/config-center/src/main/resources/local/common-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/config-center/src/main/resources/local/common-dev.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/framework-system/config-center/src/main/resources/local/user-service-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/config-center/src/main/resources/local/user-service-dev.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/framework-system/config-center/src/main/resources/local/zuul-gateway-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/config-center/src/main/resources/local/zuul-gateway-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-system/config-center/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/config-center/src/main/resources/logback.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-system/config-center/src/test/java/com/spring/cloud/config/ConfigCenterApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/config-center/src/test/java/com/spring/cloud/config/ConfigCenterApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/framework-system/eureka-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/eureka-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-system/eureka-server/src/main/java/com/spring/cloud/eureka/EurekaServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/eureka-server/src/main/java/com/spring/cloud/eureka/EurekaServerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-system/eureka-server/src/main/java/com/spring/cloud/eureka/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/eureka-server/src/main/java/com/spring/cloud/eureka/config/WebSecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/framework-system/eureka-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/eureka-server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework-system/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-system/eureka-server/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/eureka-server/src/main/resources/logback.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-system/eureka-server/src/test/java/com/spring/cloud/eureka/EurekaServerApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/eureka-server/src/test/java/com/spring/cloud/eureka/EurekaServerApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/framework-system/zuul-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/ZuulGetewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/ZuulGetewayApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/config/FilterUrlsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-core/framework-configuration/src/main/java/com/spring/boot/framework/config/FilterUrlsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/config/ResourceServerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/config/ResourceServerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/config/SwaggerResourceProviderConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/config/SwaggerResourceProviderConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/constant/SecurityConstant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/filters/AccessFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/filters/AccessFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/filters/CapchaFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/filters/CapchaFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/filters/ErrorFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/filters/ErrorFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/filters/LoggerFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/filters/LoggerFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/filters/PermissionPreFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/filters/PermissionPreFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/fullback/AuthFallbackProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/fullback/AuthFallbackProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/handler/AccessDeniedHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/handler/AccessDeniedHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/fullback/UserFallbackProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/fullback/UserFallbackProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/handler/ZuulRateLimiterErrorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/handler/ZuulRateLimiterErrorHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/jwt/JwtUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/jwt/JwtUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/service/impl/LogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/service/impl/LogServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/service/MenuPermissionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/service/MenuPermissionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/service/impl/PermissionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/service/impl/PermissionServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/resources/logback.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/framework-system/zuul-gateway/src/test/java/com/spring/cloud/zuul/ZuulGetewayApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework-system/zuul-gateway/src/test/java/com/spring/cloud/zuul/ZuulGetewayApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system-api/auth-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/system-api/auth-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system-api/auth-api/src/main/java/com/wmang/system/auth/api/UserFeignApi.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/system-api/auth-api/src/main/java/com/wmang/system/auth/hystrix/UserFeignApiHystrix.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/system-api/auth-api/src/main/java/com/wmang/system/auth/model/AuthUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/system-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/system-api/pom.xml" afterDir="false" />
     </list>
     <list id="424b79f4-249d-4459-b9b6-cdc65328f10c" name="New changelist" comment="" />
     <ignored path="exercise-parent.iws" />
@@ -460,45 +248,59 @@
     <session id="1035111134">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="14" />
+          <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.17" value="1" />
-          <entry key="project.open.time.2" value="2" />
+          <entry key="project.open.time.2" value="4" />
+          <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.27" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.31" value="1" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="Dockerfile" value="3" />
           <entry key="Dockerfile-config" value="3" />
-          <entry key="class" value="124" />
+          <entry key="MF" value="2" />
+          <entry key="class" value="252" />
           <entry key="ftl" value="3" />
-          <entry key="java" value="169" />
+          <entry key="gitattributes" value="1" />
+          <entry key="iml" value="2" />
+          <entry key="java" value="287" />
           <entry key="log" value="1" />
           <entry key="md" value="1" />
-          <entry key="pom" value="2" />
+          <entry key="pom" value="18" />
+          <entry key="properties" value="1" />
+          <entry key="provides" value="1" />
           <entry key="sql" value="2" />
           <entry key="txt" value="1" />
-          <entry key="xml" value="58" />
-          <entry key="yml" value="109" />
+          <entry key="xml" value="111" />
+          <entry key="xsd" value="1" />
+          <entry key="yml" value="140" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="124" />
+          <entry key="CLASS" value="252" />
           <entry key="Dockerfile" value="1" />
           <entry key="FTL" value="3" />
-          <entry key="JAVA" value="169" />
+          <entry key="IDEA_MODULE" value="2" />
+          <entry key="JAVA" value="287" />
+          <entry key="Manifest" value="2" />
           <entry key="Markdown" value="1" />
-          <entry key="PLAIN_TEXT" value="7" />
+          <entry key="PLAIN_TEXT" value="9" />
+          <entry key="Properties" value="1" />
           <entry key="SQL" value="2" />
-          <entry key="XML" value="60" />
-          <entry key="YAML" value="108" />
+          <entry key="XML" value="130" />
+          <entry key="YAML" value="139" />
           <entry key="YAML_EX" value="1" />
         </counts>
       </usages-collector>
@@ -507,20 +309,21 @@
           <entry key="Dockerfile" value="44" />
           <entry key="Dockerfile-config" value="16" />
           <entry key="class" value="2" />
-          <entry key="java" value="611" />
-          <entry key="txt" value="44" />
-          <entry key="xml" value="271" />
-          <entry key="yml" value="641" />
+          <entry key="dummy" value="1" />
+          <entry key="java" value="1339" />
+          <entry key="txt" value="57" />
+          <entry key="xml" value="545" />
+          <entry key="yml" value="750" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CLASS" value="2" />
           <entry key="Dockerfile" value="33" />
-          <entry key="JAVA" value="611" />
-          <entry key="PLAIN_TEXT" value="71" />
-          <entry key="XML" value="271" />
-          <entry key="YAML" value="582" />
+          <entry key="JAVA" value="1339" />
+          <entry key="PLAIN_TEXT" value="85" />
+          <entry key="XML" value="545" />
+          <entry key="YAML" value="691" />
           <entry key="YAML_EX" value="59" />
         </counts>
       </usages-collector>
@@ -532,13 +335,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/AuthResourceServerConfig.java">
+        <entry file="file://$PROJECT_DIR$/framework-core/framework-configuration/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="330">
+              <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/service/impl/UserDetailServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="32" column="52" selection-start-line="32" selection-start-column="52" selection-end-line="32" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -546,8 +355,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/JwtAuthorizationConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="51" column="46" lean-forward="true" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
+            <state relative-caret-position="132">
+              <caret line="95" column="30" selection-start-line="95" selection-start-column="30" selection-end-line="95" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -556,19 +365,61 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/framework-system/zuul-gateway/src/test/java/com/spring/cloud/zuul/ZuulGetewayApplicationTests.java">
+        <entry file="jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/oauth/spring-security-oauth2/2.2.1.RELEASE/spring-security-oauth2-2.2.1.RELEASE.jar!/org/springframework/security/oauth2/provider/token/DefaultTokenServices.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="23" column="55" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="55" />
+            <state relative-caret-position="137">
+              <caret line="170" selection-start-line="170" selection-end-line="170" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/service/impl/PermissionServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="236">
+              <caret line="45" column="29" lean-forward="true" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$USER_HOME$/springCloudConfig/exercise/authentic-service-dev.yml">
+        <entry file="file://$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/handler/AccessDeniedHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="142" column="4" lean-forward="true" selection-start-line="142" selection-start-column="4" selection-end-line="142" selection-end-column="4" />
+            <state relative-caret-position="155">
+              <caret line="27" column="14" lean-forward="true" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/business-core/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="183">
+              <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/business-core/user-service/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="236">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/framework-core/framework-configuration/src/main/java/com/spring/boot/framework/config/JwtConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -589,36 +440,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>EnableResourceServer</find>
-      <find>UsernamePasswordAuthenticationFilter</find>
-      <find>user-service</find>
-      <find>JwtUtils</find>
-      <find>.userDetailsService</find>
-      <find>AuthenticationManagerBuilder</find>
-      <find>OncePerRequestFilter</find>
-      <find>AccessDeniedHandler</find>
-      <find>amqp</find>
-      <find>UserFeignApiHystrix</find>
-      <find>调用findUserByUsername异常</find>
-      <find>````</find>
-      <find>user</find>
-      <find>UserFeignApi</find>
-      <find>ExceptionTranslationFilter</find>
-      <find>Basic</find>
-      <find>AUTHORIZATION_CODE</find>
-      <find>login</find>
-      <find>userDetailsService</find>
-      <find>UserDetailsService</find>
-      <find>hasAuthority</find>
-      <find>authenticationManager</find>
+      <find>UserDetailServiceImpl</find>
+      <find>UserDetailService</find>
+      <find>jedis</find>
+      <find>连接超时时间</find>
+      <find>-data-redis</find>
+      <find>data</find>
+      <find>redsi</find>
+      <find>JwtRedisTokenStore</find>
+      <find>AUTH + token</find>
+      <find>TokenEnhancer</find>
+      <find>AuthorizationServerTokenServices</find>
+      <find>readAccess</find>
+      <find>read</find>
+      <find>readAccessToken</find>
+      <find>clientDetailsService</find>
+      <find>myTokenServices</find>
+      <find>JwkTokenS</find>
+      <find>tokenservice</find>
       <find>JwtAuthorizationConfig</find>
-      <find>ProviderMan</find>
-      <find>AuthenticationManager</find>
-      <find>oauth/token?</find>
-      <find>/oauth/token</find>
-      <find>AbstractAuthenticationProcessingFilter</find>
-      <find>utf-8</find>
-      <find>e2NvbS53bWFuZy5leGVyY2lzZS44ODg4ODh9</find>
+      <find>findMenuByRole</find>
+      <find>DefaultTokenServices</find>
+      <find>jwtKey</find>
+      <find>findUserByUsername</find>
+      <find>okhtt</find>
+      <find>feign-okhttp</find>
+      <find>fegin:</find>
+      <find>redis</find>
+      <find>oauth</find>
+      <find>system-configuration</find>
+      <find>JwtConfig</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -647,26 +498,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/service/impl/AuthServiceImpl.java" />
-        <option value="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/system-api/auth-api/src/main/java/com/wmang/system/api/auth/api/PermissionFeignApi.java" />
-        <option value="$PROJECT_DIR$/system-api/auth-api/src/main/java/com/wmang/system/api/auth/hystrix/PermissionFeignApiHystrix.java" />
-        <option value="$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/controller/feignClient/PermissionFeignApiClient.java" />
-        <option value="$PROJECT_DIR$/framework-system/config-center/src/main/resources/local/zuul-gateway-dev.yml" />
-        <option value="$PROJECT_DIR$/framework-system/config-center/src/main/resources/local/authentic-service-dev.yml" />
-        <option value="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/resources/logback.xml" />
-        <option value="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/service/impl/UserDetailServiceImpl.java" />
-        <option value="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/ZuulGetewayApplication.java" />
-        <option value="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/filters/AccessFilter.java" />
-        <option value="$PROJECT_DIR$/business-core/user-service/pom.xml" />
-        <option value="$PROJECT_DIR$/business-core/user-consumer/src/main/resources/logback.xml" />
-        <option value="$PROJECT_DIR$/business-core/user-consumer/pom.xml" />
-        <option value="$PROJECT_DIR$/business-core/user-consumer/src/main/java/com/spring/cloud/consumer/contorller/UserContorller.java" />
-        <option value="$PROJECT_DIR$/business-core/pom.xml" />
-        <option value="$PROJECT_DIR$/framework-system/config-center/src/main/resources/local/user-service-dev.yml" />
-        <option value="$PROJECT_DIR$/framework-system/eureka-server/src/main/docker/Dockerfile" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/doc/docker/Dockerfile" />
         <option value="$PROJECT_DIR$/doc/docker/Dockerfile-config" />
         <option value="$PROJECT_DIR$/framework-system/eureka-server/src/main/resources/application-ver.yml" />
         <option value="$PROJECT_DIR$/framework-system/config-center/src/main/resources/application-dev.yml" />
@@ -678,26 +509,46 @@
         <option value="$PROJECT_DIR$/business-core/user-service/src/main/resources/bootstrap.yml" />
         <option value="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/resources/bootstrap.yml" />
         <option value="$PROJECT_DIR$/framework-system/authentic-service/src/main/resources/bootstrap.yml" />
-        <option value="$USER_HOME$/springCloudConfig/exercise/user-service-dev.yml" />
-        <option value="$PROJECT_DIR$/business-core/user-service/src/main/resources/logback.xml" />
-        <option value="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/AuthenticServiceApplication.java" />
         <option value="$PROJECT_DIR$/framework-system/authentic-service/pom.xml" />
         <option value="$PROJECT_DIR$/framework-core/framework-configuration/src/main/java/com/spring/boot/framework/config/FilterUrlsConfig.java" />
-        <option value="$USER_HOME$/springCloudConfig/exercise/zuul-gateway-dev.yml" />
         <option value="$PROJECT_DIR$/framework-system/config-center/src/main/resources/logback.xml" />
         <option value="$PROJECT_DIR$/framework-system/eureka-server/src/main/resources/logback.xml" />
         <option value="$PROJECT_DIR$/framework-system/config-center/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/doc/docker/docker-compose.yml" />
         <option value="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/controller/AuthController.java" />
-        <option value="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/fullback/AuthFallbackProvider.java" />
         <option value="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/service/impl/UserDetailsImpl.java" />
         <option value="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/config/ResourceServerConfig.java" />
-        <option value="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/JwtAuthorizationConfig.java" />
         <option value="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/AuthResourceServerConfig.java" />
-        <option value="$PROJECT_DIR$/framework-system/authentic-service/src/main/resources/logback.xml" />
         <option value="$PROJECT_DIR$/framework-system/zuul-gateway/src/test/java/com/spring/cloud/zuul/ZuulGetewayApplicationTests.java" />
         <option value="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/AuthServerConfig.java" />
+        <option value="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/filters/LoggerFilter.java" />
+        <option value="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/filters/ErrorFilter.java" />
+        <option value="$USER_HOME$/springCloudConfig/exercise/application-dev.yml" />
+        <option value="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/fullback/AuthFallbackProvider.java" />
+        <option value="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/MyTokenStoreService.java" />
+        <option value="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/myTokenService.java" />
+        <option value="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/myTokenServices.java" />
+        <option value="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/MyTokenServices.java" />
+        <option value="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/JwtRedisTokenStore.java" />
+        <option value="$PROJECT_DIR$/framework-core/framework-configuration/src/main/java/com/spring/boot/framework/config/JwtRedisTokenStore.java" />
+        <option value="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/service/MenuPermissionService.java" />
+        <option value="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/config/JwtAuthorizationConfig.java" />
+        <option value="$USER_HOME$/springCloudConfig/exercise/zuul-gateway-dev.yml" />
+        <option value="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/AuthenticServiceApplication.java" />
+        <option value="$PROJECT_DIR$/system-api/auth-api/src/main/java/com/wmang/system/api/auth/api/UserFeignApi.java" />
         <option value="$USER_HOME$/springCloudConfig/exercise/authentic-service-dev.yml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$USER_HOME$/springCloudConfig/exercise/user-service-dev.yml" />
+        <option value="$USER_HOME$/springCloudConfig/exercise/application.yml" />
+        <option value="$PROJECT_DIR$/framework-core/framework-configuration/pom.xml" />
+        <option value="$PROJECT_DIR$/framework-system/zuul-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/config/JwtRedisTokenStore.java" />
+        <option value="$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/service/impl/PermissionServiceImpl.java" />
+        <option value="$PROJECT_DIR$/framework-system/pom.xml" />
+        <option value="$PROJECT_DIR$/business-core/user-service/pom.xml" />
+        <option value="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/JwtAuthorizationConfig.java" />
+        <option value="$PROJECT_DIR$/framework-system/authentic-service/src/main/resources/logback.xml" />
+        <option value="$PROJECT_DIR$/business-core/user-service/src/main/resources/logback.xml" />
       </list>
     </option>
   </component>
@@ -746,7 +597,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="width" value="1280" />
     <option name="height" value="800" />
   </component>
@@ -758,6 +609,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -768,58 +621,37 @@
             <path>
               <item name="exercise-parent" type="b2602c69:ProjectViewProjectNode" />
               <item name="exercise-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="framework-core" type="462c0819:PsiDirectoryNode" />
+              <item name="business-core" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="exercise-parent" type="b2602c69:ProjectViewProjectNode" />
               <item name="exercise-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="framework-core" type="462c0819:PsiDirectoryNode" />
-              <item name="framework-utils" type="462c0819:PsiDirectoryNode" />
+              <item name="business-core" type="462c0819:PsiDirectoryNode" />
+              <item name="user-service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="exercise-parent" type="b2602c69:ProjectViewProjectNode" />
               <item name="exercise-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="framework-core" type="462c0819:PsiDirectoryNode" />
-              <item name="framework-utils" type="462c0819:PsiDirectoryNode" />
+              <item name="business-core" type="462c0819:PsiDirectoryNode" />
+              <item name="user-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="exercise-parent" type="b2602c69:ProjectViewProjectNode" />
               <item name="exercise-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="framework-core" type="462c0819:PsiDirectoryNode" />
-              <item name="framework-utils" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="exercise-parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="exercise-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="framework-core" type="462c0819:PsiDirectoryNode" />
-              <item name="framework-utils" type="462c0819:PsiDirectoryNode" />
+              <item name="business-core" type="462c0819:PsiDirectoryNode" />
+              <item name="user-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="exercise-parent" type="b2602c69:ProjectViewProjectNode" />
               <item name="exercise-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="framework-core" type="462c0819:PsiDirectoryNode" />
-              <item name="framework-utils" type="462c0819:PsiDirectoryNode" />
+              <item name="business-core" type="462c0819:PsiDirectoryNode" />
+              <item name="user-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="exercise-parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="exercise-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="framework-core" type="462c0819:PsiDirectoryNode" />
-              <item name="framework-utils" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-              <item name="constant" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="exercise-parent" type="b2602c69:ProjectViewProjectNode" />
@@ -846,59 +678,6 @@
               <item name="authentic-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="exercise-parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="exercise-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="framework-system" type="462c0819:PsiDirectoryNode" />
-              <item name="authentic-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="exercise-parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="exercise-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="framework-system" type="462c0819:PsiDirectoryNode" />
-              <item name="authentic-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="authentic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="exercise-parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="exercise-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="framework-system" type="462c0819:PsiDirectoryNode" />
-              <item name="authentic-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="authentic" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="exercise-parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="exercise-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="framework-system" type="462c0819:PsiDirectoryNode" />
-              <item name="authentic-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="authentic" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="exercise-parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="exercise-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="framework-system" type="462c0819:PsiDirectoryNode" />
-              <item name="authentic-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="authentic" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="exercise-parent" type="b2602c69:ProjectViewProjectNode" />
@@ -909,118 +688,11 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="exercise-parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="exercise-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="framework-system" type="462c0819:PsiDirectoryNode" />
-              <item name="zuul-gateway" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="exercise-parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="exercise-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="framework-system" type="462c0819:PsiDirectoryNode" />
-              <item name="zuul-gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="exercise-parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="exercise-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="framework-system" type="462c0819:PsiDirectoryNode" />
-              <item name="zuul-gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="exercise-parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="exercise-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="framework-system" type="462c0819:PsiDirectoryNode" />
-              <item name="zuul-gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="exercise-parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="exercise-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="framework-system" type="462c0819:PsiDirectoryNode" />
-              <item name="zuul-gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="zuul" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="exercise-parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="exercise-parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework.security.oauth:spring-security-oauth2:2.2.1.RELEASE" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="exercise-parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework.security.oauth:spring-security-oauth2:2.2.1.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-security-oauth2-2.2.1.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="exercise-parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework.security.oauth:spring-security-oauth2:2.2.1.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-security-oauth2-2.2.1.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="oauth2" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="exercise-parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework.security.oauth:spring-security-oauth2:2.2.1.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-security-oauth2-2.2.1.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="oauth2" type="462c0819:PsiDirectoryNode" />
-              <item name="provider" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="exercise-parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework.security.oauth:spring-security-oauth2:2.2.1.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-security-oauth2-2.2.1.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="oauth2" type="462c0819:PsiDirectoryNode" />
-              <item name="provider" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="exercise-parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework.security:spring-security-web:5.0.5.RELEASE" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="exercise-parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework.security:spring-security-web:5.0.5.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-security-web-5.0.5.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="exercise-parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework.security:spring-security-web:5.0.5.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-security-web-5.0.5.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="exercise-parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework.security:spring-security-web:5.0.5.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-security-web-5.0.5.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="authentication" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1049,10 +721,10 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
-    <property name="SearchEverywhereHistoryKey" value="SecurityConst&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/spirng-cloud/exercise-parent/framework-core/framework-utils/src/main/java/com/spring/cloud/framework/utils/constant/SecurityConstant.java&#10;ClientDetailsUserDetailsService&#9;PSI&#9;JAVA://org.springframework.security.oauth2.provider.client.ClientDetailsUserDetailsService&#10;authentic&#9;FILE&#9;file:///Users/wangmian/springCloudConfig/exercise/authentic-service-dev.yml&#10;basic&#9;FILE&#9;jar:///Users/wangmian/work/maven-repository/org/springframework/security/spring-security-web/5.0.5.RELEASE/spring-security-web-5.0.5.RELEASE.jar!/org/springframework/security/web/authentication/www/BasicAuthenticationFilter.class&#10;Basi&#9;FILE&#9;jar:///Users/wangmian/work/maven-repository/org/springframework/security/spring-security-web/5.0.5.RELEASE/spring-security-web-5.0.5.RELEASE.jar!/org/springframework/security/web/authentication/www/BasicAuthenticationFilter.class&#10;AbstractAuthenticationProcessingFilter&#9;FILE&#9;jar:///Users/wangmian/work/maven-repository/org/springframework/security/spring-security-web/5.0.5.RELEASE/spring-security-web-5.0.5.RELEASE.jar!/org/springframework/security/web/authentication/AbstractAuthenticationProcessingFilter.class&#10;AbstractUserDetailsAuthenticationProvider&#9;PSI&#9;JAVA://org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider&#10;clie&#9;FILE&#9;jar:///Users/wangmian/work/maven-repository/org/springframework/security/oauth/spring-security-oauth2/2.2.1.RELEASE/spring-security-oauth2-2.2.1.RELEASE.jar!/org/springframework/security/oauth2/provider/client/ClientCredentialsTokenEndpointFilter.class&#10;user&#9;FILE&#9;jar:///Users/wangmian/work/maven-repository/org/springframework/security/spring-security-core/5.0.5.RELEASE/spring-security-core-5.0.5.RELEASE.jar!/org/springframework/security/authentication/dao/AbstractUserDetailsAuthenticationProvider.class&#10;Prov&#9;FILE&#9;jar:///Users/wangmian/work/maven-repository/org/springframework/security/spring-security-core/5.0.5.RELEASE/spring-security-core-5.0.5.RELEASE.jar!/org/springframework/security/authentication/ProviderManager.class&#10;auth&#9;FILE&#9;file:///Users/wangmian/springCloudConfig/exercise/authentic-service-dev.yml&#10; usernameP&#9;PSI&#9;JAVA://org.springframework.security.authentication.UsernamePasswordAuthenticationToken&#10;Usernae&#9;PSI&#9;JAVA://org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter&#10;authe&#9;FILE&#9;file:///Users/wangmian/springCloudConfig/exercise/authentic-service-dev.yml&#10;Provider&#9;FILE&#9;jar:///Users/wangmian/work/maven-repository/org/springframework/security/spring-security-core/5.0.5.RELEASE/spring-security-core-5.0.5.RELEASE.jar!/org/springframework/security/authentication/ProviderManager.class&#10;ProviderManager&#9;PSI&#9;JAVA://org.springframework.security.authentication.ProviderManager&#10;JwtAuthorizationConfig&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/spirng-cloud/exercise-parent/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/JwtAuthorizationConfig.java&#10;zuu&#9;FILE&#9;file:///Users/wangmian/springCloudConfig/exercise/zuul-gateway-dev.yml&#10;zuul&#9;FILE&#9;file:///Users/wangmian/springCloudConfig/exercise/zuul-gateway-dev.yml&#10;user-ser&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/spirng-cloud/exercise-parent/framework-system/config-center/src/main/resources/local/user-service-dev.yml&#10;usercon&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/spirng-cloud/exercise-parent/business-core/user-consumer/src/main/java/com/spring/cloud/consumer/contorller/UserContorller.java&#10;user-se&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/spirng-cloud/exercise-parent/framework-system/config-center/src/main/resources/local/user-service-dev.yml&#10;eureka&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/spirng-cloud/exercise-parent/framework-system/config-center/src/main/resources/local/eureka-server-dev.yml&#10;user-servi&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/spirng-cloud/exercise-parent/framework-system/config-center/src/main/resources/local/user-service-dev.yml&#10;zuul-g&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/exercise-parent/framework-system/config-center/src/main/resources/local/zuul-gateway-dev.yml&#10;authentic-ser&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/exercise-parent/framework-system/config-center/src/main/resources/local/authentic-service-dev.yml&#10;MenuPermissionService&#9;PSI&#9;JAVA://com.spring.cloud.zuul.service.MenuPermissionService&#10;UserController&#9;PSI&#9;JAVA://com.spring.cloud.service.controller.UserController&#10;AuthServiceImpl&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/exercise-parent/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/service/impl/AuthServiceImpl.java&#10;AuthenticServiceApplication&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/exercise-parent/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/AuthenticServiceApplication.java&#10;HystrixCommandAspect&#9;PSI&#9;JAVA://com.netflix.hystrix.contrib.javanica.aop.aspectj.HystrixCommandAspect&#10;UserS&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/exercise-parent/business-core/user-service/src/main/java/com/spring/cloud/service/UserSevrviceApplication.java&#10;User&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/exercise-parent/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/service/impl/UserDetailServiceImpl.java&#10;zuulg&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/exercise-parent/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/ZuulGetewayApplication.java&#10;authen&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/exercise-parent/framework-system/config-center/src/main/resources/local/authentic-service-dev.yml&#10;boots&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/exercise-parent/framework-system/zuul-gateway/src/main/resources/bootstrap.yml&#10;authentic-s&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/exercise-parent/framework-system/config-center/src/main/resources/local/authentic-service-dev.yml&#10;Security&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/exercise-parent/framework-core/framework-utils/src/main/java/com/spring/cloud/framework/utils/constant/SecurityConstant.java&#10;Secu&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/exercise-parent/framework-core/framework-utils/src/main/java/com/spring/cloud/framework/utils/constant/SecurityConstant.java&#10;ZuulController&#9;PSI&#9;JAVA://org.springframework.cloud.netflix.zuul.web.ZuulController&#10;uul&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/exercise-parent/framework-system/config-center/src/main/resources/local/zuul-gateway-dev.yml&#10;AuthFallbackProvider&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/exercise-parent/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/fullback/AuthFallbackProvider.java&#10;UserDetailsImpl&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/exercise-parent/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/service/impl/UserDetailsImpl.java&#10;ajaxLoginSuccessHandler&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/exercise-parent/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/ajax/AjaxLoginSuccessHandler.java&#10;AuthenticationManager&#9;FILE&#9;jar:///Users/wangmian/work/maven-repository/org/springframework/security/spring-security-core/5.0.5.RELEASE/spring-security-core-5.0.5.RELEASE.jar!/org/springframework/security/authentication/AuthenticationManager.class&#10;AjaxSecurityConfig&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/exercise-parent/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/ajax/AjaxSecurityConfig.java&#10;authentic-dev&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/exercise-parent/framework-system/config-center/src/main/resources/local/authentic-service-dev.yml&#10;AjaxLoginSuccessHandler&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/exercise-parent/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/ajax/AjaxLoginSuccessHandler.java&#10;Redis&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/exercise-parent/framework-core/framework-configuration/src/main/java/com/spring/boot/framework/config/RedisConfig.java&#10;FilterUrl&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/exercise-parent/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/config/FilterUrlsConfig.java" />
+    <property name="SearchEverywhereHistoryKey" value="jwtA&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/spirng-cloud/exercise-parent/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/JwtAuthorizationConfig.java&#10;permissionService&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/spirng-cloud/exercise-parent/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/service/impl/PermissionServiceImpl.java&#10;JwtAuthorizationConfig&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/spirng-cloud/exercise-parent/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/JwtAuthorizationConfig.java&#10;ResourceServerTokenServicesConfiguration&#9;FILE&#9;jar:///Users/wangmian/work/maven-repository/org/springframework/security/oauth/boot/spring-security-oauth2-autoconfigure/2.0.0.RELEASE/spring-security-oauth2-autoconfigure-2.0.0.RELEASE.jar!/org/springframework/boot/autoconfigure/security/oauth2/resource/ResourceServerTokenServicesConfiguration.class&#10;De&#9;FILE&#9;jar:///Users/wangmian/work/maven-repository/org/springframework/security/oauth/spring-security-oauth2/2.2.1.RELEASE/spring-security-oauth2-2.2.1.RELEASE.jar!/org/springframework/security/oauth2/provider/token/DefaultTokenServices.class&#10;Defau&#9;FILE&#9;jar:///Users/wangmian/work/maven-repository/org/springframework/security/oauth/spring-security-oauth2/2.2.1.RELEASE/spring-security-oauth2-2.2.1.RELEASE.jar!/org/springframework/security/oauth2/provider/token/DefaultTokenServices.class&#10;AuthorizationServerEndpointsConfigurer&#9;PSI&#9;JAVA://org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer&#10;TokenEnhancer&#9;PSI&#9;JAVA://com.spring.cloud.authentic.config.JwtAuthorizationConfig#tokenEnhancer&#10;jwtredis&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/spirng-cloud/exercise-parent/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/JwtRedisTokenStore.java&#10;rediscon&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/spirng-cloud/exercise-parent/framework-core/framework-configuration/src/main/java/com/spring/boot/framework/config/RedisConfig.java&#10;redis&#9;PSI&#9;JAVA://com.spring.boot.framework.config.RedisConfig&#10;AuthFallbackProvider&#9;PSI&#9;JAVA://com.spring.cloud.zuul.fullback.AuthFallbackProvider&#10;userDetail&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/spirng-cloud/exercise-parent/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/service/impl/UserDetailServiceImpl.java&#10;user&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/spirng-cloud/exercise-parent/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/service/impl/UserDetailsImpl.java&#10;gate&#9;FILE&#9;file:///Users/wangmian/springCloudConfig/exercise/zuul-gateway-dev.yml&#10;user-ser&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/spirng-cloud/exercise-parent/framework-system/config-center/src/main/resources/local/user-service-dev.yml&#10;SecurityConst&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/spirng-cloud/exercise-parent/framework-core/framework-utils/src/main/java/com/spring/cloud/framework/utils/constant/SecurityConstant.java&#10;ClientDetailsUserDetailsService&#9;PSI&#9;JAVA://org.springframework.security.oauth2.provider.client.ClientDetailsUserDetailsService&#10;authentic&#9;FILE&#9;file:///Users/wangmian/springCloudConfig/exercise/authentic-service-dev.yml&#10;basic&#9;FILE&#9;jar:///Users/wangmian/work/maven-repository/org/springframework/security/spring-security-web/5.0.5.RELEASE/spring-security-web-5.0.5.RELEASE.jar!/org/springframework/security/web/authentication/www/BasicAuthenticationFilter.class&#10;Basi&#9;FILE&#9;jar:///Users/wangmian/work/maven-repository/org/springframework/security/spring-security-web/5.0.5.RELEASE/spring-security-web-5.0.5.RELEASE.jar!/org/springframework/security/web/authentication/www/BasicAuthenticationFilter.class&#10;AbstractAuthenticationProcessingFilter&#9;FILE&#9;jar:///Users/wangmian/work/maven-repository/org/springframework/security/spring-security-web/5.0.5.RELEASE/spring-security-web-5.0.5.RELEASE.jar!/org/springframework/security/web/authentication/AbstractAuthenticationProcessingFilter.class&#10;AbstractUserDetailsAuthenticationProvider&#9;PSI&#9;JAVA://org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider&#10;clie&#9;FILE&#9;jar:///Users/wangmian/work/maven-repository/org/springframework/security/oauth/spring-security-oauth2/2.2.1.RELEASE/spring-security-oauth2-2.2.1.RELEASE.jar!/org/springframework/security/oauth2/provider/client/ClientCredentialsTokenEndpointFilter.class&#10;Prov&#9;FILE&#9;jar:///Users/wangmian/work/maven-repository/org/springframework/security/spring-security-core/5.0.5.RELEASE/spring-security-core-5.0.5.RELEASE.jar!/org/springframework/security/authentication/ProviderManager.class&#10;auth&#9;FILE&#9;file:///Users/wangmian/springCloudConfig/exercise/authentic-service-dev.yml&#10; usernameP&#9;PSI&#9;JAVA://org.springframework.security.authentication.UsernamePasswordAuthenticationToken&#10;Usernae&#9;PSI&#9;JAVA://org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter&#10;authe&#9;FILE&#9;file:///Users/wangmian/springCloudConfig/exercise/authentic-service-dev.yml&#10;Provider&#9;FILE&#9;jar:///Users/wangmian/work/maven-repository/org/springframework/security/spring-security-core/5.0.5.RELEASE/spring-security-core-5.0.5.RELEASE.jar!/org/springframework/security/authentication/ProviderManager.class&#10;ProviderManager&#9;PSI&#9;JAVA://org.springframework.security.authentication.ProviderManager&#10;zuu&#9;FILE&#9;file:///Users/wangmian/springCloudConfig/exercise/zuul-gateway-dev.yml&#10;zuul&#9;FILE&#9;file:///Users/wangmian/springCloudConfig/exercise/zuul-gateway-dev.yml&#10;usercon&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/spirng-cloud/exercise-parent/business-core/user-consumer/src/main/java/com/spring/cloud/consumer/contorller/UserContorller.java&#10;user-se&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/spirng-cloud/exercise-parent/framework-system/config-center/src/main/resources/local/user-service-dev.yml&#10;eureka&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/spirng-cloud/exercise-parent/framework-system/config-center/src/main/resources/local/eureka-server-dev.yml&#10;user-servi&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/spirng-cloud/exercise-parent/framework-system/config-center/src/main/resources/local/user-service-dev.yml&#10;zuul-g&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/exercise-parent/framework-system/config-center/src/main/resources/local/zuul-gateway-dev.yml&#10;authentic-ser&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/exercise-parent/framework-system/config-center/src/main/resources/local/authentic-service-dev.yml&#10;MenuPermissionService&#9;PSI&#9;JAVA://com.spring.cloud.zuul.service.MenuPermissionService&#10;UserController&#9;PSI&#9;JAVA://com.spring.cloud.service.controller.UserController&#10;AuthServiceImpl&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/exercise-parent/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/service/impl/AuthServiceImpl.java&#10;AuthenticServiceApplication&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/exercise-parent/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/AuthenticServiceApplication.java&#10;HystrixCommandAspect&#9;PSI&#9;JAVA://com.netflix.hystrix.contrib.javanica.aop.aspectj.HystrixCommandAspect&#10;UserS&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/exercise-parent/business-core/user-service/src/main/java/com/spring/cloud/service/UserSevrviceApplication.java&#10;User&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/exercise-parent/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/service/impl/UserDetailServiceImpl.java&#10;zuulg&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/exercise-parent/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/ZuulGetewayApplication.java&#10;authen&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/exercise-parent/framework-system/config-center/src/main/resources/local/authentic-service-dev.yml&#10;boots&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/exercise-parent/framework-system/zuul-gateway/src/main/resources/bootstrap.yml&#10;authentic-s&#9;FILE&#9;file:///Users/wangmian/work/ideaSpace/exercise-parent/framework-system/config-center/src/main/resources/local/authentic-service-dev.yml" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541003943951" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541523560272" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/system-api/auth-api/src/main/java/com/wmang/system/auth/api" />
@@ -1075,18 +747,18 @@
       <recent name="com.spring.cloud.authentic" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config" />
       <recent name="$PROJECT_DIR$/business-core/user-consumer/src/main/resources" />
       <recent name="$PROJECT_DIR$/framework-system/eureka-server/src/main/resources" />
       <recent name="$PROJECT_DIR$/framework-system/config-center/src/main/resources" />
       <recent name="$PROJECT_DIR$/doc/docker" />
-      <recent name="$PROJECT_DIR$/business-core/user-service/src/main/resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.spring.cloud.zuul.config" />
+      <recent name="com.spring.boot.framework.config" />
       <recent name="com.spring.cloud.service.controller.feignClient" />
       <recent name="com.wmang.system.api.auth.api" />
       <recent name="com.wmang.system.api.auth.hystrix" />
-      <recent name="com.spring.cloud.zuul.fullback" />
-      <recent name="com.spring.cloud.framework.constant" />
     </key>
     <key name="OPEN_URL_DIALOG">
       <recent name="https://github.com/liuweijw/fw-cloud-framework.git" />
@@ -1115,7 +787,7 @@
     </option>
     <option name="contentProportion" value="0.2231405" />
   </component>
-  <component name="RunManager" selected="JUnit.ZuulGetewayApplicationTests.contextLoads">
+  <component name="RunManager" selected="Maven.exercise-parent">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -1325,19 +997,6 @@
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <module name="exercise-parent" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -1810,10 +1469,10 @@
       <item itemvalue="Maven.user-consumer" />
       <item itemvalue="Maven.user-service" />
       <item itemvalue="Maven.zuul-gateway" />
-      <item itemvalue="Spring Boot.AuthenticServiceApplication" />
       <item itemvalue="Spring Boot.ConfigCenterApplication" />
       <item itemvalue="Spring Boot.EurekaServerApplication" />
       <item itemvalue="Spring Boot.UserConsumerApplication" />
+      <item itemvalue="Spring Boot.AuthenticServiceApplication" />
       <item itemvalue="Spring Boot.UserSevrviceApplication" />
       <item itemvalue="Spring Boot.ZuulGetewayApplication" />
       <item itemvalue="JUnit.UserSevrviceApplicationTests.testFindUser" />
@@ -1900,7 +1559,14 @@
       <workItem from="1540825580903" duration="1076000" />
       <workItem from="1540827998171" duration="1080000" />
       <workItem from="1540905763923" duration="4003000" />
-      <workItem from="1540947169554" duration="28318000" />
+      <workItem from="1540947169554" duration="28499000" />
+      <workItem from="1541061626424" duration="19139000" />
+      <workItem from="1541143033142" duration="13266000" />
+      <workItem from="1541257650106" duration="3885000" />
+      <workItem from="1541409977983" duration="968000" />
+      <workItem from="1541464991602" duration="452000" />
+      <workItem from="1541502323350" duration="9143000" />
+      <workItem from="1541521814603" duration="1708000" />
     </task>
     <task id="LOCAL-00001" summary="添加gitignore配置文件">
       <created>1525964787015</created>
@@ -1951,7 +1617,14 @@
       <option name="project" value="LOCAL" />
       <updated>1535554530723</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="完善安全认证功能">
+      <created>1541004114109</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1541004114109</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1987,7 +1660,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="443901000" />
+    <option name="totallyTimeSpent" value="492643000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -2002,49 +1675,10 @@
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Web" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.28029078" />
+      <window_info id="Web" order="0" sideWeight="0.5033408" side_tool="true" weight="0.28836834" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49665925" visible="true" weight="0.3029079" />
       <window_info id="UI Designer" order="2" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info id="Palette&#9;" order="4" />
-      <window_info id="Image Layers" order="5" />
-      <window_info id="Capture Tool" order="6" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49444443" weight="0.32876712" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4789984" visible="true" weight="0.32876712" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4983845" weight="0.3452055" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32876712" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.52100164" side_tool="true" weight="0.32876712" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4983845" weight="0.32876712" />
-      <window_info anchor="bottom" id="Spring" order="9" weight="0.32876712" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49722221" weight="0.32876712" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.46666667" weight="0.28630137" />
-      <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32876712" />
-      <window_info anchor="bottom" id="Problems" order="13" weight="0.32876712" />
-      <window_info anchor="bottom" id="Database Changes" order="14" weight="0.32876712" />
-      <window_info anchor="bottom" id="Run Dashboard" order="15" weight="0.32876712" />
-      <window_info anchor="bottom" id="Docker" order="16" show_stripe_button="false" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Designer" order="4" />
-      <window_info anchor="right" id="Database" order="5" weight="0.3298611" />
-      <window_info anchor="right" id="Maven Projects" order="6" weight="0.2584814" />
-      <window_info anchor="right" id="Dynamic Properties" order="7" />
-      <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.3298611" />
-      <window_info anchor="right" id="Bean Validation" order="9" />
-      <window_info anchor="right" id="Capture Analysis" order="10" />
-      <window_info anchor="right" id="Theme Preview" order="11" />
-      <window_info anchor="right" id="Structure" order="12" visible="true" weight="0.24959612" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="Web" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" weight="0.24717286" />
-      <window_info id="UI Designer" order="2" />
-      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Favorites" order="3" sideWeight="0.5020408" side_tool="true" weight="0.28432956" />
       <window_info id="Palette&#9;" order="4" />
       <window_info id="Image Layers" order="5" />
       <window_info id="Capture Tool" order="6" />
@@ -2078,7 +1712,7 @@
       <window_info anchor="right" id="Capture Analysis" order="10" />
       <window_info anchor="right" id="Theme Preview" order="11" />
       <window_info anchor="right" id="Structure" order="12" weight="0.24959612" />
-    </layout-to-restore>
+    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -2101,7 +1735,8 @@
     <MESSAGE value="添加代码" />
     <MESSAGE value="提交代码" />
     <MESSAGE value="完善项目结构" />
-    <option name="LAST_COMMIT_MESSAGE" value="完善项目结构" />
+    <MESSAGE value="完善安全认证功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="完善安全认证功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2320,14 +1955,8 @@
           <option name="timeStamp" value="102" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/service/impl/PermissionServiceImpl.java</url>
-          <line>40</line>
-          <properties />
-          <option name="timeStamp" value="104" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/filters/ErrorFilter.java</url>
-          <line>43</line>
+          <line>45</line>
           <properties />
           <option name="timeStamp" value="105" />
         </line-breakpoint>
@@ -2336,12 +1965,6 @@
           <line>14</line>
           <properties />
           <option name="timeStamp" value="113" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/service/impl/UserDetailServiceImpl.java</url>
-          <line>37</line>
-          <properties />
-          <option name="timeStamp" value="118" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/ajax/AjaxAuthenticationFilter.java</url>
@@ -2362,24 +1985,12 @@
           <option name="timeStamp" value="126" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/system-api/auth-api/src/main/java/com/wmang/system/api/auth/hystrix/UserFeignApiHystrix.java</url>
-          <line>23</line>
-          <properties />
-          <option name="timeStamp" value="127" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/config/SwaggerResourceProviderConfig.java</url>
           <line>24</line>
           <properties />
           <option name="timeStamp" value="130" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/JwtAuthorizationConfig.java</url>
-          <line>106</line>
-          <properties />
-          <option name="timeStamp" value="138" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/spring-security-config/5.0.5.RELEASE/spring-security-config-5.0.5.RELEASE.jar!/org/springframework/security/config/annotation/web/configuration/WebSecurityConfigurerAdapter.class</url>
           <line>233</line>
           <properties />
@@ -2396,12 +2007,6 @@
           <line>42</line>
           <properties />
           <option name="timeStamp" value="151" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/service/impl/UserDetailsImpl.java</url>
-          <line>37</line>
-          <properties />
-          <option name="timeStamp" value="157" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/spring-security-web/5.0.5.RELEASE/spring-security-web-5.0.5.RELEASE.jar!/org/springframework/security/web/authentication/UsernamePasswordAuthenticationFilter.class</url>
@@ -2421,25 +2026,25 @@
           <properties />
           <option name="timeStamp" value="176" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/spring-security-core/5.0.5.RELEASE/spring-security-core-5.0.5.RELEASE.jar!/org/springframework/security/authentication/ProviderManager.class</url>
           <line>56</line>
           <properties />
           <option name="timeStamp" value="177" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/spring-security-core/5.0.5.RELEASE/spring-security-core-5.0.5.RELEASE.jar!/org/springframework/security/authentication/dao/DaoAuthenticationProvider.class</url>
           <line>49</line>
           <properties />
           <option name="timeStamp" value="178" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/spring-security-core/5.0.5.RELEASE/spring-security-core-5.0.5.RELEASE.jar!/org/springframework/security/authentication/dao/AbstractUserDetailsAuthenticationProvider.class</url>
           <line>62</line>
           <properties />
           <option name="timeStamp" value="179" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/spring-security-core/5.0.5.RELEASE/spring-security-core-5.0.5.RELEASE.jar!/org/springframework/security/authentication/dao/AbstractUserDetailsAuthenticationProvider.class</url>
           <line>54</line>
           <properties />
@@ -2457,41 +2062,17 @@
           <properties />
           <option name="timeStamp" value="192" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/spring-security-web/5.0.5.RELEASE/spring-security-web-5.0.5.RELEASE.jar!/org/springframework/security/web/authentication/www/BasicAuthenticationFilter.class</url>
-          <line>58</line>
-          <properties />
-          <option name="timeStamp" value="194" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/spring-security-web/5.0.5.RELEASE/spring-security-web-5.0.5.RELEASE.jar!/org/springframework/security/web/authentication/AbstractAuthenticationProcessingFilter.class</url>
           <line>61</line>
           <properties />
           <option name="timeStamp" value="195" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/JwtAuthorizationConfig.java</url>
-          <line>61</line>
+          <line>60</line>
           <properties />
           <option name="timeStamp" value="197" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/spring-security-web/5.0.5.RELEASE/spring-security-web-5.0.5.RELEASE.jar!/org/springframework/security/web/authentication/www/BasicAuthenticationFilter.class</url>
-          <line>116</line>
-          <properties />
-          <option name="timeStamp" value="199" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/spring-security-web/5.0.5.RELEASE/spring-security-web-5.0.5.RELEASE.jar!/org/springframework/security/web/authentication/www/BasicAuthenticationFilter.class</url>
-          <line>71</line>
-          <properties />
-          <option name="timeStamp" value="201" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/spring-security-web/5.0.5.RELEASE/spring-security-web-5.0.5.RELEASE.jar!/org/springframework/security/web/authentication/www/BasicAuthenticationFilter.class</url>
-          <line>73</line>
-          <properties />
-          <option name="timeStamp" value="202" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/spring-security-core/5.0.5.RELEASE/spring-security-core-5.0.5.RELEASE.jar!/org/springframework/security/authentication/ProviderManager.class</url>
@@ -2499,25 +2080,25 @@
           <properties />
           <option name="timeStamp" value="203" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/spring-security-core/5.0.5.RELEASE/spring-security-core-5.0.5.RELEASE.jar!/org/springframework/security/authentication/dao/AbstractUserDetailsAuthenticationProvider.class</url>
           <line>77</line>
           <properties />
           <option name="timeStamp" value="204" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/spring-security-core/5.0.5.RELEASE/spring-security-core-5.0.5.RELEASE.jar!/org/springframework/security/authentication/dao/DaoAuthenticationProvider.class</url>
           <line>33</line>
           <properties />
           <option name="timeStamp" value="205" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/oauth/spring-security-oauth2/2.2.1.RELEASE/spring-security-oauth2-2.2.1.RELEASE.jar!/org/springframework/security/oauth2/provider/client/ClientDetailsUserDetailsService.class</url>
           <line>31</line>
           <properties />
           <option name="timeStamp" value="206" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/spring-security-core/5.0.5.RELEASE/spring-security-core-5.0.5.RELEASE.jar!/org/springframework/security/crypto/password/DelegatingPasswordEncoder.class</url>
           <line>59</line>
           <properties />
@@ -2534,6 +2115,132 @@
           <line>31</line>
           <properties />
           <option name="timeStamp" value="212" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/AuthServerConfig.java</url>
+          <line>78</line>
+          <properties />
+          <option name="timeStamp" value="215" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/spring-security-web/5.0.5.RELEASE/spring-security-web-5.0.5.RELEASE.jar!/org/springframework/security/web/authentication/www/BasicAuthenticationFilter.class</url>
+          <line>62</line>
+          <properties />
+          <option name="timeStamp" value="216" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/filters/LoggerFilter.java</url>
+          <line>45</line>
+          <properties />
+          <option name="timeStamp" value="220" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/oauth/spring-security-oauth2/2.2.1.RELEASE/spring-security-oauth2-2.2.1.RELEASE.jar!/org/springframework/security/oauth2/provider/token/DefaultTokenServices.class</url>
+          <line>78</line>
+          <properties />
+          <option name="timeStamp" value="225" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/oauth/spring-security-oauth2/2.2.1.RELEASE/spring-security-oauth2-2.2.1.RELEASE.jar!/org/springframework/security/oauth2/provider/token/store/redis/RedisTokenStore.class</url>
+          <line>160</line>
+          <properties />
+          <option name="timeStamp" value="229" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/service/impl/PermissionServiceImpl.java</url>
+          <line>67</line>
+          <properties />
+          <option name="timeStamp" value="234" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/service/impl/PermissionServiceImpl.java</url>
+          <line>39</line>
+          <properties />
+          <option name="timeStamp" value="235" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/service/impl/PermissionServiceImpl.java</url>
+          <line>57</line>
+          <properties />
+          <option name="timeStamp" value="237" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/oauth/spring-security-oauth2/2.2.1.RELEASE/spring-security-oauth2-2.2.1.RELEASE.jar!/org/springframework/security/oauth2/provider/token/DefaultTokenServices.class</url>
+          <line>136</line>
+          <properties />
+          <option name="timeStamp" value="238" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/oauth/spring-security-oauth2/2.2.1.RELEASE/spring-security-oauth2-2.2.1.RELEASE.jar!/org/springframework/security/oauth2/provider/token/DefaultTokenServices.class</url>
+          <line>169</line>
+          <properties />
+          <option name="timeStamp" value="241" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/oauth/spring-security-oauth2/2.2.1.RELEASE/spring-security-oauth2-2.2.1.RELEASE.jar!/org/springframework/security/oauth2/provider/token/DefaultTokenServices.class</url>
+          <line>170</line>
+          <properties />
+          <option name="timeStamp" value="243" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/JwtAuthorizationConfig.java</url>
+          <line>122</line>
+          <properties />
+          <option name="timeStamp" value="245" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/oauth/boot/spring-security-oauth2-autoconfigure/2.0.0.RELEASE/spring-security-oauth2-autoconfigure-2.0.0.RELEASE.jar!/org/springframework/boot/autoconfigure/security/oauth2/resource/ResourceServerTokenServicesConfiguration.class</url>
+          <line>259</line>
+          <properties />
+          <option name="timeStamp" value="261" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/oauth/boot/spring-security-oauth2-autoconfigure/2.0.0.RELEASE/spring-security-oauth2-autoconfigure-2.0.0.RELEASE.jar!/org/springframework/boot/autoconfigure/security/oauth2/resource/ResourceServerTokenServicesConfiguration.class</url>
+          <line>267</line>
+          <properties />
+          <option name="timeStamp" value="262" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/jwt/JwtUtils.java</url>
+          <line>126</line>
+          <properties />
+          <option name="timeStamp" value="266" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/jwt/JwtUtils.java</url>
+          <line>141</line>
+          <properties />
+          <option name="timeStamp" value="267" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/service/impl/UserServiceImpl.java</url>
+          <line>135</line>
+          <properties />
+          <option name="timeStamp" value="268" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/service/impl/UserDetailServiceImpl.java</url>
+          <line>37</line>
+          <properties />
+          <option name="timeStamp" value="269" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/controller/feignClient/UserFeignApiClient.java</url>
+          <line>41</line>
+          <properties />
+          <option name="timeStamp" value="271" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/controller/feignClient/UserFeignApiClient.java</url>
+          <line>38</line>
+          <properties />
+          <option name="timeStamp" value="274" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/../../../maven-repository/io/github/openfeign/feign-core/9.5.1/feign-core-9.5.1.jar!/feign/FeignException.class</url>
+          <line>36</line>
+          <properties />
+          <option name="timeStamp" value="275" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -2556,389 +2263,348 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$PROJECT_DIR$/../../../maven-repository/io/reactivex/rxjava/1.3.8/rxjava-1.3.8.jar!/rx/Observable.class">
+    <entry file="file://$PROJECT_DIR$/.gitattributes">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="1607" selection-start-line="1607" selection-end-line="1607" />
+        <state relative-caret-position="30">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/oauth/boot/spring-security-oauth2-autoconfigure/2.0.0.RELEASE/spring-security-oauth2-autoconfigure-2.0.0.RELEASE.jar!/org/springframework/boot/autoconfigure/security/oauth2/resource/ResourceServerTokenServicesConfiguration.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="193" column="13" selection-start-line="193" selection-start-column="13" selection-end-line="193" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/AuthenticServiceApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="15" column="53" lean-forward="true" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1650">
+          <caret line="134" column="9" selection-start-line="134" selection-start-column="9" selection-end-line="134" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/fullback/AuthFallbackProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        <state relative-caret-position="315">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/service/impl/PermissionServiceImpl.java">
+    <entry file="jar://$PROJECT_DIR$/../../../maven-repository/com/netflix/hystrix/hystrix-core/1.5.12/hystrix-core-1.5.12.jar!/com/netflix/hystrix/HystrixCommand.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="50" column="33" lean-forward="true" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
+        <state relative-caret-position="147">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/cloud/spring-cloud-sleuth-core/2.0.0.M9/spring-cloud-sleuth-core-2.0.0.M9.jar!/org/springframework/cloud/sleuth/instrument/web/ExceptionLoggingFilter.class">
+    <entry file="file://$PROJECT_DIR$/system-api/auth-api/src/main/java/com/wmang/system/api/auth/api/UserFeignApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="83" column="35" selection-start-line="83" selection-start-column="35" selection-end-line="83" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework-system/config-center/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-46" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/springCloudConfig/exercise/application-dev.yml" />
+    <entry file="jar://$PROJECT_DIR$/../../../maven-repository/io/github/openfeign/feign-core/9.5.1/feign-core-9.5.1.jar!/feign/codec/ErrorDecoder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework-system/config-center/src/main/resources/logback.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../maven-repository/io/github/openfeign/feign-okhttp/9.5.0/feign-okhttp-9.5.0.pom">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
+          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../maven-repository/io/zipkin/brave/brave-instrumentation-servlet/4.18.2/brave-instrumentation-servlet-4.18.2.jar!/brave/servlet/TracingFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="99" selection-start-line="99" selection-end-line="99" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../maven-repository/org/apache/tomcat/embed/tomcat-embed-core/8.5.31/tomcat-embed-core-8.5.31.jar!/org/apache/catalina/core/ApplicationFilterChain.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="81" column="46" lean-forward="true" selection-start-line="81" selection-start-column="46" selection-end-line="81" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/spring-security-core/5.0.5.RELEASE/spring-security-core-5.0.5.RELEASE.jar!/org/springframework/security/core/userdetails/cache/NullUserCache.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#469#470#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/spring-context/5.0.6.RELEASE/spring-context-5.0.6.RELEASE.jar!/org/springframework/context/support/MessageSourceAccessor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/spring-web/5.0.6.RELEASE/spring-web-5.0.6.RELEASE.jar!/org/springframework/web/filter/RequestContextFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="27" column="10" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/spring-core/5.0.6.RELEASE/spring-core-5.0.6.RELEASE.jar!/org/springframework/cglib/proxy/MethodProxy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="123" column="9" lean-forward="true" selection-start-line="123" selection-start-column="9" selection-end-line="123" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/ajax/AjaxAuthenticationFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="20" column="84" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="84" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/spring-security-web/5.0.5.RELEASE/spring-security-web-5.0.5.RELEASE.jar!/org/springframework/security/web/authentication/AbstractAuthenticationTargetUrlRequestHandler.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/spring-security-web/5.0.5.RELEASE/spring-security-web-5.0.5.RELEASE.jar!/org/springframework/security/web/DefaultSecurityFilterChain.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/spring-security-web/5.0.5.RELEASE/spring-security-web-5.0.5.RELEASE.jar!/org/springframework/security/web/AuthenticationEntryPoint.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/spring-security-web/5.0.5.RELEASE/spring-security-web-5.0.5.RELEASE.jar!/org/springframework/security/web/authentication/logout/LogoutFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="61" selection-start-line="61" selection-end-line="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/spring-security-web/5.0.5.RELEASE/spring-security-web-5.0.5.RELEASE.jar!/org/springframework/security/web/FilterChainProxy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="172" selection-start-line="172" selection-end-line="172" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/spring-security-web/5.0.5.RELEASE/spring-security-web-5.0.5.RELEASE.jar!/org/springframework/security/web/authentication/SimpleUrlAuthenticationFailureHandler.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4">
-          <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/spring-security-web/5.0.5.RELEASE/spring-security-web-5.0.5.RELEASE.jar!/org/springframework/security/web/authentication/LoginUrlAuthenticationEntryPoint.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="48" column="46" lean-forward="true" selection-start-line="48" selection-start-column="46" selection-end-line="48" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/spring-security-web/5.0.5.RELEASE/spring-security-web-5.0.5.RELEASE.jar!/org/springframework/security/web/authentication/UsernamePasswordAuthenticationFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="30" column="16" lean-forward="true" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/spring-security-web/5.0.5.RELEASE/spring-security-web-5.0.5.RELEASE.jar!/org/springframework/security/web/authentication/AnonymousAuthenticationFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/spring-security-web/5.0.5.RELEASE/spring-security-web-5.0.5.RELEASE.jar!/org/springframework/security/web/authentication/DelegatingAuthenticationEntryPoint.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/oauth/spring-security-oauth2/2.2.1.RELEASE/spring-security-oauth2-2.2.1.RELEASE.jar!/org/springframework/security/oauth2/provider/client/ClientCredentialsTokenEndpointFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="26" column="49" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="938" column="34" selection-start-line="938" selection-start-column="27" selection-end-line="938" selection-end-column="34" />
-          <folding>
-            <element signature="e#36393#36394#0" expanded="true" />
-            <element signature="e#36459#36460#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/spring-security-web/5.0.5.RELEASE/spring-security-web-5.0.5.RELEASE.jar!/org/springframework/security/web/header/HeaderWriterFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/spring-security-web/5.0.5.RELEASE/spring-security-web-5.0.5.RELEASE.jar!/org/springframework/security/web/context/SecurityContextPersistenceFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/spring-security-core/5.0.5.RELEASE/spring-security-core-5.0.5.RELEASE.jar!/org/springframework/security/authentication/UsernamePasswordAuthenticationToken.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
-          <folding>
-            <element signature="e#1024#1025#0" expanded="true" />
-            <element signature="e#1063#1064#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/FwJwtAccessTokenConverter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/framework-core/framework-utils/src/main/java/com/spring/cloud/framework/utils/constant/SecurityConstant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-148">
-          <caret line="13" column="7" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/framework-core/framework-utils/src/main/java/com/spring/cloud/framework/utils/constant/CommonConstant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="46" column="12" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/java/io/UnsupportedEncodingException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/framework-system/authentic-service/src/main/resources/logback.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="158" column="21" selection-start-line="158" selection-start-column="21" selection-end-line="158" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/spring-web/5.0.6.RELEASE/spring-web-5.0.6.RELEASE.jar!/org/springframework/web/filter/OncePerRequestFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/spring-security-core/5.0.5.RELEASE/spring-security-core-5.0.5.RELEASE.jar!/org/springframework/security/crypto/password/PasswordEncoder.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/spring-security-core/5.0.5.RELEASE/spring-security-core-5.0.5.RELEASE.jar!/org/springframework/security/core/userdetails/User.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="63" selection-start-line="63" selection-end-line="63" />
-          <folding>
-            <element signature="e#2649#2650#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/spring-security-web/5.0.5.RELEASE/spring-security-web-5.0.5.RELEASE.jar!/org/springframework/security/web/authentication/AbstractAuthenticationProcessingFilter.class">
+    <entry file="jar://$PROJECT_DIR$/../../../maven-repository/io/github/openfeign/feign-hystrix/9.5.1/feign-hystrix-9.5.1.jar!/feign/hystrix/HystrixInvocationHandler.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="257">
-          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
+          <caret line="75" selection-start-line="75" selection-end-line="75" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/spring-security-web/5.0.5.RELEASE/spring-security-web-5.0.5.RELEASE.jar!/org/springframework/security/web/authentication/www/BasicAuthenticationFilter.class">
+    <entry file="file://$PROJECT_DIR$/business-core/user-service/target/maven-archiver/pom.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../maven-repository/org/springframework/boot/spring-boot-starter-data-redis/2.0.2.RELEASE/spring-boot-starter-data-redis-2.0.2.RELEASE.pom">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="73" selection-start-line="73" selection-end-line="73" />
+        <state relative-caret-position="57">
+          <caret line="46" column="31" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/spring-security-config/5.0.5.RELEASE/spring-security-config-5.0.5.RELEASE.jar!/org/springframework/security/config/annotation/web/configuration/WebSecurityConfigurerAdapter.class">
+    <entry file="file://$PROJECT_DIR$/framework-core/framework-api/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="233" selection-start-line="233" selection-end-line="233" />
+        <state relative-caret-position="503">
+          <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/spring-security-core/5.0.5.RELEASE/spring-security-core-5.0.5.RELEASE.jar!/org/springframework/security/authentication/ProviderManager.class">
+    <entry file="file://$PROJECT_DIR$/framework-core/framework-utils/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="56" selection-start-line="56" selection-end-line="56" />
+        <state relative-caret-position="315">
+          <caret line="21" column="21" lean-forward="true" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/framework-core/framework-configuration/src/main/java/com/spring/boot/framework/config/FilterUrlsConfig.java">
+    <entry file="file://$PROJECT_DIR$/framework-core/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        <state relative-caret-position="195">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/ajax/AjaxSecurityConfig.java">
+    <entry file="jar://$PROJECT_DIR$/../../../maven-repository/io/github/openfeign/feign-core/9.5.1/feign-core-9.5.1.jar!/feign/FeignException.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/AuthResourceServerConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="102">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/system-api/auth-api/src/main/java/com/wmang/system/api/auth/hystrix/UserFeignApiHystrix.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+        <state relative-caret-position="180">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/spring-security-core/5.0.5.RELEASE/spring-security-core-5.0.5.RELEASE.jar!/org/springframework/security/crypto/password/DelegatingPasswordEncoder.class">
+    <entry file="file://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/oauth/boot/spring-security-oauth2-autoconfigure/2.0.0.RELEASE/spring-security-oauth2-autoconfigure-2.0.0.RELEASE.pom">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="436">
+          <caret line="67" column="17" lean-forward="true" selection-start-line="56" selection-start-column="3" selection-end-line="67" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/oauth/spring-security-oauth2/2.2.1.RELEASE/spring-security-oauth2-2.2.1.RELEASE.jar!/org/springframework/security/oauth2/provider/client/ClientDetailsUserDetailsService.class">
+    <entry file="file://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/oauth/spring-security-oauth2/2.2.1.RELEASE/spring-security-oauth2-2.2.1.RELEASE.pom">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="28" column="41" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="41" />
+        <state relative-caret-position="157">
+          <caret line="124" column="12" selection-start-line="124" selection-start-column="12" selection-end-line="124" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/service/impl/UserDetailServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5">
-          <caret line="23" column="7" lean-forward="true" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/JwtRedisTokenStore.java">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/spring-security-core/5.0.5.RELEASE/spring-security-core-5.0.5.RELEASE.jar!/org/springframework/security/authentication/dao/DaoAuthenticationProvider.class">
+    <entry file="file://$PROJECT_DIR$/framework-core/framework-configuration/src/main/java/com/spring/boot/framework/config/FilterUrlsConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="28" column="67" lean-forward="true" selection-start-line="28" selection-start-column="67" selection-end-line="28" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/spring-security-core/5.0.5.RELEASE/spring-security-core-5.0.5.RELEASE.jar!/org/springframework/security/authentication/dao/AbstractUserDetailsAuthenticationProvider.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="45" column="58" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/AuthServerConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
-          <folding>
-            <element signature="e#789#790#0" expanded="true" />
-            <element signature="e#829#830#0" expanded="true" />
-            <element signature="e#886#887#0" expanded="true" />
-            <element signature="e#948#949#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/JwtAuthorizationConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="51" column="46" lean-forward="true" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
+        <state relative-caret-position="225">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/framework-system/zuul-gateway/src/test/java/com/spring/cloud/zuul/ZuulGetewayApplicationTests.java">
+    <entry file="file://$USER_HOME$/springCloudConfig/exercise/authentic-service-dev.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="23" column="55" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="55" />
+        <state relative-caret-position="2070">
+          <caret line="138" selection-start-line="138" selection-end-line="140" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/springCloudConfig/exercise/authentic-service-dev.yml">
+    <entry file="file://$USER_HOME$/springCloudConfig/exercise/user-service-dev.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="142" column="4" lean-forward="true" selection-start-line="142" selection-start-column="4" selection-end-line="142" selection-end-column="4" />
+        <state relative-caret-position="105">
+          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/springCloudConfig/exercise/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1515">
+          <caret line="101" selection-start-line="101" selection-end-line="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework-core/framework-configuration/src/main/java/com/spring/boot/framework/config/JwtRedisTokenStore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework-system/system-configuration.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework-system/framework-system.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework-system/authentic-service/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="42" column="21" lean-forward="true" selection-start-line="39" selection-start-column="6" selection-end-line="42" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../maven-repository/org/springframework/cloud/spring-cloud-starter-oauth2/2.0.0.M3/spring-cloud-starter-oauth2-2.0.0.M3.pom">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="33" column="21" lean-forward="true" selection-start-line="30" selection-start-column="4" selection-end-line="33" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/springCloudConfig/exercise/zuul-gateway-dev.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="203" column="28" selection-start-line="203" selection-start-column="28" selection-end-line="203" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework-system/zuul-gateway/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="33" column="46" selection-start-line="33" selection-start-column="46" selection-end-line="33" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/config/JwtRedisTokenStore.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/business-core/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework-system/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework-core/framework-configuration/src/main/java/com/spring/boot/framework/config/JwtConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/business-core/user-service/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/aop/AuthorizationInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework-core/framework-configuration/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/business-core/user-service/src/main/java/com/spring/cloud/service/controller/feignClient/UserFeignApiClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="40" column="9" lean-forward="true" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/service/impl/UserDetailServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="32" column="52" selection-start-line="32" selection-start-column="52" selection-end-line="32" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework-system/authentic-service/src/main/resources/logback.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="155" column="42" lean-forward="true" selection-start-line="155" selection-start-column="42" selection-end-line="155" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/business-core/user-service/src/main/resources/logback.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="158" column="23" lean-forward="true" selection-start-line="158" selection-start-column="23" selection-end-line="158" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework-system/authentic-service/src/main/java/com/spring/cloud/authentic/config/JwtAuthorizationConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="95" column="30" selection-start-line="95" selection-start-column="30" selection-end-line="95" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../../maven-repository/org/springframework/security/oauth/spring-security-oauth2/2.2.1.RELEASE/spring-security-oauth2-2.2.1.RELEASE.jar!/org/springframework/security/oauth2/provider/token/DefaultTokenServices.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="170" selection-start-line="170" selection-end-line="170" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/service/impl/PermissionServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="45" column="29" lean-forward="true" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework-system/zuul-gateway/src/main/java/com/spring/cloud/zuul/handler/AccessDeniedHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="27" column="14" lean-forward="true" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -2996,11 +2662,12 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>auth-api</last-edited>
+          <last-edited>framework-system</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

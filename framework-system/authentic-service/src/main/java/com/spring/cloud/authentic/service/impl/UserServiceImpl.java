@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 @Service("userService")
 public class UserServiceImpl implements UserService {
 
-   public static final  Logger log = LoggerFactory.getLogger(UserServiceImpl.class);
+    public static final Logger log = LoggerFactory.getLogger(UserServiceImpl.class);
+
     /**
      * 通过用户名查询用户、角色信息
      *

@@ -67,6 +67,12 @@
         <option value="$PROJECT_DIR$/authentic-service/pom.xml" />
         <option value="$PROJECT_DIR$/bus-service/pom.xml" />
         <option value="$PROJECT_DIR$/framework-core/framework-utils/pom.xml" />
+        <option value="$PROJECT_DIR$/framework-system/pom.xml" />
+        <option value="$PROJECT_DIR$/framework-system/authentic-service/pom.xml" />
+        <option value="$PROJECT_DIR$/framework-system/config-center/pom.xml" />
+        <option value="$PROJECT_DIR$/framework-system/eureka-server/pom.xml" />
+        <option value="$PROJECT_DIR$/framework-system/zuul-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/framework-core/framework-configuration/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

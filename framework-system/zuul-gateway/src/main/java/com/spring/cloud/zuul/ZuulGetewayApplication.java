@@ -16,26 +16,26 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 @SpringCloudApplication
 @EnableZuulProxy
 @EnableFeignClients
-@ComponentScan(basePackages = {"com.spring.cloud.zuul","com.spring.boot.framework"})
-public class ZuulGetewayApplication extends SpringBootServletInitializer{
+@ComponentScan(basePackages = {"com.spring.cloud.zuul", "com.spring.boot.framework"})
+public class ZuulGetewayApplication extends SpringBootServletInitializer {
 
 
-	@Override
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-		return builder.sources(ZuulGetewayApplication.class);
-	}
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+        return builder.sources(ZuulGetewayApplication.class);
+    }
 
 
-//	@Bean
+    //	@Bean
 //	public PermissionPreFilter permissionPreFilter(){
 //		return new PermissionPreFilter();
 //	}
-	@Bean
-	LoadBalancerInterceptor loadBalancerInterceptor(LoadBalancerClient loadBalance) {
-		return new LoadBalancerInterceptor(loadBalance);
-	}
+    @Bean
+    LoadBalancerInterceptor loadBalancerInterceptor(LoadBalancerClient loadBalance) {
+        return new LoadBalancerInterceptor(loadBalance);
+    }
 
-	public static void main(String[] args) {
-		SpringApplication.run(ZuulGetewayApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(ZuulGetewayApplication.class, args);
+    }
 }

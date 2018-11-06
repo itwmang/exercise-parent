@@ -65,6 +65,7 @@
       <module name="framework-system" target="1.8" />
       <module name="framework-utils" target="1.8" />
       <module name="system-api" target="1.8" />
+      <module name="system-configuration" target="1.8" />
       <module name="untitled" target="1.8" />
       <module name="untitled1" target="1.5" />
       <module name="user-consumer" target="1.8" />

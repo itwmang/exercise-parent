@@ -2,9 +2,9 @@ spring:
   cloud:
     config:
       failFast: true
-#      discovery:
-#        enable: true
-#        service-id: config-center
+      #      discovery:
+      #        enable: true
+      #        service-id: config-center
       uri: http://120.79.90.129:8888
       profile: @profileActive@
       label: master

@@ -53,8 +53,8 @@ public class AuthController extends BaseController {
         sp.stop();
 
         if (null == res) {
-            if(log.isInfoEnabled()){
-                log.info(MessageFormat.format("account[{0}]登录接口调用失败,耗时[{1}]毫秒",account,sp.getTime()));
+            if (log.isInfoEnabled()) {
+                log.info(MessageFormat.format("account[{0}]登录接口调用失败,耗时[{1}]毫秒", account, sp.getTime()));
             }
             return super.error(AuthEnums.AuthLoginEnums.auth_error.getCode(), AuthEnums.AuthLoginEnums.auth_error.getMsg());
         }
@@ -72,11 +72,10 @@ public class AuthController extends BaseController {
     }
 
 
-
     @GetMapping(value = "/authentic/api/findMenuByRole/{roleCode}")
-    public Set<AuthPermission> findMenuByRole(@PathVariable String roleCode){
+    public Set<AuthPermission> findMenuByRole(@PathVariable String roleCode) {
         Set<AuthPermission> permissionSet = new HashSet<>();
-        log.info("class:[AuthController-findMenuByRole]roleCode[{}]",roleCode);
+        log.info("class:[AuthController-findMenuByRole]roleCode[{}]", roleCode);
         if (roleCode == "getuser") {
             AuthPermission auth = new AuthPermission();
             auth.setUrl("/authentic-service/getUser");
@@ -86,10 +85,9 @@ public class AuthController extends BaseController {
     }
 
 
-
-
-
-    /**==================================================================*/
+    /**
+     * ==================================================================
+     */
 
     @Autowired
     @Qualifier("consumerTokenServices")

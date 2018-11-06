@@ -9,10 +9,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.netflix.zuul.filters.support.FilterConstants;
+import org.springframework.stereotype.Component;
 
 /**
  * Created by yingying on 18-5-14.
  */
+@Component
 public class LoggerFilter extends ZuulFilter {
     private static Logger log = LoggerFactory.getLogger(ErrorFilter.class);
 

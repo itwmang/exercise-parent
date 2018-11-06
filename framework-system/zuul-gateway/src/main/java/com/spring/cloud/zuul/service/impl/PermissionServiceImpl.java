@@ -1,7 +1,7 @@
 package com.spring.cloud.zuul.service.impl;
 
 import com.spring.boot.framework.api.beans.AuthPermission;
-import com.spring.cloud.framework.utils.constant.SecurityConstant;
+import com.spring.cloud.zuul.config.JwtRedisTokenStore;
 import com.spring.cloud.zuul.jwt.JwtUtils;
 import com.spring.cloud.zuul.service.MenuPermissionService;
 import com.spring.cloud.zuul.service.PermissionService;
@@ -13,7 +13,6 @@ import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
-import org.springframework.security.oauth2.provider.token.store.redis.RedisTokenStore;
 import org.springframework.stereotype.Service;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.util.CollectionUtils;
@@ -43,24 +42,23 @@ public class PermissionServiceImpl implements PermissionService {
 
         boolean hasPermission = false;
 
-        if(null == principal){
+        if (null == principal) {
             return hasPermission;
         }
 
-        if(CollectionUtils.isEmpty(authoritesList)){
+        if (CollectionUtils.isEmpty(authoritesList)) {
             return hasPermission;
         }
         String token = JwtUtils.getToken(request);
-        if(StringUtils.isBlank(token)){
+        if (StringUtils.isBlank(token)) {
             log.error("=======>[gateway|PermissionService|hasPermission][获取request Header Authorization]");
             return hasPermission;
         }
 
-        if(!"anonymousUser".equals(principal.toString())){
-            RedisTokenStore redisTokenStore = new RedisTokenStore(redisConnectionFactory);
-            redisTokenStore.setPrefix(SecurityConstant.TOKEN_PREFIX);
+        if (!"anonymousUser".equals(principal.toString())) {
+            JwtRedisTokenStore redisTokenStore = new JwtRedisTokenStore();
             OAuth2AccessToken accessToken = redisTokenStore.readAccessToken(token);
-            if(null == accessToken || accessToken.isExpired()){
+            if (null == accessToken || accessToken.isExpired()) {
                 log.error("=======>[gateway|PermissionService|hasPermission][token 过期或者不存在]");
                 return hasPermission;
             }
@@ -74,8 +72,8 @@ public class PermissionServiceImpl implements PermissionService {
 
         //网关处理是否拥有,菜单下的功能权限校验由调用子模块负责
         String requestUri = request.getRequestURI();
-        for (AuthPermission menu : permissionSet ) {
-            if(StringUtils.isBlank(menu.getUrl()) && antPathMatcher.match(menu.getUrl(),requestUri)){
+        for (AuthPermission menu : permissionSet) {
+            if (StringUtils.isBlank(menu.getUrl()) && antPathMatcher.match(menu.getUrl(), requestUri)) {
                 hasPermission = true;
                 break;
             }

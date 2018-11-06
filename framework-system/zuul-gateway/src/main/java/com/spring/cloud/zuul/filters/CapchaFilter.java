@@ -37,9 +37,9 @@ public class CapchaFilter extends OncePerRequestFilter {
         )) {
             //需要校验 验证码
 //            checkCode(request,response,filterChain);
-        }else{
+        } else {
             //不需要校验 验证码
-            filterChain.doFilter(request,response);
+            filterChain.doFilter(request, response);
         }
     }
 //校验验证码逻辑处理

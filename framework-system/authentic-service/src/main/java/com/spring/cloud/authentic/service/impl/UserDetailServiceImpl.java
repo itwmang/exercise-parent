@@ -15,7 +15,7 @@ import java.io.Serializable;
  * Created by yingying on 2018/6/6.
  */
 @Service("userDetailService")
-public class UserDetailServiceImpl implements UserDetailsService,Serializable {
+public class UserDetailServiceImpl implements UserDetailsService, Serializable {
 
 
     @Autowired
@@ -35,11 +35,13 @@ public class UserDetailServiceImpl implements UserDetailsService,Serializable {
      */
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        if(StringUtils.isBlank(username)){
-            throw new UsernameNotFoundException("用户不存在："+username);
+        if (StringUtils.isBlank(username)) {
+            throw new UsernameNotFoundException("用户不存在：" + username);
         }
         AuthUser user = userFeignApi.findUserByUsername(username);
-        if (null == user) { throw new UsernameNotFoundException("用户不存在:" + username); }
+        if (null == user) {
+            throw new UsernameNotFoundException("用户不存在:" + username);
+        }
         return new UserDetailsImpl(user);
     }
 }

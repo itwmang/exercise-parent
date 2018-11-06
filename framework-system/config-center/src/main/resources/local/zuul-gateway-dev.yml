@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-     name: zuul-gateway
+    name: zuul-gateway
 
 eureka:
   instance:
@@ -26,23 +26,23 @@ security:
   #认证服务器
   auth:
     server: http://localhost:2190
-#是否需要校验验证码
+  #是否需要校验验证码
   capcha: false
-#  user:
-#    password: user  # 直接登录时的密码
-#    ignored: /
-#    sessions: never   # session策略
-#    oauth2:
-#      sso:
-#        loginPath: /login   # 登录路径
-#      client:
-#        clientId: testclientId
-#        clientSecret: testclientSecret
-#        accessTokenUri: https://github.com/login/oauth/access_token
-#        userAuthorizationUri: https://github.com/login/oauth/authorize
-#      resource:
-#        userInfoUri: https://api.github.com/user
-#        preferTokenInfo: false
+  #  user:
+  #    password: user  # 直接登录时的密码
+  #    ignored: /
+  #    sessions: never   # session策略
+  #    oauth2:
+  #      sso:
+  #        loginPath: /login   # 登录路径
+  #      client:
+  #        clientId: testclientId
+  #        clientSecret: testclientSecret
+  #        accessTokenUri: https://github.com/login/oauth/access_token
+  #        userAuthorizationUri: https://github.com/login/oauth/authorize
+  #      resource:
+  #        userInfoUri: https://api.github.com/user
+  #        preferTokenInfo: false
   sessions: stateless
   oauth2:
     client:
@@ -53,8 +53,8 @@ security:
       token-info-uri: ${security.auth.server}/oauth/check-token #由资源服务器用来解码访问令牌
       service-id: zuul-gateway
       jwt:
-         #key-uri: ${security.auth.server}/oauth/token_key #使用JWT令牌，RSA公开密钥可以用于令牌验证
-         key-value: wmangccc.888888
+        #key-uri: ${security.auth.server}/oauth/token_key #使用JWT令牌，RSA公开密钥可以用于令牌验证
+        key-value: wmangccc.888888
 #security:
 #  validate:
 #    code: false
@@ -111,16 +111,16 @@ zuul:
       serviceId: user-service
       stripPrefix: true
       sensitiveHeaders:
-#    business-admin-server:
-#      path: /admin/**
-#      serviceId: business-admin-server
-#      stripPrefix: true
-#      sensitiveHeaders:
-#    business-pay-server:
-#      path: /pay/**
-#      serviceId: business-pay-server
-#      stripPrefix: true
-#      sensitiveHeaders:
+  #    business-admin-server:
+  #      path: /admin/**
+  #      serviceId: business-admin-server
+  #      stripPrefix: true
+  #      sensitiveHeaders:
+  #    business-pay-server:
+  #      path: /pay/**
+  #      serviceId: business-pay-server
+  #      stripPrefix: true
+  #      sensitiveHeaders:
   ratelimit:
     key-prefix: business-ratelimite
     enabled: true
@@ -155,7 +155,7 @@ redis:
       # 连接池中的最小空闲连接
       min-idle: 0
   # 连接超时时间（毫秒）
-  timeout: 1000
+  timeout: 10000
 
 #################redis哨兵设置#################
 # Redis服务器master的名字

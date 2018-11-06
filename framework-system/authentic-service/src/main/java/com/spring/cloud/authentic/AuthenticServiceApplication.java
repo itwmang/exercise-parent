@@ -11,7 +11,8 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringCloudApplication
 @EnableFeignClients(basePackages = {"com.wmang.system.api"})
-@ComponentScan(basePackages = {"com.spring.cloud.authentic","com.spring.boot.framework","com.wmang.system.api"})
+//@EnableFeignClients()
+@ComponentScan(basePackages = {"com.spring.cloud.authentic", "com.spring.boot.framework", "com.wmang.system.api"})
 @MapperScan(value = "com.spring.cloud.authentic.dao")
 public class AuthenticServiceApplication extends SpringBootServletInitializer {
     public static void main(String[] args) {

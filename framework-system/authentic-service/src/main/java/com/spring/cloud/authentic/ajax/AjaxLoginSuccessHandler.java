@@ -29,59 +29,61 @@ import java.io.PrintWriter;
 @Component
 public class AjaxLoginSuccessHandler implements AuthenticationSuccessHandler {
 
-	@Autowired
-	private ObjectMapper objectMapper;
+    @Autowired
+    private ObjectMapper objectMapper;
 
-	@Autowired
-	private ClientDetailsService clientDetailsService;
+    @Autowired
+    private ClientDetailsService clientDetailsService;
 
-	@Autowired
-	private AuthorizationServerTokenServices authorizationServerTokenServices;
+    @Autowired
+    private AuthorizationServerTokenServices authorizationServerTokenServices;
 
-	@Override
-	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) {
-		String header = request.getHeader(SecurityConstant.AUTHORIZATION);
-		if (StringUtils.isBlank(header) || !header.startsWith(SecurityConstant.BASIC))
-			throw new UnapprovedClientAuthenticationException("请求头中client信息为空");
+    @Override
+    public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) {
+        String header = request.getHeader(SecurityConstant.AUTHORIZATION);
+        if (StringUtils.isBlank(header) || !header.startsWith(SecurityConstant.BASIC))
+            throw new UnapprovedClientAuthenticationException("请求头中client信息为空");
 
-		try {
-			String[] tokens = extractAndDecodeHeader(header);
-			assert tokens.length == 2;
-			String clientId = tokens[0];
+        try {
+            String[] tokens = extractAndDecodeHeader(header);
+            assert tokens.length == 2;
+            String clientId = tokens[0];
 
-			ClientDetails clientDetails = clientDetailsService.loadClientByClientId(clientId);
-			TokenRequest tokenRequest = new TokenRequest(MapUtil.newHashMap(), clientId, clientDetails.getScope(), CommonConstant.SPRING_SECURITY_FORM_MOBILE_KEY);
-			OAuth2Request oAuth2Request = tokenRequest.createOAuth2Request(clientDetails);
+            ClientDetails clientDetails = clientDetailsService.loadClientByClientId(clientId);
+            TokenRequest tokenRequest = new TokenRequest(MapUtil.newHashMap(), clientId, clientDetails.getScope(), CommonConstant.SPRING_SECURITY_FORM_MOBILE_KEY);
+            OAuth2Request oAuth2Request = tokenRequest.createOAuth2Request(clientDetails);
 
-			OAuth2Authentication oAuth2Authentication = new OAuth2Authentication(oAuth2Request, authentication);
-			OAuth2AccessToken oAuth2AccessToken = authorizationServerTokenServices.createAccessToken(oAuth2Authentication);
-			log.info("获取token 成功：{}", oAuth2AccessToken.getValue());
+            OAuth2Authentication oAuth2Authentication = new OAuth2Authentication(oAuth2Request, authentication);
+            OAuth2AccessToken oAuth2AccessToken = authorizationServerTokenServices.createAccessToken(oAuth2Authentication);
+            log.info("获取token 成功：{}", oAuth2AccessToken.getValue());
 
-			response.setCharacterEncoding(CommonConstant.UTF8);
-			response.setContentType(CommonConstant.CONTENT_TYPE);
-			PrintWriter printWriter = response.getWriter();
-			printWriter.append(objectMapper.writeValueAsString(oAuth2AccessToken));
-		} catch (IOException e) {
-			throw new BadCredentialsException("Failed to decode basic authentication token");
-		}
-	}
+            response.setCharacterEncoding(CommonConstant.UTF8);
+            response.setContentType(CommonConstant.CONTENT_TYPE);
+            PrintWriter printWriter = response.getWriter();
+            printWriter.append(objectMapper.writeValueAsString(oAuth2AccessToken));
+        } catch (IOException e) {
+            throw new BadCredentialsException("Failed to decode basic authentication token");
+        }
+    }
 
-	private String[] extractAndDecodeHeader(String header) throws IOException {
+    private String[] extractAndDecodeHeader(String header) throws IOException {
 
-		byte[] base64Token = header.substring(6)
-				.getBytes("UTF-8");
-		byte[] decoded;
-		try {
-			decoded = Base64.decode(base64Token);
-		} catch (IllegalArgumentException e) {
-			throw new BadCredentialsException("Failed to decode basic authentication token");
-		}
+        byte[] base64Token = header.substring(6)
+                .getBytes("UTF-8");
+        byte[] decoded;
+        try {
+            decoded = Base64.decode(base64Token);
+        } catch (IllegalArgumentException e) {
+            throw new BadCredentialsException("Failed to decode basic authentication token");
+        }
 
-		String token = new String(decoded, CommonConstant.UTF8);
+        String token = new String(decoded, CommonConstant.UTF8);
 
-		int delim = token.indexOf(":");
+        int delim = token.indexOf(":");
 
-		if (delim == -1) { throw new BadCredentialsException("Invalid basic authentication token"); }
-		return new String[] { token.substring(0, delim), token.substring(delim + 1) };
-	}
+        if (delim == -1) {
+            throw new BadCredentialsException("Invalid basic authentication token");
+        }
+        return new String[]{token.substring(0, delim), token.substring(delim + 1)};
+    }
 }

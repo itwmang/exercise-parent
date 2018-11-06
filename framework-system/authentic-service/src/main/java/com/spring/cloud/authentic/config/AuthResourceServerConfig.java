@@ -27,7 +27,7 @@ import java.util.List;
 /**
  * @Author: wangmian
  * @Date: 2018/9/4 21:19
- * @Description:  认证服务器开发接口配置
+ * @Description: 认证服务器开发接口配置
  */
 @Order(SecurityProperties.BASIC_AUTH_ORDER - 4)
 @Configuration
@@ -58,7 +58,7 @@ public class AuthResourceServerConfig extends WebSecurityConfigurerAdapter {
 //                .expiredUrl("/login?expired");
 
 
-        for (String url :filterUrlsConfig.getCollects()) {
+        for (String url : filterUrlsConfig.getCollects()) {
             registry.antMatchers(url).permitAll();
         }
 
@@ -71,10 +71,11 @@ public class AuthResourceServerConfig extends WebSecurityConfigurerAdapter {
     }
 
 
-    @Bean(name=BeanIds.AUTHENTICATION_MANAGER)
+    @Bean(name = BeanIds.AUTHENTICATION_MANAGER)
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }
+
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         //注入userDetailsService的实现类

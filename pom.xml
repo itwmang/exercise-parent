@@ -39,8 +39,9 @@
         <pagehelper.version>5.1.2</pagehelper.version>
         <jjwt.version>0.7.0</jjwt.version>
         <ttl.version>2.2.0</ttl.version>
+        <redis.version>2.0.10.RELEASE</redis.version>
+        <oauth2.version>2.0.0.RELEASE</oauth2.version>
         <swagger2.version>2.9.0</swagger2.version>
-        <jedis>2.9.0</jedis>
         <lombok.version>1.16.20</lombok.version>
         <zuul-ratelimit.version>1.7.0.RELEASE</zuul-ratelimit.version>
     </properties>
@@ -179,7 +180,20 @@
                 <version>3.3.2</version>
             </dependency>
 
+<!--oauth2-->
+            <dependency>
+                <groupId>org.springframework.security.oauth.boot</groupId>
+                <artifactId>spring-security-oauth2-autoconfigure</artifactId>
+                <version>${oauth2.version}</version>
+            </dependency>
 
+
+            <!--redis-->
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-redis</artifactId>
+                <version>${redis.version}</version>
+            </dependency>
             <!--jedis操作-->
             <dependency>
                 <groupId>redis.clients</groupId>

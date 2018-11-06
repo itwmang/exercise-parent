@@ -11,8 +11,7 @@ public interface UserService {
     /**
      * 通过用户名查询用户、角色信息
      *
-     * @param username
-     *            用户名
+     * @param username 用户名
      */
     @GetMapping("/api/findUserByUsername/{username}")
     AuthUser findUserByUsername(@PathVariable("username") String username);

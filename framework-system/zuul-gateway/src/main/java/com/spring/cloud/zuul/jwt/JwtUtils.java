@@ -30,19 +30,21 @@ public class JwtUtils {
 
     /**
      * 设置用户信息
+     *
      * @param userAccount
      */
-    public static void setUser(String userAccount){
+    public static void setUser(String userAccount) {
         THREAD_LOCAL.set(userAccount);
-        MDC.put(SecurityConstant.KEY_USER,userAccount);
+        MDC.put(SecurityConstant.KEY_USER, userAccount);
     }
 
     /**
      * 获取登录用户
+     *
      * @param userAccount
      * @return
      */
-    public static String getUser(String userAccount){
+    public static String getUser(String userAccount) {
         return THREAD_LOCAL.get();
     }
 
@@ -51,10 +53,9 @@ public class JwtUtils {
      * @param userAccount
      * @return
      */
-    public static String getUserAccount(String userAccount){
+    public static String getUserAccount(String userAccount) {
         return THREAD_LOCAL.get();
     }
-
 
 
     /**
@@ -90,12 +91,13 @@ public class JwtUtils {
 
     /**
      * 根据token和
+     *
      * @param token
      * @param jwtKey
      * @return
      */
-    public static List<String> getRole(String token,String jwtKey){
-        Claims claims =  buildClaims(buildToken(token), jwtKey);
+    public static List<String> getRole(String token, String jwtKey) {
+        Claims claims = buildClaims(buildToken(token), jwtKey);
         if (null == claims) {
             return new ArrayList<String>();
         }
@@ -105,10 +107,11 @@ public class JwtUtils {
 
     /**
      * 从用户请求中获取token
+     *
      * @param request
      */
     public static String getToken(HttpServletRequest request) {
-        String authorization =  request.getHeader(SecurityConstant.REQUEST_AUTHENCATION);
+        String authorization = request.getHeader(SecurityConstant.REQUEST_AUTHENCATION);
         return buildToken(authorization);
     }
 

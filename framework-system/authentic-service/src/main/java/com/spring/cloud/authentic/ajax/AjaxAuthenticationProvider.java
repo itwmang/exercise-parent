@@ -12,7 +12,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 /**
  * Created by wmang on 2018/8/22.
- *
+ * <p>
  * 自定义参数验证 <br/>
  * 可以在自定义登录界面添加登录时需要的参数，如多个验证码等、可以修改默认登录名称和密码的参数名 整体流程：<br/>
  * 1.用户登录时，先经过自定义的passcard_filter过滤器，该过滤器继承了AbstractAuthenticationProcessingFilter，并且绑定了登录失败和成功时需要的处理器(跳转页面使用)<br/>
@@ -36,14 +36,14 @@ public class AjaxAuthenticationProvider implements AuthenticationProvider {
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         AjaxAuthenticationToken ajaxToken = (AjaxAuthenticationToken) authentication;
         AuthUser user = userFeignApi.findUserByMobile((String) ajaxToken.getPrincipal());
-        if(null == user){
-            throw new UsernameNotFoundException("登录账号：【"+ajaxToken.getPrincipal()+"】 不存在");
+        if (null == user) {
+            throw new UsernameNotFoundException("登录账号：【" + ajaxToken.getPrincipal() + "】 不存在");
         }
-        UserDetailsImpl userDetail =buildUserDetails(user);
-        if(null == userDetail){
-            throw new InternalAuthenticationServiceException("登录账号：【"+ajaxToken.getPrincipal()+"】 不存在");
+        UserDetailsImpl userDetail = buildUserDetails(user);
+        if (null == userDetail) {
+            throw new InternalAuthenticationServiceException("登录账号：【" + ajaxToken.getPrincipal() + "】 不存在");
         }
-        AjaxAuthenticationToken authToken = new AjaxAuthenticationToken(userDetail,userDetail.getAuthorities());
+        AjaxAuthenticationToken authToken = new AjaxAuthenticationToken(userDetail, userDetail.getAuthorities());
         authToken.setDetails(ajaxToken.getDetails());
         return authToken;
     }
